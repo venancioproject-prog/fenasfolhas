@@ -1,4 +1,5 @@
-<html class="dark" lang="pt-BR"><head>
+<html class="dark" lang="pt-BR"><head></head><body class="bg-[#394C29] text-on-background antialiased overflow-x-hidden">```html
+
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Yèyé Osunsade - Alquimia Botânica e Performance</title>
@@ -128,9 +129,15 @@
             .text-bege-erva-doce {
                 color: #EBD19C;
             }
+            
+            /* Custom grid styling to ensure 5 columns on desktop */
+            @media (min-width: 1024px) {
+                .instagram-grid {
+                    display: grid;
+                    grid-template-columns: repeat(5, 1fr);
+                }
+            }
         </style>
-</head>
-<body class="bg-[#394C29] text-on-background antialiased overflow-x-hidden">
 <!-- TopNavBar (Shared Component) -->
 <nav class="bg-[#394C29] dark:bg-emerald-950/90 docked full-width top-0 sticky backdrop-blur-md border-b border-white/10 z-50">
 <div class="flex justify-between items-center px-10 py-6 max-w-[1280px] mx-auto w-full">
@@ -188,22 +195,22 @@
 </div>
 </div>
 </section>
-<!-- BLOCK 3: Science / Gallery - Updated Section -->
+<!-- BLOCK 3: Science / Gallery - Refactored Section -->
 <section class="bg-[#394C29] py-section-gap px-margin-edge w-full" id="saberes-da-floresta">
-<div class="max-w-container-max mx-auto">
+<div class="max-w-[1280px] mx-auto">
 <div class="text-center mb-16 space-y-4">
 <h2 class="font-['Fraunces'] font-bold text-[3rem] leading-[1.2] text-bege-erva-doce">Vídeos de Yeye Oshun sobre Ervas e Banhos</h2>
 </div>
-<!-- Instagram Embed Grid -->
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-[15px] items-start">
+<!-- Instagram Embed Grid: 5x2, aligned to top, no crop -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-[15px] items-start instagram-grid">
 <!-- Video 1 -->
 <div class="flex flex-col w-full">
 <div class="mb-4 text-center">
 <h3 class="font-['Fraunces'] text-bege-erva-doce text-lg font-semibold uppercase tracking-wider mb-2 leading-tight">1. Banho de Folhas Faz Brilhar</h3>
 <p class="font-['Montserrat'] text-bege-erva-doce/80 text-xs leading-snug">Conheça o poder das folhas para expandir sua luminosidade espiritual e brilho pessoal.</p>
 </div>
-<div class="w-full bg-black/20 rounded-lg overflow-hidden">
-<blockquote class="instagram-media w-full" data-instgrm-permalink="https://www.instagram.com/reel/C-bTe91p2v9/" data-instgrm-version="14" style="margin: 0; padding:0; width:100%;"></blockquote>
+<div class="w-full p-0">
+<blockquote class="instagram-media w-full max-w-full m-0" data-instgrm-permalink="https://www.instagram.com/reel/C-bTe91p2v9/" data-instgrm-version="14" style="width:100%;"></blockquote>
 </div>
 </div>
 <!-- Video 2 -->
@@ -212,8 +219,8 @@
 <h3 class="font-['Fraunces'] text-bege-erva-doce text-lg font-semibold uppercase tracking-wider mb-2 leading-tight">2. Banho para Tratar Ressentimento</h3>
 <p class="font-['Montserrat'] text-bege-erva-doce/80 text-xs leading-snug">Protocolo botânico para limpeza emocional e liberação de mágoas acumuladas.</p>
 </div>
-<div class="w-full bg-black/20 rounded-lg overflow-hidden">
-<blockquote class="instagram-media w-full" data-instgrm-permalink="https://www.instagram.com/reel/DRDRn_bjzSg/" data-instgrm-version="14" style="margin: 0; padding:0; width:100%;"></blockquote>
+<div class="w-full p-0">
+<blockquote class="instagram-media w-full max-w-full m-0" data-instgrm-permalink="https://www.instagram.com/reel/DRDRn_bjzSg/" data-instgrm-version="14" style="width:100%;"></blockquote>
 </div>
 </div>
 <!-- Video 3 -->
@@ -222,8 +229,8 @@
 <h3 class="font-['Fraunces'] text-bege-erva-doce text-lg font-semibold uppercase tracking-wider mb-2 leading-tight">3. Banho de Descarrego</h3>
 <p class="font-['Montserrat'] text-bege-erva-doce/80 text-xs leading-snug">Limpeza profunda das energias densas para renovação do campo vibracional.</p>
 </div>
-<div class="w-full bg-black/20 rounded-lg overflow-hidden">
-<blockquote class="instagram-media w-full" data-instgrm-permalink="https://www.instagram.com/reel/DRLYJbID0vk/" data-instgrm-version="14" style="margin: 0; padding:0; width:100%;"></blockquote>
+<div class="w-full p-0">
+<blockquote class="instagram-media w-full max-w-full m-0" data-instgrm-permalink="https://www.instagram.com/reel/DRLYJbID0vk/" data-instgrm-version="14" style="width:100%;"></blockquote>
 </div>
 </div>
 <!-- Video 4 -->
@@ -232,8 +239,8 @@
 <h3 class="font-['Fraunces'] text-bege-erva-doce text-lg font-semibold uppercase tracking-wider mb-2 leading-tight">4. Banho para Prosperidade</h3>
 <p class="font-['Montserrat'] text-bege-erva-doce/80 text-xs leading-snug">Alquimia vegetal focada na abertura de caminhos e atração de abundância.</p>
 </div>
-<div class="w-full bg-black/20 rounded-lg overflow-hidden">
-<blockquote class="instagram-media w-full" data-instgrm-permalink="https://www.instagram.com/reel/DQ5TfCdj2jt/" data-instgrm-version="14" style="margin: 0; padding:0; width:100%;"></blockquote>
+<div class="w-full p-0">
+<blockquote class="instagram-media w-full max-w-full m-0" data-instgrm-permalink="https://www.instagram.com/reel/DQ5TfCdj2jt/" data-instgrm-version="14" style="width:100%;"></blockquote>
 </div>
 </div>
 <!-- Video 5 -->
@@ -242,8 +249,8 @@
 <h3 class="font-['Fraunces'] text-bege-erva-doce text-lg font-semibold uppercase tracking-wider mb-2 leading-tight">5. Banho de Atração e Amor</h3>
 <p class="font-['Montserrat'] text-bege-erva-doce/80 text-xs leading-snug">Elementos da natureza para potencializar o magnetismo pessoal e o autoamor.</p>
 </div>
-<div class="w-full bg-black/20 rounded-lg overflow-hidden">
-<blockquote class="instagram-media w-full" data-instgrm-permalink="https://www.instagram.com/reel/DQ78RRNDz9t/" data-instgrm-version="14" style="margin: 0; padding:0; width:100%;"></blockquote>
+<div class="w-full p-0">
+<blockquote class="instagram-media w-full max-w-full m-0" data-instgrm-permalink="https://www.instagram.com/reel/DQ78RRNDz9t/" data-instgrm-version="14" style="width:100%;"></blockquote>
 </div>
 </div>
 <!-- Video 6 -->
@@ -252,8 +259,8 @@
 <h3 class="font-['Fraunces'] text-bege-erva-doce text-lg font-semibold uppercase tracking-wider mb-2 leading-tight">6. Curar com Folhas</h3>
 <p class="font-['Montserrat'] text-bege-erva-doce/80 text-xs leading-snug">A tecnologia biológica da cura através da conexão profunda com o reino vegetal.</p>
 </div>
-<div class="w-full bg-black/20 rounded-lg overflow-hidden">
-<blockquote class="instagram-media w-full" data-instgrm-permalink="https://www.instagram.com/reel/DQurRm3jsjW/" data-instgrm-version="14" style="margin: 0; padding:0; width:100%;"></blockquote>
+<div class="w-full p-0">
+<blockquote class="instagram-media w-full max-w-full m-0" data-instgrm-permalink="https://www.instagram.com/reel/DQurRm3jsjW/" data-instgrm-version="14" style="width:100%;"></blockquote>
 </div>
 </div>
 <!-- Video 7 -->
@@ -262,8 +269,8 @@
 <h3 class="font-['Fraunces'] text-bege-erva-doce text-lg font-semibold uppercase tracking-wider mb-2 leading-tight">7. Reza para Espantar Espírito</h3>
 <p class="font-['Montserrat'] text-bege-erva-doce/80 text-xs leading-snug">A força da palavra aliada às ervas para proteção contra influências externas.</p>
 </div>
-<div class="w-full bg-black/20 rounded-lg overflow-hidden">
-<blockquote class="instagram-media w-full" data-instgrm-permalink="https://www.instagram.com/reel/DRXRllJEdu2/" data-instgrm-version="14" style="margin: 0; padding:0; width:100%;"></blockquote>
+<div class="w-full p-0">
+<blockquote class="instagram-media w-full max-w-full m-0" data-instgrm-permalink="https://www.instagram.com/reel/DRXRllJEdu2/" data-instgrm-version="14" style="width:100%;"></blockquote>
 </div>
 </div>
 <!-- Video 8 -->
@@ -272,8 +279,8 @@
 <h3 class="font-['Fraunces'] text-bege-erva-doce text-lg font-semibold uppercase tracking-wider mb-2 leading-tight">8. Banho contra Rejeição</h3>
 <p class="font-['Montserrat'] text-bege-erva-doce/80 text-xs leading-snug">Acolhimento botânico para restaurar a autoimagem e o pertencimento.</p>
 </div>
-<div class="w-full bg-black/20 rounded-lg overflow-hidden">
-<blockquote class="instagram-media w-full" data-instgrm-permalink="https://www.instagram.com/reel/DQrdWIvjOe4/" data-instgrm-version="14" style="margin: 0; padding:0; width:100%;"></blockquote>
+<div class="w-full p-0">
+<blockquote class="instagram-media w-full max-w-full m-0" data-instgrm-permalink="https://www.instagram.com/reel/DQrdWIvjOe4/" data-instgrm-version="14" style="width:100%;"></blockquote>
 </div>
 </div>
 <!-- Video 9 -->
@@ -282,8 +289,8 @@
 <h3 class="font-['Fraunces'] text-bege-erva-doce text-lg font-semibold uppercase tracking-wider mb-2 leading-tight">9. Banho de Brilho Pessoal</h3>
 <p class="font-['Montserrat'] text-bege-erva-doce/80 text-xs leading-snug">Uma combinação especial de flores e folhas para exaltar sua energia vital.</p>
 </div>
-<div class="w-full bg-black/20 rounded-lg overflow-hidden">
-<blockquote class="instagram-media w-full" data-instgrm-permalink="https://www.instagram.com/reel/DQnRj4aD-dr/" data-instgrm-version="14" style="margin: 0; padding:0; width:100%;"></blockquote>
+<div class="w-full p-0">
+<blockquote class="instagram-media w-full max-w-full m-0" data-instgrm-permalink="https://www.instagram.com/reel/DQnRj4aD-dr/" data-instgrm-version="14" style="width:100%;"></blockquote>
 </div>
 </div>
 <!-- Video 10 -->
@@ -292,8 +299,8 @@
 <h3 class="font-['Fraunces'] text-bege-erva-doce text-lg font-semibold uppercase tracking-wider mb-2 leading-tight">10. Oxum e a Cura</h3>
 <p class="font-['Montserrat'] text-bege-erva-doce/80 text-xs leading-snug">A sabedoria da divindade das águas doces e o segredo das folhas curativas.</p>
 </div>
-<div class="w-full bg-black/20 rounded-lg overflow-hidden">
-<blockquote class="instagram-media w-full" data-instgrm-permalink="https://www.instagram.com/reel/DEsxmNWIPlB/" data-instgrm-version="14" style="margin: 0; padding:0; width:100%;"></blockquote>
+<div class="w-full p-0">
+<blockquote class="instagram-media w-full max-w-full m-0" data-instgrm-permalink="https://www.instagram.com/reel/DEsxmNWIPlB/" data-instgrm-version="14" style="width:100%;"></blockquote>
 </div>
 </div>
 </div>
@@ -455,4 +462,4 @@
 </div>
 </footer>
 <script async="" src="https://www.instagram.com/embed.js"></script>
-</body></html>
+```</body></html>
