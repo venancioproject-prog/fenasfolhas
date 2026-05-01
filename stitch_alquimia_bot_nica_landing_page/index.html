@@ -103,8 +103,7 @@
             }
           }
         </script>
-<style>
-            .material-symbols-outlined {
+<style>            .material-symbols-outlined {
                 font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
             }
             .symbol-filled {
@@ -132,34 +131,38 @@
             /* Video Section Architecture */
             .video-section-container {
                 width: 100%;
-                max-width: 1280px;
+                max-width: 1400px;
                 margin: 0 auto;
                 padding: 4rem 2rem;
             }
             .brutalist-grid {
                 display: grid;
                 grid-template-columns: repeat(4, 1fr);
-                gap: 32px;
-                justify-content: center;
+                gap: 48px;
+                justify-items: center;
                 align-items: start;
+                margin: 0 auto;
             }
             
             .video-card {
                 display: flex;
                 flex-direction: column;
-                gap: 16px;
+                gap: 20px;
+                width: 100%;
             }
 
             .video-title {
                 font-family: 'Newsreader', serif;
                 color: #EBD19C;
-                font-size: 1.5rem;
-                font-weight: 600;
-                line-height: 1.2;
+                font-size: 1.75rem;
+                font-weight: 700;
+                line-height: 1.1;
                 margin-bottom: 8px;
-                min-height: 3.6rem;
+                min-height: 4rem;
                 display: flex;
                 align-items: flex-end;
+                text-transform: uppercase;
+                letter-spacing: 0.05em;
             }
 
             /* Ensure Instagram embeds fit perfectly within columns */
@@ -173,20 +176,22 @@
                 border: 1px solid rgba(255,255,255,0.05) !important;
             }
 
-            @media (max-width: 1024px) {
+            @media (max-width: 1200px) {
                 .brutalist-grid {
                     grid-template-columns: repeat(2, 1fr);
+                    gap: 32px;
                 }
             }
             @media (max-width: 640px) {
                 .brutalist-grid {
                     grid-template-columns: 1fr;
+                    max-width: 400px;
                 }
                 .video-title {
                     min-height: auto;
+                    font-size: 1.5rem;
                 }
-            }
-        </style>
+            }</style>
 </head>
 <body class="bg-[#394C29] text-on-background antialiased overflow-x-hidden">
 <!-- TopNavBar (Shared Component) -->
