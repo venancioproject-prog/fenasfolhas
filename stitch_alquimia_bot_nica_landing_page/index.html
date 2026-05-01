@@ -56,7 +56,7 @@
                         "surface-tint": "#b7cea0",
                         "on-primary-container": "#a5bc8f",
                         "on-secondary-container": "#ceb683",
-                        "primary-container": "#394c29",
+                        "primary-container": "#394C29",
                         "tertiary-fixed": "#ffdcc0",
                         "inverse-on-surface": "#293321",
                         "outline": "#8e9287",
@@ -65,7 +65,8 @@
                         "inverse-surface": "#dae7cc",
                         "on-surface": "#dae7cc",
                         "verde-ancestral": "#394C29",
-                        "bege-erva-doce": "#EBD19C"
+                        "bege-erva-doce": "#EBD19C",
+                        "custom-brown": "#B37C49"
                 },
                 "borderRadius": {
                         "DEFAULT": "0.125rem",
@@ -159,21 +160,34 @@
             margin: 0 auto !important; 
         }
 
+        /* Mobile Menu State */
+        #mobile-menu.hidden {
+            display: none;
+        }
+        #mobile-menu:not(.hidden) {
+            display: flex;
+        }
+
         @media (max-width: 1024px) {
             .brutalist-grid { grid-template-columns: repeat(2, 1fr); }
         }
         @media (max-width: 640px) {
             .brutalist-grid { grid-template-columns: 1fr; }
+            .section-container {
+                padding-left: 1.25rem;
+                padding-right: 1.25rem;
+            }
         }
     </style>
 </head>
 <body class="bg-verde-ancestral text-on-background antialiased overflow-x-hidden">
 <!-- TopNavBar -->
-<nav class="bg-verde-ancestral dark:bg-emerald-950/90 top-0 sticky backdrop-blur-md border-b border-white/10 z-50">
-<div class="section-container py-6 flex justify-between items-center">
-<div class="text-xl font-semibold italic text-bege-erva-doce font-['Newsreader']">
+<nav class="bg-verde-ancestral dark:bg-emerald-950/90 top-0 sticky backdrop-blur-md border-b border-white/10 z-[100]">
+<div class="section-container py-4 md:py-6 flex justify-between items-center relative">
+<div class="text-xl md:text-2xl font-semibold italic text-bege-erva-doce font-['Newsreader'] z-50">
             Yèyé Osunsade
         </div>
+<!-- Desktop Nav -->
 <div class="hidden lg:flex space-x-6 items-center">
 <a class="text-bege-erva-doce/80 hover:text-white transition-colors uppercase tracking-widest text-[11px] font-bold font-['Montserrat']" href="#sobre">Sobre</a>
 <a class="text-bege-erva-doce/80 hover:text-white transition-colors uppercase tracking-widest text-[11px] font-bold font-['Montserrat']" href="#saberes-da-floresta">Saberes</a>
@@ -182,56 +196,73 @@
 <a class="text-bege-erva-doce/80 hover:text-white transition-colors uppercase tracking-widest text-[11px] font-bold font-['Montserrat']" href="#masterclass">Masterclass</a>
 <a class="text-bege-erva-doce/80 hover:text-white transition-colors uppercase tracking-widest text-[11px] font-bold font-['Montserrat']" href="#imprensa">Imprensa</a>
 </div>
-<div class="hidden sm:block">
-<a class="bg-tertiary text-on-tertiary-fixed uppercase font-label-md text-[10px] px-5 py-3 rounded hover:opacity-90 transition-opacity" href="#masterclass">GARANTIR VAGA</a>
+<div class="hidden sm:flex items-center gap-4">
+<a class="bg-tertiary text-on-tertiary-fixed uppercase font-['Montserrat'] text-[10px] px-5 py-3 rounded hover:opacity-90 transition-opacity font-bold" href="#masterclass">GARANTIR VAGA</a>
 </div>
-<button class="lg:hidden text-bege-erva-doce">
-<span class="material-symbols-outlined">menu</span>
+<!-- Mobile Toggle -->
+<button aria-label="Toggle Menu" class="lg:hidden text-bege-erva-doce z-50 p-2" id="menu-toggle">
+<span class="material-symbols-outlined text-3xl" id="menu-icon">menu</span>
 </button>
+</div>
+<!-- Mobile Menu Overlay -->
+<div class="hidden fixed inset-0 bg-verde-ancestral z-40 flex-col items-center justify-center space-y-8 pt-20 overflow-y-auto" id="mobile-menu">
+<a class="text-bege-erva-doce text-xl uppercase tracking-widest font-bold font-['Montserrat']" href="#sobre" onclick="toggleMenu()">Sobre</a>
+<a class="text-bege-erva-doce text-xl uppercase tracking-widest font-bold font-['Montserrat']" href="#saberes-da-floresta" onclick="toggleMenu()">Saberes</a>
+<a class="text-bege-erva-doce text-xl uppercase tracking-widest font-bold font-['Montserrat']" href="#espetaculo" onclick="toggleMenu()">Espetáculo</a>
+<a class="text-bege-erva-doce text-xl uppercase tracking-widest font-bold font-['Montserrat']" href="#livro" onclick="toggleMenu()">Livro</a>
+<a class="text-bege-erva-doce text-xl uppercase tracking-widest font-bold font-['Montserrat']" href="#masterclass" onclick="toggleMenu()">Masterclass</a>
+<a class="text-bege-erva-doce text-xl uppercase tracking-widest font-bold font-['Montserrat']" href="#imprensa" onclick="toggleMenu()">Imprensa</a>
+<div class="pt-8">
+<a class="bg-tertiary text-on-tertiary-fixed uppercase font-['Montserrat'] text-[12px] px-8 py-4 rounded font-bold" href="#masterclass" onclick="toggleMenu()">GARANTIR MINHA VAGA</a>
+</div>
 </div>
 </nav>
 <!-- HERO -->
-<header class="bg-verde-ancestral pt-24 pb-section-gap" id="sobre">
-<div class="section-container flex flex-col md:flex-row items-center gap-12">
-<div class="flex-1 space-y-8 text-left">
-<h1 class="font-headline-xl text-headline-xl text-bege-erva-doce leading-tight">Desperte sua Potência Máxima através da Alquimia Botânica</h1>
-<p class="font-body-lg text-body-lg text-bege-erva-doce/80 max-w-xl">Yèyé Osunsade traduz a sabedoria ancestral das folhas em estratégias práticas para quem busca regeneração mental, foco e o auge da performance humana.</p>
-<div class="pt-4">
-<a class="inline-flex items-center gap-3 bg-tertiary text-on-tertiary-fixed uppercase font-subtitle-md text-subtitle-md px-8 py-4 rounded shadow-lg hover:bg-tertiary/90 transition-colors" href="#masterclass">
-<span class="text-error text-[10px]">🔴</span> GARANTIR MINHA VAGA NA MASTERCLASS
+<header class="bg-verde-ancestral pt-12 md:pt-24 pb-16 md:pb-section-gap" id="sobre">
+<div class="section-container flex flex-col md:flex-row items-center gap-12 md:gap-16">
+<div class="w-full flex-1 space-y-6 md:space-y-8 text-center md:text-left">
+<h1 class="font-headline-xl text-[2.75rem] md:text-headline-xl text-bege-erva-doce leading-[1.1] px-2 md:px-0">
+                Desperte sua Potência Máxima através da Alquimia Botânica
+            </h1>
+<p class="font-body-lg text-body-lg text-bege-erva-doce/80 max-w-xl mx-auto md:mx-0">
+                Yèyé Osunsade traduz a sabedoria ancestral das folhas em estratégias práticas para quem busca regeneração mental, foco e o auge da performance humana.
+            </p>
+<div class="pt-4 flex justify-center md:justify-start">
+<a class="inline-flex items-center gap-3 bg-tertiary text-on-tertiary-fixed uppercase font-['Montserrat'] text-sm md:text-subtitle-md px-6 md:px-8 py-4 rounded shadow-lg hover:bg-tertiary/90 transition-all transform hover:scale-105 font-bold" href="#masterclass">
+<span class="text-error text-[10px] animate-pulse">🔴</span> GARANTIR MINHA VAGA NA MASTERCLASS
                 </a>
 </div>
 </div>
-<div class="flex-1 w-full max-w-md">
-<div class="aspect-[4/5] bg-surface-container rounded-lg overflow-hidden border border-bege-erva-doce/20">
+<div class="w-full flex-1 max-w-md mx-auto">
+<div class="aspect-[4/5] bg-surface-container rounded-lg overflow-hidden border border-bege-erva-doce/20 shadow-2xl">
 <img alt="Yèyé Osunsade" class="w-full h-full object-cover object-top" src="https://lh3.googleusercontent.com/aida/ADBb0ujt3pumNiB-nS_L3xQtsZxzOxXXGbLN6ZtMdsbhKS8YyGB4lFTjJua9YImLeLQM1i_-QXOpCq4USL6nSdO1-b-lJxtWTgjgUNjoQyofEuj9weqOYrBNQXEtvNHH_A2mwWQ8vtxYdMbMbZyRrfnFZc8fv-WmhcwG919m47arjywrMwPPrxvssBqurys7yUggpxBUbQVSU_cOEhBKdvMCtuLeSNJZ1GF4uzlqhFcS-XBQU7aSUQblOkZ3itZVDgD7dY1VDlJsFISP3A"/>
 </div>
 </div>
 </div>
 </header>
 <!-- TRAJECTORY -->
-<section class="bg-secondary-fixed text-primary-container py-section-gap">
-<div class="section-container grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-<div class="relative h-full min-h-[400px] rounded-lg overflow-hidden">
+<section class="bg-secondary-fixed text-primary-container py-16 md:py-section-gap">
+<div class="section-container grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 items-center">
+<div class="relative w-full aspect-square md:h-full md:min-h-[400px] rounded-lg overflow-hidden shadow-xl order-2 lg:order-1">
 <img alt="Sueli Kinté e Sueide Kinté" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/ADBb0ujmwcIz7zRXdX-lgPjH5uPTeg3x4PuF8hm5QHBgD7h8DQU379dWxnym50ZE2HVMhem55wXVu8b3UBfIsyRKTr1xl_BASz-ep0jlw36vTlPdHDXmE77YDTvDs4-vuoHbI_AMrjMNcMuHxLnbWWTEPk4lrM__wmEQZEE0sF10s--sEpWznfFfJPr72md52-I9ciC51dKBvcYUCmYIhHq3awJp_QKgNC6wr6GYT-sUishnJCjydp-RmIY7EGwvEbI1Pp8Y1E8hgotE0g"/>
 </div>
-<div class="space-y-8">
-<h2 class="font-headline-lg text-headline-lg">De Neta de Curandeiros a Estrategista de Bem-Estar</h2>
+<div class="space-y-6 md:space-y-8 order-1 lg:order-2 text-center md:text-left">
+<h2 class="font-headline-lg text-[2.25rem] md:text-headline-lg leading-tight">De Neta de Curandeiros a Estrategista de Bem-Estar</h2>
 <div class="space-y-6 font-body-lg text-body-lg opacity-90">
 <p>A ciência do biohacking encontrou a sabedoria ancestral. Minha missão é decodificar o poder das folhas e raízes não apenas como tradição, mas como tecnologia biológica de ponta para otimização humana.</p>
 <p>Em um mundo onde a exaustão é a norma, a verdadeira vantagem competitiva reside na capacidade de regeneração profunda.</p>
 </div>
-<blockquote class="border-l-4 border-verde-ancestral pl-6 py-2">
-<p class="font-headline-md text-headline-md italic">"A verdadeira performance nasce quando sua química interna está em paz com a sua história."</p>
+<blockquote class="border-l-4 border-verde-ancestral pl-6 py-2 mx-auto md:mx-0 text-left">
+<p class="font-headline-md text-2xl md:text-headline-md italic">"A verdadeira performance nasce quando sua química interna está em paz com a sua história."</p>
 </blockquote>
 </div>
 </div>
 </section>
 <!-- VIDEO GALLERY -->
-<section class="bg-black py-section-gap" id="saberes-da-floresta">
+<section class="bg-black py-16 md:py-section-gap" id="saberes-da-floresta">
 <div class="section-container">
-<div class="text-center mb-16">
-<h2 class="font-['Fraunces'] font-bold text-4xl md:text-5xl text-bege-erva-doce">Vídeos de Yeye Oshun sobre Ervas e Banhos</h2>
+<div class="text-center mb-12 md:mb-16 px-4">
+<h2 class="font-['Fraunces'] font-bold text-3xl md:text-5xl text-bege-erva-doce">Vídeos de Yeye Oshun sobre Ervas e Banhos</h2>
 </div>
 <div class="brutalist-grid">
 <!-- Item 1 -->
@@ -286,111 +317,138 @@
 </div>
 </section>
 <!-- TRANSMEDIA EXPERIENCE -->
-<section class="bg-verde-ancestral py-section-gap">
+<section class="bg-verde-ancestral py-16 md:py-section-gap">
 <div class="section-container text-center space-y-12">
-<h2 class="font-headline-lg text-headline-lg text-bege-erva-doce">Fé nas Folhas: Uma Experiência Transmídia Ancestral</h2>
-<p class="font-body-lg text-body-lg text-bege-erva-doce/80 max-w-3xl mx-auto">
+<h2 class="font-headline-lg text-[2.25rem] md:text-headline-lg text-bege-erva-doce px-4">Fé nas Folhas: Uma Experiência Transmídia Ancestral</h2>
+<p class="font-body-lg text-body-lg text-bege-erva-doce/80 max-w-3xl mx-auto px-4">
             Mais do que um projeto, "Fé nas Folhas" manifesta-se como um ecossistema vivo de conhecimento que transita entre literatura, educação e arte.
         </p>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-<div class="flex flex-col items-center gap-4">
-<div class="w-16 h-16 rounded-full border border-bege-erva-doce/20 flex items-center justify-center text-bege-erva-doce">
-<span class="material-symbols-outlined text-3xl">menu_book</span>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-12 px-8">
+<div class="flex flex-col items-center gap-4 group">
+<div class="w-20 h-20 rounded-full border border-bege-erva-doce/20 flex items-center justify-center text-bege-erva-doce group-hover:bg-bege-erva-doce group-hover:text-verde-ancestral transition-all duration-300">
+<span class="material-symbols-outlined text-4xl">menu_book</span>
 </div>
-<span class="font-label-md text-bege-erva-doce uppercase tracking-widest">Literatura</span>
+<span class="font-label-md text-bege-erva-doce uppercase tracking-widest font-bold">Literatura</span>
 </div>
-<div class="flex flex-col items-center gap-4">
-<div class="w-16 h-16 rounded-full border border-bege-erva-doce/20 flex items-center justify-center text-bege-erva-doce">
-<span class="material-symbols-outlined text-3xl">groups</span>
+<div class="flex flex-col items-center gap-4 group">
+<div class="w-20 h-20 rounded-full border border-bege-erva-doce/20 flex items-center justify-center text-bege-erva-doce group-hover:bg-bege-erva-doce group-hover:text-verde-ancestral transition-all duration-300">
+<span class="material-symbols-outlined text-4xl">groups</span>
 </div>
-<span class="font-label-md text-bege-erva-doce uppercase tracking-widest">Educação Corporativa</span>
+<span class="font-label-md text-bege-erva-doce uppercase tracking-widest font-bold">Educação Corporativa</span>
 </div>
-<div class="flex flex-col items-center gap-4">
-<div class="w-16 h-16 rounded-full border border-bege-erva-doce/20 flex items-center justify-center text-bege-erva-doce">
-<span class="material-symbols-outlined text-3xl">music_note</span>
+<div class="flex flex-col items-center gap-4 group sm:col-span-2 md:col-span-1">
+<div class="w-20 h-20 rounded-full border border-bege-erva-doce/20 flex items-center justify-center text-bege-erva-doce group-hover:bg-bege-erva-doce group-hover:text-verde-ancestral transition-all duration-300">
+<span class="material-symbols-outlined text-4xl">music_note</span>
 </div>
-<span class="font-label-md text-bege-erva-doce uppercase tracking-widest">Expressão Artística</span>
+<span class="font-label-md text-bege-erva-doce uppercase tracking-widest font-bold">Expressão Artística</span>
 </div>
 </div>
 </div>
 </section>
 <!-- MUSICAL PERFORMANCE -->
-<section class="bg-surface-container-low py-section-gap" id="espetaculo">
-<div class="section-container grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-<div class="space-y-8">
+<section class="bg-surface-container-low py-16 md:py-section-gap" id="espetaculo">
+<div class="section-container grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 items-center">
+<div class="space-y-6 md:space-y-8 text-center md:text-left">
+<div class="flex justify-center md:justify-start">
 <span class="bg-tertiary text-on-tertiary-fixed px-4 py-1 rounded-full font-label-md text-[11px] font-bold uppercase tracking-widest">Arte &amp; Ritual</span>
-<h2 class="font-headline-lg text-headline-lg text-bege-erva-doce">Espetáculo Musical</h2>
+</div>
+<h2 class="font-headline-lg text-[2.25rem] md:text-headline-lg text-bege-erva-doce">Espetáculo Musical</h2>
 <p class="font-body-lg text-body-lg text-bege-erva-doce/80">A teoria se torna experiência sensorial. O espetáculo musical transcende a fala, utilizando som e movimento para traduzir a força da floresta.</p>
 </div>
-<div class="aspect-[3/4] rounded-lg overflow-hidden border border-bege-erva-doce/10">
+<div class="aspect-[3/4] md:aspect-video lg:aspect-[3/4] rounded-lg overflow-hidden border border-bege-erva-doce/10 shadow-2xl">
 <img alt="Espetáculo" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/ADBb0uhyvl8N0FgjYz-XM6Tg1V-mvLFXx3Hj7T6pPz8rtVXhfNtBA-WWsK6asmBUyCTTxRB7AHgtTICe3jYLnJq1n6lPgDGT5pr4_PNnrBNqFcO722O--nJ_g_V0haz_OSRhMU00kKbGvPBPXmZ_aTxOR4zX9UVn5-3LfzE_jlbis4EQ4Dvro7LfZ_iffJRB447Orqn1nWcIMTTEWZ1PjipGIUU-JTWSxI9bCnepHJ6t2KX4IfOhYZMgmm584WNZjllZZRYLFJl5SuydBw"/>
 </div>
 </div>
 </section>
 <!-- THE BOOK -->
-<section class="bg-secondary-fixed text-primary-container py-section-gap" id="livro">
-<div class="section-container grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-<div class="lg:col-span-5 aspect-[3/4] bg-verde-ancestral rounded-lg overflow-hidden shadow-2xl">
+<section class="bg-secondary-fixed text-primary-container py-16 md:py-section-gap" id="livro">
+<div class="section-container grid grid-cols-1 lg:grid-cols-12 gap-12 md:gap-16 items-center">
+<div class="lg:col-span-5 w-full aspect-[3/4] bg-verde-ancestral rounded-lg overflow-hidden shadow-2xl">
 <img alt="Livro" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/ADBb0ujauHqilh3vYnuwqzkH2UVbqW0tb0UafKOYQRTUms6eBGpwHXzhXR4PEa3mqzuz_z6-xIFOBhnFkqEkj9aaH775GMPrdktBOJFCdVPHFQSLrvBXbjWXfpiD6Clhs5_N1FAG02fN7U0NlqoG2PhsNMeqV3u7Vg2WV107YgSJp4MgSqOD-otG_fyNYUJhS8g5RDZEwCwc_NXz6QtU7bnQJFnhkxuXPilkctoTpvj_MqHZ-HV7QeHf_ppzqkNgXzO4RawEOIN4wgKMuQ"/>
 </div>
-<div class="lg:col-span-7 space-y-8">
-<h2 class="font-headline-lg text-headline-lg">Livro: Fé nas Folhas</h2>
+<div class="lg:col-span-7 space-y-8 text-center md:text-left">
+<h2 class="font-headline-lg text-[2.25rem] md:text-headline-lg">Livro: Fé nas Folhas</h2>
 <p class="font-body-lg text-body-lg opacity-90">Um guia que resgata a sabedoria de benzedeiras com foco na cultura afro-brasileira e indígena. Publicado pela Fontanar.</p>
-<div class="bg-verde-ancestral/5 border border-verde-ancestral/10 p-8 rounded-lg">
-<p class="font-headline-md italic">"Que as folhas tragam a cura e o design traga a conexão."</p>
-<p class="mt-4 font-label-md opacity-60 uppercase tracking-widest">— Yèyé Osunsade</p>
+<div class="bg-verde-ancestral/5 border border-verde-ancestral/10 p-6 md:p-8 rounded-lg text-left">
+<p class="font-headline-md italic text-xl md:text-2xl">"Que as folhas tragam a cura e o design traga a conexão."</p>
+<p class="mt-4 font-['Montserrat'] text-[10px] md:font-label-md opacity-60 uppercase tracking-widest font-bold">— Yèyé Osunsade</p>
 </div>
-<a class="inline-block bg-tertiary text-on-tertiary-fixed uppercase font-subtitle-md px-8 py-4 rounded shadow hover:opacity-90" href="#">COMPRAR NA AMAZON</a>
+<div class="flex justify-center md:justify-start">
+<a class="inline-block bg-custom-brown text-white uppercase font-['Montserrat'] px-8 py-4 rounded shadow hover:opacity-90 font-bold transition-all" href="#">COMPRAR NA AMAZON</a>
+</div>
 </div>
 </div>
 </section>
 <!-- MASTERCLASS -->
-<section class="bg-verde-ancestral py-section-gap border-y border-white/5" id="masterclass">
-<div class="section-container text-center space-y-10">
-<h2 class="font-headline-xl text-headline-xl text-bege-erva-doce">Masterclass: Alquimia da Performance</h2>
-<p class="font-body-lg text-body-lg text-bege-erva-doce/80 max-w-3xl mx-auto">Um treinamento imersivo projetado para líderes e equipes de alta exigência. Aprenda protocolos botânicos práticos para regular a dopamina e sustentar o foco profundo.</p>
-<a class="inline-block bg-tertiary text-on-tertiary-fixed uppercase font-subtitle-md px-8 py-4 rounded shadow-lg hover:opacity-90" href="#">LEVAR ESTA PALESTRA PARA MINHA EMPRESA</a>
+<section class="bg-verde-ancestral py-20 md:py-section-gap border-y border-white/5" id="masterclass">
+<div class="section-container text-center space-y-10 w-full flex flex-col items-center">
+<h2 class="font-headline-xl text-[2.75rem] md:text-headline-xl text-bege-erva-doce px-4">Masterclass: Alquimia da Performance</h2>
+<p class="font-body-lg text-body-lg text-bege-erva-doce/80 max-w-3xl mx-auto px-6">Um treinamento imersivo projetado para líderes e equipes de alta exigência. Aprenda protocolos botânicos práticos para regular a dopamina e sustentar o foco profundo.</p>
+<div class="pt-4 px-6 w-full max-w-sm md:max-w-none">
+<a class="inline-block w-full md:w-auto bg-tertiary text-on-tertiary-fixed uppercase font-['Montserrat'] px-8 py-5 rounded shadow-lg hover:scale-105 transition-all font-bold tracking-wider" href="#">LEVAR ESTA PALESTRA PARA MINHA EMPRESA</a>
+</div>
 </div>
 </section>
 <!-- PRESS -->
-<section class="bg-secondary-fixed text-primary-container py-section-gap" id="imprensa">
+<section class="bg-secondary-fixed text-primary-container py-16 md:py-section-gap" id="imprensa">
 <div class="section-container">
-<h2 class="font-headline-lg text-headline-lg text-center mb-16">Destaque na Imprensa</h2>
-<div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
-<div class="p-6 border border-verde-ancestral/10 bg-white/5 rounded-lg">
-<span class="font-bold text-[11px] uppercase tracking-tighter block mb-4">Folha de S.Paulo</span>
+<h2 class="font-headline-lg text-[2.25rem] md:text-headline-lg text-center mb-12 md:mb-16">Destaque na Imprensa</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+<div class="p-6 border border-verde-ancestral/10 bg-white/5 rounded-lg flex flex-col justify-between">
+<span class="font-['Montserrat'] font-bold text-[11px] uppercase tracking-tighter block mb-4">Folha de S.Paulo</span>
 <p class="italic text-sm">"Reconecta o world corporativo com a sabedoria das matas."</p>
 </div>
-<div class="p-6 border border-verde-ancestral/10 bg-white/5 rounded-lg">
-<span class="font-bold text-[11px] uppercase tracking-tighter block mb-4">Vogue Brasil</span>
+<div class="p-6 border border-verde-ancestral/10 bg-white/5 rounded-lg flex flex-col justify-between">
+<span class="font-['Montserrat'] font-bold text-[11px] uppercase tracking-tighter block mb-4">Vogue Brasil</span>
 <p class="italic text-sm">"O novo luxo essencial para o equilíbrio mental."</p>
 </div>
-<div class="p-6 border border-verde-ancestral/10 bg-white/5 rounded-lg">
-<span class="font-bold text-[11px] uppercase tracking-tighter block mb-4">Estadão</span>
+<div class="p-6 border border-verde-ancestral/10 bg-white/5 rounded-lg flex flex-col justify-between">
+<span class="font-['Montserrat'] font-bold text-[11px] uppercase tracking-tighter block mb-4">Estadão</span>
 <p class="italic text-sm">"Tecnologia ancestral como caminho para a longevidade."</p>
 </div>
-<div class="p-6 border border-verde-ancestral/10 bg-white/5 rounded-lg">
-<span class="font-bold text-[11px] uppercase tracking-tighter block mb-4">Marie Claire</span>
+<div class="p-6 border border-verde-ancestral/10 bg-white/5 rounded-lg flex flex-col justify-between">
+<span class="font-['Montserrat'] font-bold text-[11px] uppercase tracking-tighter block mb-4">Marie Claire</span>
 <p class="italic text-sm">"Uma jornada de cura que une performance e espiritualidade."</p>
 </div>
-<div class="p-6 border border-verde-ancestral/10 bg-white/5 rounded-lg">
-<span class="font-bold text-[11px] uppercase tracking-tighter block mb-4">Valor Econômico</span>
+<div class="p-6 border border-verde-ancestral/10 bg-white/5 rounded-lg flex flex-col justify-between sm:col-span-2 lg:col-span-1">
+<span class="font-['Montserrat'] font-bold text-[11px] uppercase tracking-tighter block mb-4">Valor Econômico</span>
 <p class="italic text-sm">"A methodology de Osunsade atrai CEOs em busca de foco."</p>
 </div>
 </div>
 </div>
 </section>
 <!-- FOOTER -->
-<footer class="bg-black text-bege-erva-doce py-16 border-t border-white/5">
+<footer class="bg-black text-bege-erva-doce py-12 md:py-16 border-t border-white/5">
 <div class="section-container flex flex-col md:flex-row justify-between items-center gap-8">
-<div class="text-lg font-bold">Yèyé Osunsade</div>
-<div class="text-[12px] opacity-60 text-center">© 2024 Yèyé Osunsade. Alquimia Botânica e Performance.</div>
-<div class="flex space-x-6 text-[10px] uppercase tracking-widest font-bold">
-<a class="hover:underline" href="#">Instagram</a>
-<a class="hover:underline" href="#">LinkedIn</a>
-<a class="hover:underline" href="#">Contato</a>
+<div class="text-xl md:text-lg font-bold font-['Newsreader'] italic">Yèyé Osunsade</div>
+<div class="text-[12px] opacity-60 text-center order-3 md:order-2">© 2024 Yèyé Osunsade. Alquimia Botânica e Performance.</div>
+<div class="flex space-x-6 text-[10px] md:text-[11px] uppercase tracking-widest font-bold font-['Montserrat'] order-2 md:order-3">
+<a class="hover:text-white transition-colors" href="#">Instagram</a>
+<a class="hover:text-white transition-colors" href="#">LinkedIn</a>
+<a class="hover:text-white transition-colors" href="#">Contato</a>
 </div>
 </div>
 </footer>
 <script async="" src="https://www.instagram.com/embed.js"></script>
+<script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    let isMenuOpen = false;
+
+    function toggleMenu() {
+        isMenuOpen = !isMenuOpen;
+        if (isMenuOpen) {
+            mobileMenu.classList.remove('hidden');
+            menuIcon.innerText = 'close';
+            document.body.style.overflow = 'hidden';
+        } else {
+            mobileMenu.classList.add('hidden');
+            menuIcon.innerText = 'menu';
+            document.body.style.overflow = '';
+        }
+    }
+
+    menuToggle.addEventListener('click', toggleMenu);
+</script>
 </body></html>
