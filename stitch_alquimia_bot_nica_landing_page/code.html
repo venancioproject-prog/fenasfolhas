@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Yèyé Osunsade - Alquimia Botânica e Performance</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Noto+Serif:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration from Design System -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-surface-variant": "#c5c8bc",
+                    "inverse-primary": "#50643f",
+                    "tertiary-fixed-dim": "#f9b981",
+                    "on-error": "#690005",
+                    "surface-container-lowest": "#071103",
+                    "surface": "#0c1607",
+                    "surface-container-highest": "#2d3825",
+                    "on-primary-fixed": "#0f2003",
+                    "surface-container": "#182212",
+                    "secondary-fixed-dim": "#ddc490",
+                    "primary-fixed-dim": "#b7cea0",
+                    "error-container": "#93000a",
+                    "secondary": "#ddc490",
+                    "on-background": "#dae7cc",
+                    "on-tertiary-fixed-variant": "#683c0e",
+                    "tertiary": "#f9b981",
+                    "on-primary": "#233515",
+                    "on-tertiary-fixed": "#2d1600",
+                    "on-secondary-fixed-variant": "#56441c",
+                    "on-tertiary": "#4b2700",
+                    "primary": "#b7cea0",
+                    "secondary-fixed": "#fae0a9",
+                    "surface-bright": "#323c29",
+                    "on-secondary": "#3d2e07",
+                    "surface-dim": "#0c1607",
+                    "surface-variant": "#2d3825",
+                    "on-tertiary-container": "#e5a871",
+                    "on-primary-fixed-variant": "#394c29",
+                    "tertiary-container": "#673c0e",
+                    "on-secondary-fixed": "#251a00",
+                    "error": "#ffb4ab",
+                    "outline-variant": "#44483f",
+                    "surface-container-low": "#141e0e",
+                    "on-error-container": "#ffdad6",
+                    "primary-fixed": "#d3eabb",
+                    "secondary-container": "#58471e",
+                    "surface-tint": "#b7cea0",
+                    "on-primary-container": "#a5bc8f",
+                    "on-secondary-container": "#ceb683",
+                    "primary-container": "#394c29",
+                    "tertiary-fixed": "#ffdcc0",
+                    "inverse-on-surface": "#293321",
+                    "outline": "#8e9287",
+                    "background": "#0c1607",
+                    "surface-container-high": "#232d1b",
+                    "inverse-surface": "#dae7cc",
+                    "on-surface": "#dae7cc"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "unit": "8px",
+                    "container-max": "1280px",
+                    "gutter": "24px",
+                    "margin-edge": "40px",
+                    "section-gap": "120px",
+                    "element-gap": "16px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Newsreader"],
+                    "headline-xl": ["Newsreader"],
+                    "subtitle-md": ["Manrope"],
+                    "subtitle-lg": ["Manrope"],
+                    "headline-md": ["Newsreader"],
+                    "body-lg": ["Noto Serif"],
+                    "body-md": ["Noto Serif"],
+                    "label-md": ["Manrope"]
+            },
+            "fontSize": {
+                    "headline-lg": ["3rem", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "headline-xl": ["4.5rem", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "subtitle-md": ["1rem", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "subtitle-lg": ["1.25rem", {"lineHeight": "1.5", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                    "headline-md": ["2.25rem", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "body-lg": ["1.125rem", {"lineHeight": "1.7", "fontWeight": "400"}],
+                    "body-md": ["1rem", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-md": ["0.875rem", {"lineHeight": "1.2", "fontWeight": "500"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .symbol-filled {
+            font-variation-settings: 'FILL' 1, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom scrollbar to match theme */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0c1607; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2d3825; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #394c29; 
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background antialiased overflow-x-hidden">
+<!-- TopNavBar (Shared Component) -->
+<nav class="bg-[#394C29] dark:bg-emerald-950/90 docked full-width top-0 sticky backdrop-blur-md border-b border-white/10 z-50">
+<div class="flex justify-between items-center px-10 py-6 max-w-[1280px] mx-auto w-full">
+<div class="text-xl font-semibold italic text-[#F5F5DC] dark:text-stone-200">
+                Yèyé Osunsade
+            </div>
+<div class="hidden md:flex space-x-8 items-center">
+<a class="text-[#D97706] border-b border-[#D97706] pb-1 uppercase tracking-widest text-[11px] font-bold" href="#sobre">Sobre</a>
+<a class="text-[#F5F5DC]/80 hover:text-[#D97706] transition-colors duration-300 uppercase tracking-widest text-[11px] font-bold" href="#livro">Livro</a>
+<a class="text-[#F5F5DC]/80 hover:text-[#D97706] transition-colors duration-300 uppercase tracking-widest text-[11px] font-bold" href="#masterclass">Masterclass</a>
+</div>
+<div class="hidden lg:block">
+<a class="inline-block bg-tertiary text-on-tertiary-fixed uppercase font-label-md text-label-md px-6 py-3 rounded hover:opacity-90 transition-opacity shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]" href="#">GARANTIR MINHA VAGA NA MASTERCLASS</a>
+</div>
+<button class="md:hidden text-inverse-surface">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+<!-- BLOCK 1: Hero -->
+<header class="relative bg-primary-container text-secondary-fixed pt-32 pb-section-gap px-margin-edge flex flex-col md:flex-row items-center justify-between max-w-container-max mx-auto gap-12" id="sobre">
+<div class="flex-1 space-y-8 z-10">
+<h1 class="font-headline-xl text-headline-xl text-secondary-fixed">Desperte sua Potência Máxima através da Alquimia Botânica</h1>
+<p class="font-body-lg text-body-lg text-secondary-fixed/90 max-w-2xl">Yèyé Osunsade traduz a sabedoria ancestral das folhas em estratégias práticas para quem busca regeneração mental, foco e o auge da performance humana.</p>
+<div class="pt-4">
+<a class="inline-flex items-center gap-3 bg-tertiary text-on-tertiary-fixed uppercase font-subtitle-md text-subtitle-md px-8 py-4 rounded shadow-[inset_0_1px_0_rgba(255,255,255,0.2)] hover:bg-tertiary/90 transition-colors" href="#"><span class="text-error text-[10px]">🔴</span> GARANTIR MINHA VAGA NA MASTERCLASS</a>
+</div>
+</div>
+<div class="flex-1 relative w-full aspect-[4/5] max-w-md mx-auto md:mr-0 z-0">
+<div class="absolute inset-0 bg-surface-container rounded-lg overflow-hidden border border-outline-variant/30">
+<img alt="Yèyé Osunsade" class="w-full h-full object-cover object-top" src="https://lh3.googleusercontent.com/aida/ADBb0ujt3pumNiB-nS_L3xQtsZxzOxXXGbLN6ZtMdsbhKS8YyGB4lFTjJua9YImLeLQM1i_-QXOpCq4USL6nSdO1-b-lJxtWTgjgUNjoQyofEuj9weqOYrBNQXEtvNHH_A2mwWQ8vtxYdMbMbZyRrfnFZc8fv-WmhcwG919m47arjywrMwPPrxvssBqurys7yUggpxBUbQVSU_cOEhBKdvMCtuLeSNJZ1GF4uzlqhFcS-XBQU7aSUQblOkZ3itZVDgD7dY1VDlJsFISP3A"/>
+</div>
+<div class="absolute -bottom-6 -left-6 w-48 h-48 bg-secondary-container/20 rounded-full blur-2xl -z-10"></div>
+</div>
+</header>
+<!-- BLOCK 2: The Trajectory -->
+<section class="bg-secondary-fixed text-primary-container py-section-gap px-margin-edge">
+<div class="max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="order-2 lg:order-1 relative h-full min-h-[500px]">
+<div class="absolute inset-0 bg-surface-container rounded-lg overflow-hidden"><img alt="Sueli Kinté e Sueide Kinté" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/ADBb0ujmwcIz7zRXdX-lgPjH5uPTeg3x4PuF8hm5QHBgD7h8DQU379dWxnym50ZE2HVMhem55wXVu8b3UBfIsyRKTr1xl_BASz-ep0jlw36vTlPdHDXmE77YDTvDs4-vuoHbI_AMrjMNcMuHxLnbWWTEPk4lrM__wmEQZEE0sF10s--sEpWznfFfJPr72md52-I9ciC51dKBvcYUCmYIhHq3awJp_QKgNC6wr6GYT-sUishnJCjydp-RmIY7EGwvEbI1Pp8Y1E8hgotE0g"/></div>
+</div>
+<div class="order-1 lg:order-2 space-y-8">
+<h2 class="font-headline-lg text-headline-lg text-primary-container">De Neta de Curandeiros a Estrategista de Bem-Estar</h2>
+<div class="space-y-6 font-body-lg text-body-lg text-primary-container/90">
+<p class="">A ciência do biohacking encontrou a sabedoria ancestral. Minha missão é decodificar o poder das folhas e raízes não apenas como tradição, mas como tecnologia biológica de ponta para otimização humana.</p>
+<p class="">Em um mundo onde a exaustão é a norma, a verdadeira vantagem competitiva reside na capacidade de regeneração profunda. Utilizando compostos botânicos milenares, estruturo protocolos de foco, redução de estresse e longevidade cognitiva.</p>
+</div>
+<blockquote class="border-l-4 border-tertiary-container pl-6 py-2 mt-8">
+<p class="font-headline-md text-headline-md text-primary-container italic">"A verdadeira performance nasce quando sua química interna está em paz com a sua história."</p>
+</blockquote>
+</div>
+</div>
+</section>
+<!-- BLOCK 3: Science / Gallery -->
+<section class="bg-primary-container py-section-gap px-margin-edge">
+<div class="max-w-container-max mx-auto">
+<div class="text-center mb-16 space-y-4">
+<h2 class="font-headline-lg text-headline-lg text-secondary-fixed">A Botânica Aplicada à Sua Rotina</h2>
+<p class="font-subtitle-lg text-subtitle-lg text-secondary-fixed/80 uppercase">Explorações em Vídeo</p>
+</div>
+<!-- Bento Grid Video Gallery Placeholder -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[300px]">
+<div class="md:col-span-2 relative rounded-xl overflow-hidden bg-surface-container-highest group">
+<div class="absolute inset-0 bg-cover bg-center opacity-70 group-hover:opacity-90 transition-opacity duration-500" data-alt="A moody, high-contrast close-up of a dark glass apothecary bottle pouring an amber liquid extract over fresh green leaves. The lighting is cinematic, capturing the viscosity of the liquid and the vibrant green of the leaf against a dark, textured background. This represents high-end botanical extraction and alchemy." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBoSPwiGNzIp5ZQ-c6pI1zicK42P2o9IlkvC5XAQah4CRfqCLz9eRKhgbNV7jpEQlhjaaBtjsgvooTSOIidYGn2hPCqmkkM-oLCqlzBqau4aYVL5MHETfN1m_qppubm_ycgKsafBesy2KK5dSMJdj6LOxldP0htpTOd2npdR4ePX8B580enzDebQju4A7HnlB2qL9XItQJ71z_fWqT4qjsnYTAKpTZcGRpRMNGtamLH6Jn5kLn3-t4SN0cGSXfx5AoD9yQLGzjX2d0");'></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-8 w-full flex justify-between items-end">
+<div>
+<span class="inline-block bg-secondary-fixed text-primary-container px-3 py-1 rounded-full font-label-md text-label-md mb-3">Foco</span>
+<h3 class="font-headline-md text-headline-md text-inverse-surface">Ervas Nootrópicas Ancestrais</h3>
+</div>
+<button class="w-12 h-12 bg-surface/50 backdrop-blur rounded-full flex items-center justify-center border border-white/20 text-white hover:bg-tertiary transition-colors">
+<span class="material-symbols-outlined symbol-filled">play_arrow</span>
+</button>
+</div>
+</div>
+<div class="relative rounded-xl overflow-hidden bg-surface-container-highest group">
+<div class="absolute inset-0 bg-cover bg-center opacity-70 group-hover:opacity-90 transition-opacity duration-500" data-alt="A beautifully lit, minimalist composition of dried roots and herbs arranged neatly on a dark wooden surface, alongside modern scientific glass beakers. The juxtaposition of ancient botanical materials and modern laboratory equipment highlights the intersection of science and ancestral wisdom in a dark, earthy color scheme." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCVkzVffi7mK0Nda7JaSh4kUnjDQO9jHz3l4T-XRZGISyKeM94qvX0ak-bGcQPqMzQ-B6rN7PrQyUWF-MlNb5GdMvIHSI9lYeie0SNQo1V3p4dSBqPHV9ICHsTydlIaf0E23_-3ioUSiLOqt0wV27sIbNtf0yx8-iDdnNlFk7948yIRDPID2kQqlYfxLK1B153MYXUMtxderPGRCetK32PK56WSi2dJ8nXN-lxXs-ZHOpVXjtMwWD_S5zCV14aC-ICxCYCn29p_244");'></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-6 w-full">
+<span class="inline-block bg-secondary-fixed text-primary-container px-3 py-1 rounded-full font-label-md text-[10px] mb-2 uppercase font-bold">Ansiedade</span>
+<h3 class="font-subtitle-lg text-subtitle-lg text-inverse-surface">O Protocolo de Aterramento</h3>
+</div>
+</div>
+<div class="relative rounded-xl overflow-hidden bg-surface-container-highest group">
+<div class="absolute inset-0 bg-cover bg-center opacity-70 group-hover:opacity-90 transition-opacity duration-500" data-alt="A powerful, silhouetted shot of a speaker on a dimly lit stage, conveying authority and leadership. The background features a subtle, abstract botanical projection in deep greens. The overall mood is professional, commanding, and deeply grounded, reflecting high-performance leadership training." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBNflWg3sVFby0RJKcdlb-YouRWKKuW2BDz98fF67fobyvZmWAW-cNBqgMVbArEPkPs2qzePRPUUIbG6vy4DoZEjDkiKeZswcv-Pvf4Qb8TXwmqYeMnTGBTZsfvHgCPsbz9fx4T6n23HsRoGDjTLfFDlImi0oXFpfG75o1u7jqI7TO9rck036dvjKyauU_JVg4JN7Jhva3BRIiWzJGoeR6zzO7lmzyMoWLcO1HHfpcyPxuUE6V_NPDvLX6fIc2vCPM_kORGF8hNK0w");'></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-6 w-full">
+<span class="inline-block bg-secondary-fixed text-primary-container px-3 py-1 rounded-full font-label-md text-[10px] mb-2 uppercase font-bold">Autoridade</span>
+<h3 class="font-subtitle-lg text-subtitle-lg text-inverse-surface">Presença e Bioquímica</h3>
+</div>
+</div>
+<div class="md:col-span-2 relative rounded-xl overflow-hidden bg-surface-container-highest group">
+<div class="absolute inset-0 bg-cover bg-center opacity-70 group-hover:opacity-90 transition-opacity duration-500" data-alt="A serene, top-down view of hands carefully preparing a botanical infusion in a dark, minimalist ceramic bowl. The scene is lit with soft, diffused natural light that highlights the vibrant greens of the fresh leaves against the dark, tactile surface of the table. The image exudes calm, ritual, and precision." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBpVbUH0_Tuutqcab3YKlYXzy8lWpL0uGeOIUUKDePggoCJWAOLMyp1NPluIdOnRBlkQUWn4RNNCDfoIR10ti812j6XPIN2P5ukpvnds13qv_Jedv6ngls5KsI9y36VgZTCyaYEec2vlFUCuoRlHai65eBXGE-OYMdSwokyC-ijlwu9j1U1s_uzcIEzBacmLIVjlI-iPwDsZDR9uGUi9siBcsObYHlKjOB_x-zCk_3fu_kshipzmCo__jO8teMJN_35zIOso6pBfmo");'></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-8 w-full flex justify-between items-end">
+<div>
+<span class="inline-block bg-secondary-fixed text-primary-container px-3 py-1 rounded-full font-label-md text-label-md mb-3">Ritual</span>
+<h3 class="font-headline-md text-headline-md text-inverse-surface">A Alquimia Matinal</h3>
+</div>
+<button class="w-12 h-12 bg-surface/50 backdrop-blur rounded-full flex items-center justify-center border border-white/20 text-white hover:bg-tertiary transition-colors">
+<span class="material-symbols-outlined symbol-filled">play_arrow</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- BLOCK 3.5: Transmedia Experience -->
+<section class="bg-surface text-on-surface py-section-gap px-margin-edge border-b border-outline-variant/10">
+<div class="max-w-3xl mx-auto text-center space-y-8">
+<h2 class="font-headline-lg text-headline-lg text-primary">Fé nas Folhas: Uma Experiência Transmídia Ancestral</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+            Mais do que um projeto, "Fé nas Folhas" manifesta-se como um ecossistema vivo de conhecimento. Uma jornada multipotencial que transita fluidamente entre a literatura (o livro), a educação corporativa (palestras e masterclasses) e a expressão artística (o espetáculo musical). Cada pilar complementa o outro, criando uma imersão completa na alquimia botânica.
+        </p>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 pt-8">
+<div class="flex flex-col items-center gap-4 group">
+<div class="w-16 h-16 rounded-full border border-primary/20 flex items-center justify-center text-primary bg-primary/5 group-hover:bg-primary/10 transition-colors duration-300">
+<span class="material-symbols-outlined text-3xl">menu_book</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface uppercase tracking-widest">Literatura</span>
+</div>
+<div class="flex flex-col items-center gap-4 group">
+<div class="w-16 h-16 rounded-full border border-primary/20 flex items-center justify-center text-primary bg-primary/5 group-hover:bg-primary/10 transition-colors duration-300">
+<span class="material-symbols-outlined text-3xl">groups</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface uppercase tracking-widest">Educação Corporativa</span>
+</div>
+<div class="flex flex-col items-center gap-4 group">
+<div class="w-16 h-16 rounded-full border border-primary/20 flex items-center justify-center text-primary bg-primary/5 group-hover:bg-primary/10 transition-colors duration-300">
+<span class="material-symbols-outlined text-3xl">music_note</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface uppercase tracking-widest">Expressão Artística</span>
+</div>
+</div></div>
+</section>
+<!-- BLOCK 3.6: Musical Performance -->
+<section class="bg-surface-container-low text-on-surface py-section-gap px-margin-edge">
+<div class="max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="space-y-8">
+<span class="inline-block bg-tertiary text-on-tertiary-fixed px-4 py-1 rounded-full font-label-md text-[11px] font-bold uppercase tracking-widest mb-2">Arte &amp; Ritual</span>
+<h2 class="font-headline-lg text-headline-lg text-primary">Espetáculo Musical</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                A teoria se torna experiência sensorial. O espetáculo musical transcende a fala, utilizando o som, a luz e o movimento para traduzir a força da floresta e a ancestralidade das folhas para os palcos. Uma imersão catártica onde a cura e a arte se encontram, despertando conexões profundas com o sagrado e o natural.
+            </p>
+</div>
+<div class="relative w-full rounded-lg overflow-hidden border border-outline-variant/20 shadow-2xl aspect-[3/4]">
+<img alt="Yèyé Osunsade em performance no Espetáculo Musical" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/ADBb0uhyvl8N0FgjYz-XM6Tg1V-mvLFXx3Hj7T6pPz8rtVXhfNtBA-WWsK6asmBUyCTTxRB7AHgtTICe3jYLnJq1n6lPgDGT5pr4_PNnrBNqFcO722O--nJ_g_V0haz_OSRhMU00kKbGvPBPXmZ_aTxOR4zX9UVn5-3LfzE_jlbis4EQ4Dvro7LfZ_iffJRB447Orqn1nWcIMTTEWZ1PjipGIUU-JTWSxI9bCnepHJ6t2KX4IfOhYZMgmm584WNZjllZZRYLFJl5SuydBw"/>
+<div class="absolute inset-0 bg-gradient-to-tr from-surface/90 via-surface/40 to-transparent mix-blend-multiply"></div>
+</div>
+</div>
+</section>
+<!-- BLOCK 4: The Book -->
+<section class="bg-secondary-fixed text-primary-container py-section-gap px-margin-edge relative overflow-hidden" id="livro">
+<!-- Decorative background element -->
+<div class="absolute top-0 right-0 w-[800px] h-[800px] bg-secondary-fixed-dim/30 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
+<div class="max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-center relative z-10">
+<div class="lg:col-span-5 relative">
+<div class="w-full aspect-[3/4] bg-surface-container rounded-lg shadow-2xl overflow-hidden relative transform -rotate-2 hover:rotate-0 transition-transform duration-500">
+<img alt="Capa do Livro Fé nas Folhas" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/ADBb0ujauHqilh3vYnuwqzkH2UVbqW0tb0UafKOYQRTUms6eBGpwHXzhXR4PEa3mqzuz_z6-xIFOBhnFkqEkj9aaH775GMPrdktBOJFCdVPHFQSLrvBXbjWXfpiD6Clhs5_N1FAG02fN7U0NlqoG2PhsNMeqV3u7Vg2WV107YgSJp4MgSqOD-otG_fyNYUJhS8g5RDZEwCwc_NXz6QtU7bnQJFnhkxuXPilkctoTpvj_MqHZ-HV7QeHf_ppzqkNgXzO4RawEOIN4wgKMuQ"/>
+</div>
+</div>
+<div class="lg:col-span-7 space-y-8">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-primary-container mb-4">Livro: Fé nas Folhas</h2>
+<p class="font-subtitle-lg text-subtitle-lg text-primary-container/80">Práticas Ancestrais para Cura da Alma Através das Plantas</p>
+</div>
+<div class="space-y-6 font-body-lg text-body-lg text-primary-container/90"><p class="">Um guia que resgata a sabedoria de benzedeiras com foco na cultura afro-brasileira e indígena. Publicado pela Fontanar, o livro oferece instruções práticas, incluindo receitas de banhos e rezas para o bem-estar cotidiano.</p></div>
+<div class="bg-surface-container-highest/5 border border-primary-container/10 p-8 rounded-lg mt-8">
+<p class="font-headline-md text-headline-md text-primary-container italic mb-4">"Que as folhas tragam a cura e o design traga a conexão."</p>
+<p class="font-label-md text-primary-container/60 uppercase tracking-widest">— Yèyé Osunsade</p>
+</div>
+<div class="pt-6">
+<a class="inline-flex items-center gap-3 bg-tertiary text-on-tertiary-fixed uppercase font-subtitle-md text-subtitle-md px-8 py-4 rounded shadow-[inset_0_1px_0_rgba(255,255,255,0.2)] hover:bg-tertiary/90 transition-colors" href="#">
+<span class="text-error text-[10px]">🔴</span> COMPRAR AGORA NA AMAZON
+                    </a>
+</div>
+</div>
+</div>
+</section>
+<!-- BLOCK 5: Masterclass -->
+<section class="bg-primary-container py-section-gap px-margin-edge relative" id="masterclass">
+<div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-5"></div>
+<div class="max-w-container-max mx-auto text-center space-y-10 relative z-10">
+<h2 class="font-headline-xl text-headline-xl text-secondary-fixed max-w-4xl mx-auto">Masterclass: Alquimia da Performance</h2>
+<p class="font-body-lg text-body-lg text-secondary-fixed/80 max-w-3xl mx-auto">Um treinamento imersivo projetado exclusivamente para líderes e equipes de alta exigência. Aprenda protocolos botânicos práticos para regular a dopamina, sustentar o foco profundo e eliminar os riscos fisiológicos do burnout corporativo.</p>
+<div class="pt-8">
+<a class="inline-flex items-center gap-3 bg-tertiary text-on-tertiary-fixed uppercase font-subtitle-md text-subtitle-md px-8 py-4 rounded shadow-[inset_0_1px_0_rgba(255,255,255,0.2)] hover:bg-tertiary/90 transition-colors" href="#">
+<span class="text-error text-[10px]">🔴</span> LEVAR ESTA PALESTRA PARA MINHA EMPRESA
+                </a>
+</div>
+</div>
+</section>
+<!-- BLOCK 6: Research -->
+<!-- Footer (Shared Component) -->
+<footer class="bg-[#394C29] dark:bg-black text-[#D97706] full-width py-16 border-t border-white/5">
+<div class="flex flex-col md:flex-row justify-between items-center px-10 max-w-[1280px] mx-auto gap-8 md:gap-0">
+<div class="text-lg font-bold text-[#F5F5DC]">
+                Yèyé Osunsade
+            </div>
+<div class="font-body-md text-body-md text-[#F5F5DC]/60 text-center md:text-left">
+                © 2024 Yèyé Osunsade. Alquimia Botânica e Performance.
+            </div>
+<div class="flex space-x-6">
+<a class="text-white/40 hover:text-white transition-opacity uppercase font-subtitle-md text-[10px] hover:underline" href="#">Instagram</a>
+<a class="text-white/40 hover:text-white transition-opacity uppercase font-subtitle-md text-[10px] hover:underline" href="#">LinkedIn</a>
+<a class="text-white/40 hover:text-white transition-opacity uppercase font-subtitle-md text-[10px] hover:underline" href="#">Contato</a>
+</div>
+</div>
+</footer>
+</body></html>
