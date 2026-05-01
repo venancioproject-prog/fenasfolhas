@@ -134,32 +134,33 @@
                 width: 100%;
                 max-width: 1200px;
                 margin: 0 auto;
-                padding: 2rem 0;
+                padding: 4rem 0;
             }
-            .video-grid {
+            .brutalist-grid {
                 display: grid;
                 grid-template-columns: repeat(5, 1fr);
                 gap: 20px;
                 align-items: start;
             }
-            .video-grid > div {
-                min-width: 0;
-            }
-            .video-grid blockquote.instagram-media {
-                min-width: 0 !important;
-                max-width: 100% !important;
-                width: 100% !important;
-                margin: 0 !important;
-                background: #000 !important;
+            
+            .video-card {
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
             }
 
             @media (max-width: 1024px) {
-                .video-grid {
+                .brutalist-grid {
+                    grid-template-columns: repeat(3, 1fr);
+                }
+            }
+            @media (max-width: 768px) {
+                .brutalist-grid {
                     grid-template-columns: repeat(2, 1fr);
                 }
             }
-            @media (max-width: 640px) {
-                .video-grid {
+            @media (max-width: 480px) {
+                .brutalist-grid {
                     grid-template-columns: 1fr;
                 }
             }
@@ -223,92 +224,72 @@
 </div>
 </div>
 </section>
-<!-- BLOCK 3: Science / Gallery - Saberes da Floresta -->
+<!-- BLOCK 3: Static Gallery - Saberes da Floresta -->
 <section class="bg-[#000] py-section-gap px-margin-edge w-full" id="saberes-da-floresta">
 <div class="video-section-container">
 <div class="text-center mb-16 space-y-4">
 <h2 class="font-['Fraunces'] font-bold text-[3rem] leading-[1.2] text-bege-erva-doce">Vídeos de Yeye Oshun sobre Ervas e Banhos</h2>
 </div>
-<div class="video-grid">
-<!-- Video 1 -->
-<div class="flex flex-col w-full text-center">
-<div class="mb-4">
-<h3 class="font-['Fraunces'] text-bege-erva-doce text-lg font-semibold uppercase tracking-wider mb-2 leading-tight">1. Banho de Folhas Faz Brilhar</h3>
-<p class="font-['Montserrat'] text-bege-erva-doce/80 text-xs leading-snug">Conheça o poder das folhas para expandir sua luminosidade espiritual e brilho pessoal.</p>
+<div class="brutalist-grid">
+<!-- Item 1 -->
+<div class="video-card">
+<h3 class="font-['Fraunces'] text-bege-erva-doce text-sm font-semibold leading-tight min-h-[40px]">1. Banho de Folhas Faz Brilhar</h3>
+<div class="aspect-[9/16] bg-[#111] w-full border border-white/5"></div>
+<a class="font-['Montserrat'] text-bege-erva-doce/60 hover:text-bege-erva-doce text-[10px] uppercase tracking-widest font-bold transition-colors" href="https://www.instagram.com/reel/C-bTe91p2v9/" target="_blank">Assistir no Instagram</a>
 </div>
-<blockquote class="instagram-media" data-instgrm-captioned="false" data-instgrm-permalink="https://www.instagram.com/reel/C-bTe91p2v9/" data-instgrm-version="14"></blockquote>
+<!-- Item 2 -->
+<div class="video-card">
+<h3 class="font-['Fraunces'] text-bege-erva-doce text-sm font-semibold leading-tight min-h-[40px]">2. Banho para Tratar Ressentimento</h3>
+<div class="aspect-[9/16] bg-[#111] w-full border border-white/5"></div>
+<a class="font-['Montserrat'] text-bege-erva-doce/60 hover:text-bege-erva-doce text-[10px] uppercase tracking-widest font-bold transition-colors" href="https://www.instagram.com/reel/DRDRn_bjzSg/" target="_blank">Assistir no Instagram</a>
 </div>
-<!-- Video 2 -->
-<div class="flex flex-col w-full text-center">
-<div class="mb-4">
-<h3 class="font-['Fraunces'] text-bege-erva-doce text-lg font-semibold uppercase tracking-wider mb-2 leading-tight">2. Banho para Tratar Ressentimento</h3>
-<p class="font-['Montserrat'] text-bege-erva-doce/80 text-xs leading-snug">Protocolo botânico para limpeza emocional e liberação de mágoas acumuladas.</p>
+<!-- Item 3 -->
+<div class="video-card">
+<h3 class="font-['Fraunces'] text-bege-erva-doce text-sm font-semibold leading-tight min-h-[40px]">3. Banho de Descarrego</h3>
+<div class="aspect-[9/16] bg-[#111] w-full border border-white/5"></div>
+<a class="font-['Montserrat'] text-bege-erva-doce/60 hover:text-bege-erva-doce text-[10px] uppercase tracking-widest font-bold transition-colors" href="https://www.instagram.com/reel/DRLYJbID0vk/" target="_blank">Assistir no Instagram</a>
 </div>
-<blockquote class="instagram-media" data-instgrm-captioned="false" data-instgrm-permalink="https://www.instagram.com/reel/DRDRn_bjzSg/" data-instgrm-version="14"></blockquote>
+<!-- Item 4 -->
+<div class="video-card">
+<h3 class="font-['Fraunces'] text-bege-erva-doce text-sm font-semibold leading-tight min-h-[40px]">4. Banho para Prosperidade</h3>
+<div class="aspect-[9/16] bg-[#111] w-full border border-white/5"></div>
+<a class="font-['Montserrat'] text-bege-erva-doce/60 hover:text-bege-erva-doce text-[10px] uppercase tracking-widest font-bold transition-colors" href="https://www.instagram.com/reel/DQ5TfCdj2jt/" target="_blank">Assistir no Instagram</a>
 </div>
-<!-- Video 3 -->
-<div class="flex flex-col w-full text-center">
-<div class="mb-4">
-<h3 class="font-['Fraunces'] text-bege-erva-doce text-lg font-semibold uppercase tracking-wider mb-2 leading-tight">3. Banho de Descarrego</h3>
-<p class="font-['Montserrat'] text-bege-erva-doce/80 text-xs leading-snug">Limpeza profunda das energias densas para renovação do campo vibracional.</p>
+<!-- Item 5 -->
+<div class="video-card">
+<h3 class="font-['Fraunces'] text-bege-erva-doce text-sm font-semibold leading-tight min-h-[40px]">5. Banho de Atração e Amor</h3>
+<div class="aspect-[9/16] bg-[#111] w-full border border-white/5"></div>
+<a class="font-['Montserrat'] text-bege-erva-doce/60 hover:text-bege-erva-doce text-[10px] uppercase tracking-widest font-bold transition-colors" href="https://www.instagram.com/reel/DQ78RRNDz9t/" target="_blank">Assistir no Instagram</a>
 </div>
-<blockquote class="instagram-media" data-instgrm-captioned="false" data-instgrm-permalink="https://www.instagram.com/reel/DRLYJbID0vk/" data-instgrm-version="14"></blockquote>
+<!-- Item 6 -->
+<div class="video-card">
+<h3 class="font-['Fraunces'] text-bege-erva-doce text-sm font-semibold leading-tight min-h-[40px]">6. Curar com Folhas</h3>
+<div class="aspect-[9/16] bg-[#111] w-full border border-white/5"></div>
+<a class="font-['Montserrat'] text-bege-erva-doce/60 hover:text-bege-erva-doce text-[10px] uppercase tracking-widest font-bold transition-colors" href="https://www.instagram.com/reel/DQurRm3jsjW/" target="_blank">Assistir no Instagram</a>
 </div>
-<!-- Video 4 -->
-<div class="flex flex-col w-full text-center">
-<div class="mb-4">
-<h3 class="font-['Fraunces'] text-bege-erva-doce text-lg font-semibold uppercase tracking-wider mb-2 leading-tight">4. Banho para Prosperidade</h3>
-<p class="font-['Montserrat'] text-bege-erva-doce/80 text-xs leading-snug">Alquimia vegetal focada na abertura de caminhos e atração de abundância.</p>
+<!-- Item 7 -->
+<div class="video-card">
+<h3 class="font-['Fraunces'] text-bege-erva-doce text-sm font-semibold leading-tight min-h-[40px]">7. Reza para Espantar Espírito de Demanda</h3>
+<div class="aspect-[9/16] bg-[#111] w-full border border-white/5"></div>
+<a class="font-['Montserrat'] text-bege-erva-doce/60 hover:text-bege-erva-doce text-[10px] uppercase tracking-widest font-bold transition-colors" href="https://www.instagram.com/reel/DRXRllJEdu2/" target="_blank">Assistir no Instagram</a>
 </div>
-<blockquote class="instagram-media" data-instgrm-captioned="false" data-instgrm-permalink="https://www.instagram.com/reel/DQ5TfCdj2jt/" data-instgrm-version="14"></blockquote>
+<!-- Item 8 -->
+<div class="video-card">
+<h3 class="font-['Fraunces'] text-bege-erva-doce text-sm font-semibold leading-tight min-h-[40px]">8. Banho para Pessoas que se Sentem Rejeitadas</h3>
+<div class="aspect-[9/16] bg-[#111] w-full border border-white/5"></div>
+<a class="font-['Montserrat'] text-bege-erva-doce/60 hover:text-bege-erva-doce text-[10px] uppercase tracking-widest font-bold transition-colors" href="https://www.instagram.com/reel/DQrdWIvjOe4/" target="_blank">Assistir no Instagram</a>
 </div>
-<!-- Video 5 -->
-<div class="flex flex-col w-full text-center">
-<div class="mb-4">
-<h3 class="font-['Fraunces'] text-bege-erva-doce text-lg font-semibold uppercase tracking-wider mb-2 leading-tight">5. Banho de Atração e Amor</h3>
-<p class="font-['Montserrat'] text-bege-erva-doce/80 text-xs leading-snug">Elementos da natureza para potencializar o magnetismo pessoal e o autoamor.</p>
+<!-- Item 9 -->
+<div class="video-card">
+<h3 class="font-['Fraunces'] text-bege-erva-doce text-sm font-semibold leading-tight min-h-[40px]">9. Banho de Folhas e Flores para Brilho Pessoal</h3>
+<div class="aspect-[9/16] bg-[#111] w-full border border-white/5"></div>
+<a class="font-['Montserrat'] text-bege-erva-doce/60 hover:text-bege-erva-doce text-[10px] uppercase tracking-widest font-bold transition-colors" href="https://www.instagram.com/reel/DQnRj4aD-dr/" target="_blank">Assistir no Instagram</a>
 </div>
-<blockquote class="instagram-media" data-instgrm-captioned="false" data-instgrm-permalink="https://www.instagram.com/reel/DQ78RRNDz9t/" data-instgrm-version="14"></blockquote>
-</div>
-<!-- Video 6 -->
-<div class="flex flex-col w-full text-center">
-<div class="mb-4">
-<h3 class="font-['Fraunces'] text-bege-erva-doce text-lg font-semibold uppercase tracking-wider mb-2 leading-tight">6. Curar com Folhas</h3>
-<p class="font-['Montserrat'] text-bege-erva-doce/80 text-xs leading-snug">A tecnologia biológica da cura através da conexão profunda com o reino vegetal.</p>
-</div>
-<blockquote class="instagram-media" data-instgrm-captioned="false" data-instgrm-permalink="https://www.instagram.com/reel/DQurRm3jsjW/" data-instgrm-version="14"></blockquote>
-</div>
-<!-- Video 7 -->
-<div class="flex flex-col w-full text-center">
-<div class="mb-4">
-<h3 class="font-['Fraunces'] text-bege-erva-doce text-lg font-semibold uppercase tracking-wider mb-2 leading-tight">7. Reza para Espantar Espírito</h3>
-<p class="font-['Montserrat'] text-bege-erva-doce/80 text-xs leading-snug">A força da palavra aliada às ervas para proteção contra influências externas.</p>
-</div>
-<blockquote class="instagram-media" data-instgrm-captioned="false" data-instgrm-permalink="https://www.instagram.com/reel/DRXRllJEdu2/" data-instgrm-version="14"></blockquote>
-</div>
-<!-- Video 8 -->
-<div class="flex flex-col w-full text-center">
-<div class="mb-4">
-<h3 class="font-['Fraunces'] text-bege-erva-doce text-lg font-semibold uppercase tracking-wider mb-2 leading-tight">8. Banho contra Rejeição</h3>
-<p class="font-['Montserrat'] text-bege-erva-doce/80 text-xs leading-snug">Acolhimento botânico para restaurar a autoimagem e o pertencimento.</p>
-</div>
-<blockquote class="instagram-media" data-instgrm-captioned="false" data-instgrm-permalink="https://www.instagram.com/reel/DQrdWIvjOe4/" data-instgrm-version="14"></blockquote>
-</div>
-<!-- Video 9 -->
-<div class="flex flex-col w-full text-center">
-<div class="mb-4">
-<h3 class="font-['Fraunces'] text-bege-erva-doce text-lg font-semibold uppercase tracking-wider mb-2 leading-tight">9. Banho de Brilho Pessoal</h3>
-<p class="font-['Montserrat'] text-bege-erva-doce/80 text-xs leading-snug">Uma combinação especial de flores e folhas para exaltar sua energia vital.</p>
-</div>
-<blockquote class="instagram-media" data-instgrm-captioned="false" data-instgrm-permalink="https://www.instagram.com/reel/DQnRj4aD-dr/" data-instgrm-version="14"></blockquote>
-</div>
-<!-- Video 10 -->
-<div class="flex flex-col w-full text-center">
-<div class="mb-4">
-<h3 class="font-['Fraunces'] text-bege-erva-doce text-lg font-semibold uppercase tracking-wider mb-2 leading-tight">10. Oxum e a Cura</h3>
-<p class="font-['Montserrat'] text-bege-erva-doce/80 text-xs leading-snug">A sabedoria da divindade das águas doces e o segredo das folhas curativas.</p>
-</div>
-<blockquote class="instagram-media" data-instgrm-captioned="false" data-instgrm-permalink="https://www.instagram.com/reel/DEsxmNWIPlB/" data-instgrm-version="14"></blockquote>
+<!-- Item 10 -->
+<div class="video-card">
+<h3 class="font-['Fraunces'] text-bege-erva-doce text-sm font-semibold leading-tight min-h-[40px]">10. Oxum e a Cura pelas Ervas</h3>
+<div class="aspect-[9/16] bg-[#111] w-full border border-white/5"></div>
+<a class="font-['Montserrat'] text-bege-erva-doce/60 hover:text-bege-erva-doce text-[10px] uppercase tracking-widest font-bold transition-colors" href="https://www.instagram.com/reel/DEsxmNWIPlB/" target="_blank">Assistir no Instagram</a>
 </div>
 </div>
 </div>
@@ -365,7 +346,7 @@
 <div class="max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-center relative z-10">
 <div class="lg:col-span-5 relative">
 <div class="w-full aspect-[3/4] bg-surface-container rounded-lg shadow-2xl overflow-hidden relative transform -rotate-2 hover:rotate-0 transition-transform duration-500">
-<img alt="Capa do Livro Fé nas Folhas" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/ADBb0ujauHqilh3vYnuwqzkH2UVbqW0tb0UafKOYQRTUms6eBGpwHXzhXR4PEa3mqzuz_z6-xIFOBhnFkqEkj9aaH775GMPrdktBOJFCdVPHFQSLrvBXbjWXfpiD6Clhs5_N1FAG02fN7U0NlqoG2PhsNMeqV3u7Vg2WV107YgSJp4MgSqOD-otG_fyNYUJhS8g5RDZEwCwc_NXz6QtU7bnQJFnhkxuXPilkctoTpvj_MqHZ-HV7QeHf_ppzqkNgXzO4RawEOIN4wgKMuQ"/>
+<img alt="Capa do Livro Fé nas Folhas" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/ADBb0ujauHqilh3vYnuwqzkH2UVbqW0tb0UafKOYQRTUms6eBGpwHXzhXR4PEa3mqzuz_z6-xIFOBhnFkqEkj9aaH775GMPrdktBOJFCdVPHFQSLrvBXbjWXfpiD6Clhs5_N1FAG02fN7U0NlqoG2PhsNMeqV3u7Vh2WV107YgSJp4MgSqOD-otG_fyNYUJhS8g5RDZEwCwc_NXz6QtU7bnQJFnhkxuXPilkctoTpvj_MqHZ-HV7QeHf_ppzqkNgXzO4RawEOIN4wgKMuQ"/>
 </div>
 </div>
 <div class="lg:col-span-7 space-y-8">
@@ -468,5 +449,4 @@
 </div>
 </div>
 </footer>
-<script async="" src="https://www.instagram.com/embed.js"></script>
 </body></html>
