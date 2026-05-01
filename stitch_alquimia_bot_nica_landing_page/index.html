@@ -132,23 +132,34 @@
             /* Video Section Architecture */
             .video-section-container {
                 width: 100%;
-                max-width: 1200px;
+                max-width: 1280px;
                 margin: 0 auto;
-                padding: 4rem 0;
+                padding: 4rem 2rem;
             }
             .brutalist-grid {
                 display: grid;
                 grid-template-columns: repeat(4, 1fr);
-                gap: 20px;
+                gap: 32px;
+                justify-content: center;
                 align-items: start;
-                /* Shifted slightly to the right */
-                padding-left: 2rem;
             }
             
             .video-card {
                 display: flex;
                 flex-direction: column;
-                gap: 12px;
+                gap: 16px;
+            }
+
+            .video-title {
+                font-family: 'Newsreader', serif;
+                color: #EBD19C;
+                font-size: 1.5rem;
+                font-weight: 600;
+                line-height: 1.2;
+                margin-bottom: 8px;
+                min-height: 3.6rem;
+                display: flex;
+                align-items: flex-end;
             }
 
             /* Ensure Instagram embeds fit perfectly within columns */
@@ -165,13 +176,14 @@
             @media (max-width: 1024px) {
                 .brutalist-grid {
                     grid-template-columns: repeat(2, 1fr);
-                    padding-left: 0;
                 }
             }
             @media (max-width: 640px) {
                 .brutalist-grid {
                     grid-template-columns: 1fr;
-                    padding-left: 0;
+                }
+                .video-title {
+                    min-height: auto;
                 }
             }
         </style>
@@ -243,49 +255,49 @@
 <div class="brutalist-grid">
 <!-- Item 1 -->
 <div class="video-card">
-<h3 class="font-['Fraunces'] text-bege-erva-doce text-sm font-semibold leading-tight min-h-[40px]">1. Banho de Folhas Faz Brilhar</h3>
+<h3 class="video-title">1. Banho de Folhas Faz Brilhar</h3>
 <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/C-bTe91p2v9/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14"></blockquote>
 <a class="font-['Montserrat'] text-bege-erva-doce/60 hover:text-bege-erva-doce text-[10px] uppercase tracking-widest font-bold transition-colors" href="https://www.instagram.com/reel/C-bTe91p2v9/" target="_blank">Assistir no Instagram</a>
 </div>
 <!-- Item 2 -->
 <div class="video-card">
-<h3 class="font-['Fraunces'] text-bege-erva-doce text-sm font-semibold leading-tight min-h-[40px]">2. Banho para Tratar Ressentimento</h3>
+<h3 class="video-title">2. Banho para Tratar Ressentimento</h3>
 <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DRDRn_bjzSg/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14"></blockquote>
 <a class="font-['Montserrat'] text-bege-erva-doce/60 hover:text-bege-erva-doce text-[10px] uppercase tracking-widest font-bold transition-colors" href="https://www.instagram.com/reel/DRDRn_bjzSg/" target="_blank">Assistir no Instagram</a>
 </div>
 <!-- Item 3 -->
 <div class="video-card">
-<h3 class="font-['Fraunces'] text-bege-erva-doce text-sm font-semibold leading-tight min-h-[40px]">3. Banho de Descarrego</h3>
+<h3 class="video-title">3. Banho de Descarrego</h3>
 <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DRLYJbID0vk/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14"></blockquote>
 <a class="font-['Montserrat'] text-bege-erva-doce/60 hover:text-bege-erva-doce text-[10px] uppercase tracking-widest font-bold transition-colors" href="https://www.instagram.com/reel/DRLYJbID0vk/" target="_blank">Assistir no Instagram</a>
 </div>
 <!-- Item 4 -->
 <div class="video-card">
-<h3 class="font-['Fraunces'] text-bege-erva-doce text-sm font-semibold leading-tight min-h-[40px]">4. Banho para Prosperidade</h3>
+<h3 class="video-title">4. Banho para Prosperidade</h3>
 <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DQ5TfCdj2jt/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14"></blockquote>
 <a class="font-['Montserrat'] text-bege-erva-doce/60 hover:text-bege-erva-doce text-[10px] uppercase tracking-widest font-bold transition-colors" href="https://www.instagram.com/reel/DQ5TfCdj2jt/" target="_blank">Assistir no Instagram</a>
 </div>
 <!-- Item 5 -->
 <div class="video-card">
-<h3 class="font-['Fraunces'] text-bege-erva-doce text-sm font-semibold leading-tight min-h-[40px]">5. Banho de Atração e Amor</h3>
+<h3 class="video-title">5. Banho de Atração e Amor</h3>
 <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DQ78RRNDz9t/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14"></blockquote>
 <a class="font-['Montserrat'] text-bege-erva-doce/60 hover:text-bege-erva-doce text-[10px] uppercase tracking-widest font-bold transition-colors" href="https://www.instagram.com/reel/DQ78RRNDz9t/" target="_blank">Assistir no Instagram</a>
 </div>
-<!-- Item 6 (Replaced/Renumbered original Item 8) -->
+<!-- Item 6 -->
 <div class="video-card">
-<h3 class="font-['Fraunces'] text-bege-erva-doce text-sm font-semibold leading-tight min-h-[40px]">6. Banho para Rejeição</h3>
+<h3 class="video-title">6. Banho para Rejeição</h3>
 <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DQrdWIvjOe4/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14"></blockquote>
 <a class="font-['Montserrat'] text-bege-erva-doce/60 hover:text-bege-erva-doce text-[10px] uppercase tracking-widest font-bold transition-colors" href="https://www.instagram.com/reel/DQrdWIvjOe4/" target="_blank">Assistir no Instagram</a>
 </div>
-<!-- Item 7 (Replaced/Renumbered original Item 9) -->
+<!-- Item 7 -->
 <div class="video-card">
-<h3 class="font-['Fraunces'] text-bege-erva-doce text-sm font-semibold leading-tight min-h-[40px]">7. Banho de Folhas e Flores</h3>
+<h3 class="video-title">7. Banho de Folhas e Flores</h3>
 <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DQnRj4aD-dr/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14"></blockquote>
 <a class="font-['Montserrat'] text-bege-erva-doce/60 hover:text-bege-erva-doce text-[10px] uppercase tracking-widest font-bold transition-colors" href="https://www.instagram.com/reel/DQnRj4aD-dr/" target="_blank">Assistir no Instagram</a>
 </div>
-<!-- Item 8 (Replaced/Renumbered original Item 10) -->
+<!-- Item 8 -->
 <div class="video-card">
-<h3 class="font-['Fraunces'] text-bege-erva-doce text-sm font-semibold leading-tight min-h-[40px]">8. Oxum e a Cura pelas Ervas</h3>
+<h3 class="video-title">8. Oxum e a Cura pelas Ervas</h3>
 <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DEsxmNWIPlB/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14"></blockquote>
 <a class="font-['Montserrat'] text-bege-erva-doce/60 hover:text-bege-erva-doce text-[10px] uppercase tracking-widest font-bold transition-colors" href="https://www.instagram.com/reel/DEsxmNWIPlB/" target="_blank">Assistir no Instagram</a>
 </div>
