@@ -10,7 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Noto+Serif:ital,wght@0,100..900;1,100..900&amp;family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&amp;family=Montserrat:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
 <!-- Tailwind CSS -->
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<!-- Tailwind Configuration from Design System -->
+<!-- Tailwind Configuration -->
 <script id="tailwind-config">
           tailwind.config = {
             darkMode: "class",
@@ -63,7 +63,9 @@
                         "background": "#0c1607",
                         "surface-container-high": "#232d1b",
                         "inverse-surface": "#dae7cc",
-                        "on-surface": "#dae7cc"
+                        "on-surface": "#dae7cc",
+                        "verde-ancestral": "#394C29",
+                        "bege-erva-doce": "#EBD19C"
                 },
                 "borderRadius": {
                         "DEFAULT": "0.125rem",
@@ -73,7 +75,7 @@
                 },
                 "spacing": {
                         "unit": "8px",
-                        "container-max": "1280px",
+                        "container-max": "1200px",
                         "gutter": "24px",
                         "margin-edge": "40px",
                         "section-gap": "120px",
@@ -102,368 +104,291 @@
               }
             }
           }
-        </script>
-<style>            .material-symbols-outlined {
-                font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
-            }
-            .symbol-filled {
-                font-variation-settings: 'FILL' 1, 'wght' 300, 'GRAD' 0, 'opsz' 24;
-            }
-            /* Custom scrollbar to match theme */
-            ::-webkit-scrollbar {
-                width: 8px;
-            }
-            ::-webkit-scrollbar-track {
-                background: #0c1607; 
-            }
-            ::-webkit-scrollbar-thumb {
-                background: #2d3825; 
-                border-radius: 4px;
-            }
-            ::-webkit-scrollbar-thumb:hover {
-                background: #394c29; 
-            }
-            /* Specific text color for the section requested: Bege Erva-Doce */
-            .text-bege-erva-doce {
-                color: #EBD19C;
-            }
+    </script>
+<style>
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0c1607; }
+        ::-webkit-scrollbar-thumb { background: #2d3825; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #394c29; }
+        
+        .section-container {
+            width: 100%;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+        }
 
-            /* Video Section Architecture */
-            .video-section-container {
-                width: 100%;
-                max-width: 1200px;
-                margin-left: auto;
-                margin-right: auto;
-                padding: 4rem 1.5rem;
-                box-sizing: border-box;
-            }
-            .brutalist-grid {
-                display: grid;
-                grid-template-columns: repeat(4, 1fr);
-                gap: 24px;
-                width: 100%;
-                max-width: 1200px;
-                margin: 0 auto;
-            }
-            
-            .video-card {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                width: 100%;
-                overflow: hidden;
-            }
+        .brutalist-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            width: 100%;
+        }
 
-            .video-title {
-                font-family: 'Newsreader', serif;
-                color: #EBD19C;
-                font-size: 1.125rem;
-                font-weight: 700;
-                line-height: 1.3;
-                min-height: 4.5rem;
-                display: flex;
-                align-items: flex-start;
-                justify-content: center;
-                text-align: center;
-                text-transform: uppercase;
-                letter-spacing: 0.05em;
-                margin-bottom: 16px;
-                border-top: 1px solid rgba(235, 209, 156, 0.2);
-                padding-top: 12px;
-                width: 100%;
-            }
+        .video-card {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
 
-            /* Ensure Instagram embeds fit perfectly within columns */
-            .brutalist-grid blockquote.instagram-media { 
-                min-width: 0 !important; 
-                max-width: 100% !important; 
-                width: 100% !important; 
-                margin: 0 auto !important; 
-                background: #000 !important; 
-                border-radius: 4px !important;
-                border: 1px solid rgba(255,255,255,0.05) !important;
-            }
+        .video-title {
+            font-family: 'Newsreader', serif;
+            color: #EBD19C;
+            font-size: 1rem;
+            font-weight: 700;
+            line-height: 1.3;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 16px;
+            padding-top: 12px;
+            border-top: 1px solid rgba(235, 209, 156, 0.2);
+            min-height: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-            @media (max-width: 1024px) {
-                .brutalist-grid {
-                    grid-template-columns: repeat(2, 1fr);
-                }
-            }
-            @media (max-width: 640px) {
-                .brutalist-grid {
-                    grid-template-columns: 1fr;
-                }
-                .video-title {
-                    min-height: auto;
-                    font-size: 1rem;
-                }
-            }</style>
+        blockquote.instagram-media { 
+            min-width: 0 !important; 
+            max-width: 100% !important; 
+            width: 100% !important; 
+            margin: 0 auto !important; 
+        }
+
+        @media (max-width: 1024px) {
+            .brutalist-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 640px) {
+            .brutalist-grid { grid-template-columns: 1fr; }
+        }
+    </style>
 </head>
-<body class="bg-[#394C29] text-on-background antialiased overflow-x-hidden">
-<!-- TopNavBar (Shared Component) -->
-<nav class="bg-[#394C29] dark:bg-emerald-950/90 docked full-width top-0 sticky backdrop-blur-md border-b border-white/10 z-50">
-<div class="flex justify-between items-center px-10 py-6 max-w-[1280px] mx-auto w-full">
-<div class="text-xl font-semibold italic text-[#F5F5DC] dark:text-stone-200 font-['Newsreader']">
+<body class="bg-verde-ancestral text-on-background antialiased overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="bg-verde-ancestral dark:bg-emerald-950/90 top-0 sticky backdrop-blur-md border-b border-white/10 z-50">
+<div class="section-container py-6 flex justify-between items-center">
+<div class="text-xl font-semibold italic text-bege-erva-doce font-['Newsreader']">
             Yèyé Osunsade
         </div>
-<div class="hidden md:flex space-x-8 items-center"><a class="text-[#F5F5DC]/80 hover:text-[#D97706] transition-colors duration-300 uppercase tracking-widest text-[11px] font-bold font-['Montserrat']" href="#sobre">Sobre</a><a class="text-[#F5F5DC]/80 hover:text-[#D97706] transition-colors duration-300 uppercase tracking-widest text-[11px] font-bold font-['Montserrat']" href="#saberes-da-floresta">Saberes da Floresta</a><a class="text-[#F5F5DC]/80 hover:text-[#D97706] transition-colors duration-300 uppercase tracking-widest text-[11px] font-bold font-['Montserrat']" href="#espetaculo">Espetáculo</a><a class="text-[#F5F5DC]/80 hover:text-[#D97706] transition-colors duration-300 uppercase tracking-widest text-[11px] font-bold font-['Montserrat']" href="#livro">Livro</a><a class="text-[#F5F5DC]/80 hover:text-[#D97706] transition-colors duration-300 uppercase tracking-widest text-[11px] font-bold font-['Montserrat']" href="#masterclass">Masterclass</a><a class="text-[#F5F5DC]/80 hover:text-[#D97706] transition-colors duration-300 uppercase tracking-widest text-[11px] font-bold font-['Montserrat']" href="#imprensa">Imprensa</a></div>
-<div class="hidden lg:block">
-<a class="inline-block bg-tertiary text-on-tertiary-fixed uppercase font-label-md text-label-md px-6 py-3 rounded hover:opacity-90 transition-opacity shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]" href="#">GARANTIR MINHA VAGA NA MASTERCLASS</a>
+<div class="hidden lg:flex space-x-6 items-center">
+<a class="text-bege-erva-doce/80 hover:text-white transition-colors uppercase tracking-widest text-[11px] font-bold font-['Montserrat']" href="#sobre">Sobre</a>
+<a class="text-bege-erva-doce/80 hover:text-white transition-colors uppercase tracking-widest text-[11px] font-bold font-['Montserrat']" href="#saberes-da-floresta">Saberes</a>
+<a class="text-bege-erva-doce/80 hover:text-white transition-colors uppercase tracking-widest text-[11px] font-bold font-['Montserrat']" href="#espetaculo">Espetáculo</a>
+<a class="text-bege-erva-doce/80 hover:text-white transition-colors uppercase tracking-widest text-[11px] font-bold font-['Montserrat']" href="#livro">Livro</a>
+<a class="text-bege-erva-doce/80 hover:text-white transition-colors uppercase tracking-widest text-[11px] font-bold font-['Montserrat']" href="#masterclass">Masterclass</a>
+<a class="text-bege-erva-doce/80 hover:text-white transition-colors uppercase tracking-widest text-[11px] font-bold font-['Montserrat']" href="#imprensa">Imprensa</a>
 </div>
-<button class="md:hidden text-inverse-surface">
+<div class="hidden sm:block">
+<a class="bg-tertiary text-on-tertiary-fixed uppercase font-label-md text-[10px] px-5 py-3 rounded hover:opacity-90 transition-opacity" href="#masterclass">GARANTIR VAGA</a>
+</div>
+<button class="lg:hidden text-bege-erva-doce">
 <span class="material-symbols-outlined">menu</span>
 </button>
 </div>
 </nav>
-<!-- BLOCK 1: Hero -->
-<header class="relative bg-primary-container text-secondary-fixed pt-32 pb-section-gap px-margin-edge flex flex-col md:flex-row items-center justify-between gap-12" id="sobre">
-<div class="max-w-container-max mx-auto w-full flex flex-col md:flex-row items-center justify-between gap-12">
-<div class="flex-1 space-y-8 z-10">
-<h1 class="font-headline-xl text-headline-xl text-secondary-fixed">Desperte sua Potência Máxima através da Alquimia Botânica</h1>
-<p class="font-body-lg text-body-lg text-secondary-fixed/90 max-w-2xl">Yèyé Osunsade traduz a sabedoria ancestral das folhas em estratégias práticas para quem busca regeneração mental, foco e o auge da performance humana.</p>
+<!-- HERO -->
+<header class="bg-verde-ancestral pt-24 pb-section-gap" id="sobre">
+<div class="section-container flex flex-col md:flex-row items-center gap-12">
+<div class="flex-1 space-y-8 text-left">
+<h1 class="font-headline-xl text-headline-xl text-bege-erva-doce leading-tight">Desperte sua Potência Máxima através da Alquimia Botânica</h1>
+<p class="font-body-lg text-body-lg text-bege-erva-doce/80 max-w-xl">Yèyé Osunsade traduz a sabedoria ancestral das folhas em estratégias práticas para quem busca regeneração mental, foco e o auge da performance humana.</p>
 <div class="pt-4">
-<a class="inline-flex items-center gap-3 bg-tertiary text-on-tertiary-fixed uppercase font-subtitle-md text-subtitle-md px-8 py-4 rounded shadow-[inset_0_1px_0_rgba(255,255,255,0.2)] hover:bg-tertiary/90 transition-colors" href="#"><span class="text-error text-[10px]">🔴</span> GARANTIR MINHA VAGA NA MASTERCLASS</a>
+<a class="inline-flex items-center gap-3 bg-tertiary text-on-tertiary-fixed uppercase font-subtitle-md text-subtitle-md px-8 py-4 rounded shadow-lg hover:bg-tertiary/90 transition-colors" href="#masterclass">
+<span class="text-error text-[10px]">🔴</span> GARANTIR MINHA VAGA NA MASTERCLASS
+                </a>
 </div>
 </div>
-<div class="flex-1 relative w-full aspect-[4/5] max-w-md mx-auto md:mr-0 z-0">
-<div class="absolute inset-0 bg-surface-container rounded-lg overflow-hidden border border-outline-variant/30">
+<div class="flex-1 w-full max-w-md">
+<div class="aspect-[4/5] bg-surface-container rounded-lg overflow-hidden border border-bege-erva-doce/20">
 <img alt="Yèyé Osunsade" class="w-full h-full object-cover object-top" src="https://lh3.googleusercontent.com/aida/ADBb0ujt3pumNiB-nS_L3xQtsZxzOxXXGbLN6ZtMdsbhKS8YyGB4lFTjJua9YImLeLQM1i_-QXOpCq4USL6nSdO1-b-lJxtWTgjgUNjoQyofEuj9weqOYrBNQXEtvNHH_A2mwWQ8vtxYdMbMbZyRrfnFZc8fv-WmhcwG919m47arjywrMwPPrxvssBqurys7yUggpxBUbQVSU_cOEhBKdvMCtuLeSNJZ1GF4uzlqhFcS-XBQU7aSUQblOkZ3itZVDgD7dY1VDlJsFISP3A"/>
 </div>
-<div class="absolute -bottom-6 -left-6 w-48 h-48 bg-secondary-container/20 rounded-full blur-2xl -z-10"></div>
 </div>
 </div>
 </header>
-<!-- BLOCK 2: The Trajectory -->
-<section class="bg-secondary-fixed text-primary-container py-section-gap px-margin-edge w-full">
-<div class="max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-<div class="order-2 lg:order-1 relative h-full min-h-[500px]">
-<div class="absolute inset-0 bg-surface-container rounded-lg overflow-hidden">
+<!-- TRAJECTORY -->
+<section class="bg-secondary-fixed text-primary-container py-section-gap">
+<div class="section-container grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="relative h-full min-h-[400px] rounded-lg overflow-hidden">
 <img alt="Sueli Kinté e Sueide Kinté" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/ADBb0ujmwcIz7zRXdX-lgPjH5uPTeg3x4PuF8hm5QHBgD7h8DQU379dWxnym50ZE2HVMhem55wXVu8b3UBfIsyRKTr1xl_BASz-ep0jlw36vTlPdHDXmE77YDTvDs4-vuoHbI_AMrjMNcMuHxLnbWWTEPk4lrM__wmEQZEE0sF10s--sEpWznfFfJPr72md52-I9ciC51dKBvcYUCmYIhHq3awJp_QKgNC6wr6GYT-sUishnJCjydp-RmIY7EGwvEbI1Pp8Y1E8hgotE0g"/>
 </div>
+<div class="space-y-8">
+<h2 class="font-headline-lg text-headline-lg">De Neta de Curandeiros a Estrategista de Bem-Estar</h2>
+<div class="space-y-6 font-body-lg text-body-lg opacity-90">
+<p>A ciência do biohacking encontrou a sabedoria ancestral. Minha missão é decodificar o poder das folhas e raízes não apenas como tradição, mas como tecnologia biológica de ponta para otimização humana.</p>
+<p>Em um mundo onde a exaustão é a norma, a verdadeira vantagem competitiva reside na capacidade de regeneração profunda.</p>
 </div>
-<div class="order-1 lg:order-2 space-y-8">
-<h2 class="font-headline-lg text-headline-lg text-primary-container">De Neta de Curandeiros a Estrategista de Bem-Estar</h2>
-<div class="space-y-6 font-body-lg text-body-lg text-primary-container/90">
-<p class="">A ciência do biohacking encontrou a sabedoria ancestral. Minha missão é decodificar o poder das folhas e raízes não apenas como tradição, mas como tecnologia biológica de ponta para otimização humana.</p>
-<p class="">Em um mundo onde a exaustão é a norma, a verdadeira vantagem competitiva reside na capacidade de regeneração profunda. Utilizando compostos botânicos milenares, estruturo protocolos de foco, redução de estresse e longevidade cognitiva.</p>
-</div>
-<blockquote class="border-l-4 border-tertiary-container pl-6 py-2 mt-8">
-<p class="font-headline-md text-headline-md text-primary-container italic">"A verdadeira performance nasce quando sua química interna está em paz com a sua história."</p>
+<blockquote class="border-l-4 border-verde-ancestral pl-6 py-2">
+<p class="font-headline-md text-headline-md italic">"A verdadeira performance nasce quando sua química interna está em paz com a sua história."</p>
 </blockquote>
 </div>
 </div>
 </section>
-<!-- BLOCK 3: Video Gallery - Saberes da Floresta -->
-<section class="bg-[#000] py-section-gap w-full" id="saberes-da-floresta">
-<div class="video-section-container">
-<div class="text-center mb-16 space-y-4">
-<h2 class="font-['Fraunces'] font-bold text-[3.5rem] leading-[1.1] text-bege-erva-doce">Vídeos de Yeye Oshun sobre Ervas e Banhos</h2>
+<!-- VIDEO GALLERY -->
+<section class="bg-black py-section-gap" id="saberes-da-floresta">
+<div class="section-container">
+<div class="text-center mb-16">
+<h2 class="font-['Fraunces'] font-bold text-4xl md:text-5xl text-bege-erva-doce">Vídeos de Yeye Oshun sobre Ervas e Banhos</h2>
 </div>
 <div class="brutalist-grid">
 <!-- Item 1 -->
 <div class="video-card">
-<h3 class="video-title">1. BANHO DE FOLHAS FAZ BRILHAR</h3>
+<h3 class="video-title">BANHO DE FOLHAS FAZ BRILHAR</h3>
 <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/C-bTe91p2v9/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14"></blockquote>
-<a class="font-['Montserrat'] text-bege-erva-doce/60 hover:text-bege-erva-doce text-[10px] uppercase tracking-widest font-bold transition-colors text-center" href="https://www.instagram.com/reel/C-bTe91p2v9/" target="_blank">Assistir no Instagram</a>
+<a class="mt-4 font-['Montserrat'] text-bege-erva-doce/60 hover:text-bege-erva-doce text-[10px] uppercase tracking-widest font-bold transition-colors text-center" href="https://www.instagram.com/reel/C-bTe91p2v9/" target="_blank">Assistir no Instagram</a>
 </div>
 <!-- Item 2 -->
 <div class="video-card">
-<h3 class="video-title">2. BANHO PARA TRATAR RESSENTIMENTO</h3>
+<h3 class="video-title">BANHO PARA TRATAR RESSENTIMENTO</h3>
 <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DRDRn_bjzSg/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14"></blockquote>
-<a class="font-['Montserrat'] text-bege-erva-doce/60 hover:text-bege-erva-doce text-[10px] uppercase tracking-widest font-bold transition-colors text-center" href="https://www.instagram.com/reel/DRDRn_bjzSg/" target="_blank">Assistir no Instagram</a>
+<a class="mt-4 font-['Montserrat'] text-bege-erva-doce/60 hover:text-bege-erva-doce text-[10px] uppercase tracking-widest font-bold transition-colors text-center" href="https://www.instagram.com/reel/DRDRn_bjzSg/" target="_blank">Assistir no Instagram</a>
 </div>
 <!-- Item 3 -->
 <div class="video-card">
-<h3 class="video-title">3. BANHO DE DESCARREGO</h3>
+<h3 class="video-title">BANHO DE DESCARREGO</h3>
 <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DRLYJbID0vk/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14"></blockquote>
-<a class="font-['Montserrat'] text-bege-erva-doce/60 hover:text-bege-erva-doce text-[10px] uppercase tracking-widest font-bold transition-colors text-center" href="https://www.instagram.com/reel/DRLYJbID0vk/" target="_blank">Assistir no Instagram</a>
+<a class="mt-4 font-['Montserrat'] text-bege-erva-doce/60 hover:text-bege-erva-doce text-[10px] uppercase tracking-widest font-bold transition-colors text-center" href="https://www.instagram.com/reel/DRLYJbID0vk/" target="_blank">Assistir no Instagram</a>
 </div>
 <!-- Item 4 -->
 <div class="video-card">
-<h3 class="video-title">4. BANHO PARA PROSPERIDADE</h3>
+<h3 class="video-title">BANHO PARA PROSPERIDADE</h3>
 <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DQ5TfCdj2jt/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14"></blockquote>
-<a class="font-['Montserrat'] text-bege-erva-doce/60 hover:text-bege-erva-doce text-[10px] uppercase tracking-widest font-bold transition-colors text-center" href="https://www.instagram.com/reel/DQ5TfCdj2jt/" target="_blank">Assistir no Instagram</a>
+<a class="mt-4 font-['Montserrat'] text-bege-erva-doce/60 hover:text-bege-erva-doce text-[10px] uppercase tracking-widest font-bold transition-colors text-center" href="https://www.instagram.com/reel/DQ5TfCdj2jt/" target="_blank">Assistir no Instagram</a>
 </div>
 <!-- Item 5 -->
 <div class="video-card">
-<h3 class="video-title">5. BANHO DE ATRAÇÃO E AMOR</h3>
+<h3 class="video-title">BANHO DE ATRAÇÃO E AMOR</h3>
 <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DQ78RRNDz9t/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14"></blockquote>
-<a class="font-['Montserrat'] text-bege-erva-doce/60 hover:text-bege-erva-doce text-[10px] uppercase tracking-widest font-bold transition-colors text-center" href="https://www.instagram.com/reel/DQ78RRNDz9t/" target="_blank">Assistir no Instagram</a>
+<a class="mt-4 font-['Montserrat'] text-bege-erva-doce/60 hover:text-bege-erva-doce text-[10px] uppercase tracking-widest font-bold transition-colors text-center" href="https://www.instagram.com/reel/DQ78RRNDz9t/" target="_blank">Assistir no Instagram</a>
 </div>
 <!-- Item 6 -->
 <div class="video-card">
-<h3 class="video-title">6. BANHO PARA REJEIÇÃO</h3>
+<h3 class="video-title">BANHO PARA REJEIÇÃO</h3>
 <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DQrdWIvjOe4/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14"></blockquote>
-<a class="font-['Montserrat'] text-bege-erva-doce/60 hover:text-bege-erva-doce text-[10px] uppercase tracking-widest font-bold transition-colors text-center" href="https://www.instagram.com/reel/DQrdWIvjOe4/" target="_blank">Assistir no Instagram</a>
+<a class="mt-4 font-['Montserrat'] text-bege-erva-doce/60 hover:text-bege-erva-doce text-[10px] uppercase tracking-widest font-bold transition-colors text-center" href="https://www.instagram.com/reel/DQrdWIvjOe4/" target="_blank">Assistir no Instagram</a>
 </div>
 <!-- Item 7 -->
 <div class="video-card">
-<h3 class="video-title">7. BANHO DE FOLHAS E FLORES</h3>
+<h3 class="video-title">BANHO DE FOLHAS E FLORES</h3>
 <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DQnRj4aD-dr/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14"></blockquote>
-<a class="font-['Montserrat'] text-bege-erva-doce/60 hover:text-bege-erva-doce text-[10px] uppercase tracking-widest font-bold transition-colors text-center" href="https://www.instagram.com/reel/DQnRj4aD-dr/" target="_blank">Assistir no Instagram</a>
+<a class="mt-4 font-['Montserrat'] text-bege-erva-doce/60 hover:text-bege-erva-doce text-[10px] uppercase tracking-widest font-bold transition-colors text-center" href="https://www.instagram.com/reel/DQnRj4aD-dr/" target="_blank">Assistir no Instagram</a>
 </div>
 <!-- Item 8 -->
 <div class="video-card">
-<h3 class="video-title">8. OXUM E A CURA PELAS ERVAS</h3>
+<h3 class="video-title">OXUM E A CURA PELAS ERVAS</h3>
 <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DEsxmNWIPlB/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14"></blockquote>
-<a class="font-['Montserrat'] text-bege-erva-doce/60 hover:text-bege-erva-doce text-[10px] uppercase tracking-widest font-bold transition-colors text-center" href="https://www.instagram.com/reel/DEsxmNWIPlB/" target="_blank">Assistir no Instagram</a>
+<a class="mt-4 font-['Montserrat'] text-bege-erva-doce/60 hover:text-bege-erva-doce text-[10px] uppercase tracking-widest font-bold transition-colors text-center" href="https://www.instagram.com/reel/DEsxmNWIPlB/" target="_blank">Assistir no Instagram</a>
 </div>
 </div>
 </div>
 </section>
-<!-- BLOCK 3.5: Transmedia Experience -->
-<section class="bg-surface text-on-surface py-section-gap px-margin-edge border-b border-outline-variant/10 w-full">
-<div class="max-w-3xl mx-auto text-center space-y-8">
-<h2 class="font-headline-lg text-headline-lg text-primary">Fé nas Folhas: Uma Experiência Transmídia Ancestral</h2>
-<p class="font-body-lg text-body-lg text-on-surface-variant">
-            Mais do que um projeto, "Fé nas Folhas" manifesta-se como um ecossistema vivo de conhecimento. Uma jornada multipotencial que transita fluidamente entre a literatura (o livro), a educação corporativa (palestras e masterclasses) e a expressão artística (o espetáculo musical). Cada pilar complementa o outro, criando uma imersão completa na alquimia botânica.
+<!-- TRANSMEDIA EXPERIENCE -->
+<section class="bg-verde-ancestral py-section-gap">
+<div class="section-container text-center space-y-12">
+<h2 class="font-headline-lg text-headline-lg text-bege-erva-doce">Fé nas Folhas: Uma Experiência Transmídia Ancestral</h2>
+<p class="font-body-lg text-body-lg text-bege-erva-doce/80 max-w-3xl mx-auto">
+            Mais do que um projeto, "Fé nas Folhas" manifesta-se como um ecossistema vivo de conhecimento que transita entre literatura, educação e arte.
         </p>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8 pt-8">
-<div class="flex flex-col items-center gap-4 group">
-<div class="w-16 h-16 rounded-full border border-primary/20 flex items-center justify-center text-primary bg-primary/5 group-hover:bg-primary/10 transition-colors duration-300">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="flex flex-col items-center gap-4">
+<div class="w-16 h-16 rounded-full border border-bege-erva-doce/20 flex items-center justify-center text-bege-erva-doce">
 <span class="material-symbols-outlined text-3xl">menu_book</span>
 </div>
-<span class="font-label-md text-label-md text-on-surface uppercase tracking-widest">Literatura</span>
+<span class="font-label-md text-bege-erva-doce uppercase tracking-widest">Literatura</span>
 </div>
-<div class="flex flex-col items-center gap-4 group">
-<div class="w-16 h-16 rounded-full border border-primary/20 flex items-center justify-center text-primary bg-primary/5 group-hover:bg-primary/10 transition-colors duration-300">
+<div class="flex flex-col items-center gap-4">
+<div class="w-16 h-16 rounded-full border border-bege-erva-doce/20 flex items-center justify-center text-bege-erva-doce">
 <span class="material-symbols-outlined text-3xl">groups</span>
 </div>
-<span class="font-label-md text-label-md text-on-surface uppercase tracking-widest">Educação Corporativa</span>
+<span class="font-label-md text-bege-erva-doce uppercase tracking-widest">Educação Corporativa</span>
 </div>
-<div class="flex flex-col items-center gap-4 group">
-<div class="w-16 h-16 rounded-full border border-primary/20 flex items-center justify-center text-primary bg-primary/5 group-hover:bg-primary/10 transition-colors duration-300">
+<div class="flex flex-col items-center gap-4">
+<div class="w-16 h-16 rounded-full border border-bege-erva-doce/20 flex items-center justify-center text-bege-erva-doce">
 <span class="material-symbols-outlined text-3xl">music_note</span>
 </div>
-<span class="font-label-md text-label-md text-on-surface uppercase tracking-widest">Expressão Artística</span>
+<span class="font-label-md text-bege-erva-doce uppercase tracking-widest">Expressão Artística</span>
 </div>
 </div>
 </div>
 </section>
-<!-- BLOCK 3.6: Musical Performance -->
-<section class="bg-surface-container-low text-on-surface py-section-gap px-margin-edge" id="espetaculo">
-<div class="max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<!-- MUSICAL PERFORMANCE -->
+<section class="bg-surface-container-low py-section-gap" id="espetaculo">
+<div class="section-container grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 <div class="space-y-8">
-<span class="inline-block bg-tertiary text-on-tertiary-fixed px-4 py-1 rounded-full font-label-md text-[11px] font-bold uppercase tracking-widest mb-2">Arte &amp; Ritual</span>
-<h2 class="font-headline-lg text-headline-lg text-primary">Espetáculo Musical</h2>
-<p class="font-body-lg text-body-lg text-on-surface-variant">
-                A teoria se torna experiência sensorial. O espetáculo musical transcende a fala, utilizando o som, a luz e o movimento para traduzir a força da floresta e a ancestralidade das folhas para os palcos. Uma imersão catártica onde a cura e a arte se encontram, despertando conexões profundas com o sagrado e o natural.
-            </p>
+<span class="bg-tertiary text-on-tertiary-fixed px-4 py-1 rounded-full font-label-md text-[11px] font-bold uppercase tracking-widest">Arte &amp; Ritual</span>
+<h2 class="font-headline-lg text-headline-lg text-bege-erva-doce">Espetáculo Musical</h2>
+<p class="font-body-lg text-body-lg text-bege-erva-doce/80">A teoria se torna experiência sensorial. O espetáculo musical transcende a fala, utilizando som e movimento para traduzir a força da floresta.</p>
 </div>
-<div class="relative w-full rounded-lg overflow-hidden border border-outline-variant/20 shadow-2xl aspect-[3/4]">
-<img alt="Yèyé Osunsade em performance no Espetáculo Musical" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/ADBb0uhyvl8N0FgjYz-XM6Tg1V-mvLFXx3Hj7T6pPz8rtVXhfNtBA-WWsK6asmBUyCTTxRB7AHgtTICe3jYLnJq1n6lPgDGT5pr4_PNnrBNqFcO722O--nJ_g_V0haz_OSRhMU00kKbGvPBPXmZ_aTxOR4zX9UVn5-3LfzE_jlbis4EQ4Dvro7LfZ_iffJRB447Orqn1nWcIMTTEWZ1PjipGIUU-JTWSxI9bCnepHJ6t2KX4IfOhYZMgmm584WNZjllZZRYLFJl5SuydBw"/>
-<div class="absolute inset-0 bg-gradient-to-tr from-surface/90 via-surface/40 to-transparent mix-blend-multiply"></div>
+<div class="aspect-[3/4] rounded-lg overflow-hidden border border-bege-erva-doce/10">
+<img alt="Espetáculo" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/ADBb0uhyvl8N0FgjYz-XM6Tg1V-mvLFXx3Hj7T6pPz8rtVXhfNtBA-WWsK6asmBUyCTTxRB7AHgtTICe3jYLnJq1n6lPgDGT5pr4_PNnrBNqFcO722O--nJ_g_V0haz_OSRhMU00kKbGvPBPXmZ_aTxOR4zX9UVn5-3LfzE_jlbis4EQ4Dvro7LfZ_iffJRB447Orqn1nWcIMTTEWZ1PjipGIUU-JTWSxI9bCnepHJ6t2KX4IfOhYZMgmm584WNZjllZZRYLFJl5SuydBw"/>
 </div>
 </div>
 </section>
-<!-- BLOCK 4: The Book -->
-<section class="bg-secondary-fixed text-primary-container py-section-gap px-margin-edge relative overflow-hidden w-full" id="livro">
-<!-- Decorative background element -->
-<div class="absolute top-0 right-0 w-[800px] h-[800px] bg-secondary-fixed-dim/30 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
-<div class="max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-center relative z-10">
-<div class="lg:col-span-5 relative">
-<div class="w-full aspect-[3/4] bg-surface-container rounded-lg shadow-2xl overflow-hidden relative transform -rotate-2 hover:rotate-0 transition-transform duration-500">
-<img alt="Capa do Livro Fé nas Folhas" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/ADBb0ujauHqilh3vYnuwqzkH2UVbqW0tb0UafKOYQRTUms6eBGpwHXzhXR4PEa3mqzuz_z6-xIFOBhnFkqEkj9aaH775GMPrdktBOJFCdVPHFQSLrvBXbjWXfpiD6Clhs5_N1FAG02fN7U0NlqoG2PhsNMeqV3u7Vg2WV107YgSJp4MgSqOD-otG_fyNYUJhS8g5RDZEwCwc_NXz6QtU7bnQJFnhkxuXPilkctoTpvj_MqHZ-HV7QeHf_ppzqkNgXzO4RawEOIN4wgKMuQ"/>
-</div>
+<!-- THE BOOK -->
+<section class="bg-secondary-fixed text-primary-container py-section-gap" id="livro">
+<div class="section-container grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+<div class="lg:col-span-5 aspect-[3/4] bg-verde-ancestral rounded-lg overflow-hidden shadow-2xl">
+<img alt="Livro" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/ADBb0ujauHqilh3vYnuwqzkH2UVbqW0tb0UafKOYQRTUms6eBGpwHXzhXR4PEa3mqzuz_z6-xIFOBhnFkqEkj9aaH775GMPrdktBOJFCdVPHFQSLrvBXbjWXfpiD6Clhs5_N1FAG02fN7U0NlqoG2PhsNMeqV3u7Vg2WV107YgSJp4MgSqOD-otG_fyNYUJhS8g5RDZEwCwc_NXz6QtU7bnQJFnhkxuXPilkctoTpvj_MqHZ-HV7QeHf_ppzqkNgXzO4RawEOIN4wgKMuQ"/>
 </div>
 <div class="lg:col-span-7 space-y-8">
-<div>
-<h2 class="font-headline-lg text-headline-lg text-primary-container mb-4">Livro: Fé nas Folhas</h2>
-<p class="font-subtitle-lg text-subtitle-lg text-primary-container/80">Práticas Ancestrais para Cura da Alma Através das Plantas</p>
+<h2 class="font-headline-lg text-headline-lg">Livro: Fé nas Folhas</h2>
+<p class="font-body-lg text-body-lg opacity-90">Um guia que resgata a sabedoria de benzedeiras com foco na cultura afro-brasileira e indígena. Publicado pela Fontanar.</p>
+<div class="bg-verde-ancestral/5 border border-verde-ancestral/10 p-8 rounded-lg">
+<p class="font-headline-md italic">"Que as folhas tragam a cura e o design traga a conexão."</p>
+<p class="mt-4 font-label-md opacity-60 uppercase tracking-widest">— Yèyé Osunsade</p>
 </div>
-<div class="space-y-6 font-body-lg text-body-lg text-primary-container/90">
-<p class="">Um guia que resgata a sabedoria de benzedeiras com foco na cultura afro-brasileira e indígena. Publicado pela Fontanar, o livro oferece instruções práticas, incluindo receitas de banhos e rezas para o bem-estar cotidiano.</p>
+<a class="inline-block bg-tertiary text-on-tertiary-fixed uppercase font-subtitle-md px-8 py-4 rounded shadow hover:opacity-90" href="#">COMPRAR NA AMAZON</a>
 </div>
-<div class="bg-surface-container-highest/5 border border-primary-container/10 p-8 rounded-lg mt-8">
-<p class="font-headline-md text-headline-md text-primary-container italic mb-4">"Que as folhas tragam a cura e o design traga a conexão."</p>
-<p class="font-label-md text-primary-container/60 uppercase tracking-widest">— Yèyé Osunsade</p>
 </div>
-<div class="pt-6">
-<a class="inline-flex items-center gap-3 bg-tertiary text-on-tertiary-fixed uppercase font-subtitle-md text-subtitle-md px-8 py-4 rounded shadow-[inset_0_1px_0_rgba(255,255,255,0.2)] hover:bg-tertiary/90 transition-colors" href="#">
-<span class="text-error text-[10px]">🔴</span> COMPRAR AGORA NA AMAZON
-                </a>
+</section>
+<!-- MASTERCLASS -->
+<section class="bg-verde-ancestral py-section-gap border-y border-white/5" id="masterclass">
+<div class="section-container text-center space-y-10">
+<h2 class="font-headline-xl text-headline-xl text-bege-erva-doce">Masterclass: Alquimia da Performance</h2>
+<p class="font-body-lg text-body-lg text-bege-erva-doce/80 max-w-3xl mx-auto">Um treinamento imersivo projetado para líderes e equipes de alta exigência. Aprenda protocolos botânicos práticos para regular a dopamina e sustentar o foco profundo.</p>
+<a class="inline-block bg-tertiary text-on-tertiary-fixed uppercase font-subtitle-md px-8 py-4 rounded shadow-lg hover:opacity-90" href="#">LEVAR ESTA PALESTRA PARA MINHA EMPRESA</a>
+</div>
+</section>
+<!-- PRESS -->
+<section class="bg-secondary-fixed text-primary-container py-section-gap" id="imprensa">
+<div class="section-container">
+<h2 class="font-headline-lg text-headline-lg text-center mb-16">Destaque na Imprensa</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
+<div class="p-6 border border-verde-ancestral/10 bg-white/5 rounded-lg">
+<span class="font-bold text-[11px] uppercase tracking-tighter block mb-4">Folha de S.Paulo</span>
+<p class="italic text-sm">"Reconecta o world corporativo com a sabedoria das matas."</p>
+</div>
+<div class="p-6 border border-verde-ancestral/10 bg-white/5 rounded-lg">
+<span class="font-bold text-[11px] uppercase tracking-tighter block mb-4">Vogue Brasil</span>
+<p class="italic text-sm">"O novo luxo essencial para o equilíbrio mental."</p>
+</div>
+<div class="p-6 border border-verde-ancestral/10 bg-white/5 rounded-lg">
+<span class="font-bold text-[11px] uppercase tracking-tighter block mb-4">Estadão</span>
+<p class="italic text-sm">"Tecnologia ancestral como caminho para a longevidade."</p>
+</div>
+<div class="p-6 border border-verde-ancestral/10 bg-white/5 rounded-lg">
+<span class="font-bold text-[11px] uppercase tracking-tighter block mb-4">Marie Claire</span>
+<p class="italic text-sm">"Uma jornada de cura que une performance e espiritualidade."</p>
+</div>
+<div class="p-6 border border-verde-ancestral/10 bg-white/5 rounded-lg">
+<span class="font-bold text-[11px] uppercase tracking-tighter block mb-4">Valor Econômico</span>
+<p class="italic text-sm">"A methodology de Osunsade atrai CEOs em busca de foco."</p>
 </div>
 </div>
 </div>
 </section>
-<!-- BLOCK 5: Masterclass -->
-<section class="bg-primary-container py-section-gap px-margin-edge relative w-full" id="masterclass">
-<div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-5"></div>
-<div class="max-w-container-max mx-auto text-center space-y-10 relative z-10">
-<h2 class="font-headline-xl text-headline-xl text-secondary-fixed max-w-4xl mx-auto">Masterclass: Alquimia da Performance</h2>
-<p class="font-body-lg text-body-lg text-secondary-fixed/80 max-w-3xl mx-auto">Um treinamento imersivo projetado exclusivamente para líderes e equipes de alta exigência. Aprenda protocolos botânicos práticos para regular a dopamina, sustentar o foco profundo e eliminar os riscos fisiológicos do burnout corporativo.</p>
-<div class="pt-8">
-<a class="inline-flex items-center gap-3 bg-tertiary text-on-tertiary-fixed uppercase font-subtitle-md text-subtitle-md px-8 py-4 rounded shadow-[inset_0_1px_0_rgba(255,255,255,0.2)] hover:bg-tertiary/90 transition-colors" href="#">
-<span class="text-error text-[10px]">🔴</span> LEVAR ESTA PALESTRA PARA MINHA EMPRESA
-            </a>
-</div>
-</div>
-</section>
-<!-- BLOCK 6: Press Mentions -->
-<section class="bg-secondary-fixed text-primary-container py-section-gap px-margin-edge w-full" id="imprensa">
-<div class="max-w-container-max mx-auto">
-<div class="text-center mb-16 space-y-4">
-<h2 class="font-headline-lg text-headline-lg text-primary-container">Destaque na Imprensa</h2>
-<div class="w-24 h-1 bg-tertiary-container mx-auto"></div>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
-<!-- Item 1 -->
-<div class="flex flex-col gap-4 p-6 border border-primary-container/10 bg-surface-container-highest/5 rounded-lg hover:bg-surface-container-highest/10 transition-colors duration-300">
-<div class="h-12 flex items-center">
-<span class="font-label-md text-label-md font-bold uppercase tracking-tighter opacity-70">Folha de S.Paulo</span>
-</div>
-<p class="font-body-md text-body-md italic text-primary-container/80 flex-grow">"Yèyé Osunsade reconecta o world corporativo com a sabedoria das matas para combater o burnout."</p>
-<a class="font-label-md text-label-md text-tertiary-container hover:underline uppercase tracking-widest font-bold text-[11px]" href="#">Ler mais</a>
-</div>
-<!-- Item 2 -->
-<div class="flex flex-col gap-4 p-6 border border-primary-container/10 bg-surface-container-highest/5 rounded-lg hover:bg-surface-container-highest/10 transition-colors duration-300">
-<div class="h-12 flex items-center">
-<span class="font-label-md text-label-md font-bold uppercase tracking-tighter opacity-70">Vogue Brasil</span>
-</div>
-<p class="font-body-md text-body-md italic text-primary-container/80 flex-grow">"A alquimia botânica de Yèyé é o novo luxo essencial para o equilíbrio mental contemporâneo."</p>
-<a class="font-label-md text-label-md text-tertiary-container hover:underline uppercase tracking-widest font-bold text-[11px]" href="#">Ler mais</a>
-</div>
-<!-- Item 3 -->
-<div class="flex flex-col gap-4 p-6 border border-primary-container/10 bg-surface-container-highest/5 rounded-lg hover:bg-surface-container-highest/10 transition-colors duration-300">
-<div class="h-12 flex items-center">
-<span class="font-label-md text-label-md font-bold uppercase tracking-tighter opacity-70">Estadão</span>
-</div>
-<p class="font-body-md text-body-md italic text-primary-container/80 flex-grow">"Fé nas Folhas resgata a tecnologia ancestral como caminho para a longevidade cognitiva."</p>
-<a class="font-label-md text-label-md text-tertiary-container hover:underline uppercase tracking-widest font-bold text-[11px]" href="#">Ler mais</a>
-</div>
-<!-- Item 4 -->
-<div class="flex flex-col gap-4 p-6 border border-primary-container/10 bg-surface-container-highest/5 rounded-lg hover:bg-surface-container-highest/10 transition-colors duration-300">
-<div class="h-12 flex items-center">
-<span class="font-label-md text-label-md font-bold uppercase tracking-tighter opacity-70">Revista Marie Claire</span>
-</div>
-<p class="font-body-md text-body-md italic text-primary-container/80 flex-grow">"Uma jornada de cura que une performance e espiritualidade através do poder vegetal."</p>
-<a class="font-label-md text-label-md text-tertiary-container hover:underline uppercase tracking-widest font-bold text-[11px]" href="#">Ler mais</a>
-</div>
-<!-- Item 5 -->
-<div class="flex flex-col gap-4 p-6 border border-primary-container/10 bg-surface-container-highest/5 rounded-lg hover:bg-surface-container-highest/10 transition-colors duration-300">
-<div class="h-12 flex items-center">
-<span class="font-label-md text-label-md font-bold uppercase tracking-tighter opacity-70">Valor Econômico</span>
-</div>
-<p class="font-body-md text-body-md italic text-primary-container/80 flex-grow">"Biohacking e ancestralidade: a methodology de Osunsade atrai CEOs em busca de foco profundo."</p>
-<a class="font-label-md text-label-md text-tertiary-container hover:underline uppercase tracking-widest font-bold text-[11px]" href="#">Ler mais</a>
-</div>
-</div>
-</div>
-</section>
-<!-- Footer (Shared Component) -->
-<footer class="bg-[#394C29] dark:bg-black text-[#D97706] full-width py-16 border-t border-white/5">
-<div class="flex flex-col md:flex-row justify-between items-center px-10 max-w-[1280px] mx-auto gap-8 md:gap-0">
-<div class="text-lg font-bold text-[#F5F5DC]">
-            Yèyé Osunsade
-        </div>
-<div class="font-body-md text-body-md text-[#F5F5DC]/60 text-center md:text-left">
-            © 2024 Yèyé Osunsade. Alquimia Botânica e Performance.
-        </div>
-<div class="flex space-x-6">
-<a class="text-white/40 hover:text-white transition-opacity uppercase font-subtitle-md text-[10px] hover:underline" href="#">Instagram</a>
-<a class="text-white/40 hover:text-white transition-opacity uppercase font-subtitle-md text-[10px] hover:underline" href="#">LinkedIn</a>
-<a class="text-white/40 hover:text-white transition-opacity uppercase font-subtitle-md text-[10px] hover:underline" href="#">Contato</a>
+<!-- FOOTER -->
+<footer class="bg-black text-bege-erva-doce py-16 border-t border-white/5">
+<div class="section-container flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="text-lg font-bold">Yèyé Osunsade</div>
+<div class="text-[12px] opacity-60 text-center">© 2024 Yèyé Osunsade. Alquimia Botânica e Performance.</div>
+<div class="flex space-x-6 text-[10px] uppercase tracking-widest font-bold">
+<a class="hover:underline" href="#">Instagram</a>
+<a class="hover:underline" href="#">LinkedIn</a>
+<a class="hover:underline" href="#">Contato</a>
 </div>
 </div>
 </footer>
