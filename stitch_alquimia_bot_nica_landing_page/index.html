@@ -200,20 +200,22 @@
 <a class="bg-tertiary text-on-tertiary-fixed uppercase font-['Montserrat'] text-[10px] px-5 py-3 rounded hover:opacity-90 transition-opacity font-bold" href="#masterclass">GARANTIR VAGA</a>
 </div>
 <!-- Mobile Toggle -->
-<button aria-label="Toggle Menu" class="lg:hidden text-bege-erva-doce z-50 p-2" id="menu-toggle">
+<button aria-label="Toggle Menu" class="lg:hidden text-bege-erva-doce z-50 p-2 relative" id="menu-toggle">
 <span class="material-symbols-outlined text-3xl" id="menu-icon">menu</span>
 </button>
 </div>
 <!-- Mobile Menu Overlay -->
-<div class="hidden fixed inset-0 bg-verde-ancestral z-40 flex-col items-center justify-center space-y-8 pt-20 overflow-y-auto" id="mobile-menu">
+<div class="hidden fixed top-0 left-0 right-0 bottom-0 bg-verde-ancestral z-[90] flex-col items-center pt-24 pb-12 overflow-y-auto" id="mobile-menu">
+<div class="flex flex-col items-center space-y-8 w-full">
 <a class="text-bege-erva-doce text-xl uppercase tracking-widest font-bold font-['Montserrat']" href="#sobre" onclick="toggleMenu()">Sobre</a>
 <a class="text-bege-erva-doce text-xl uppercase tracking-widest font-bold font-['Montserrat']" href="#saberes-da-floresta" onclick="toggleMenu()">Saberes</a>
 <a class="text-bege-erva-doce text-xl uppercase tracking-widest font-bold font-['Montserrat']" href="#espetaculo" onclick="toggleMenu()">Espetáculo</a>
 <a class="text-bege-erva-doce text-xl uppercase tracking-widest font-bold font-['Montserrat']" href="#livro" onclick="toggleMenu()">Livro</a>
 <a class="text-bege-erva-doce text-xl uppercase tracking-widest font-bold font-['Montserrat']" href="#masterclass" onclick="toggleMenu()">Masterclass</a>
 <a class="text-bege-erva-doce text-xl uppercase tracking-widest font-bold font-['Montserrat']" href="#imprensa" onclick="toggleMenu()">Imprensa</a>
-<div class="pt-8">
+<div class="pt-8 pb-4">
 <a class="bg-tertiary text-on-tertiary-fixed uppercase font-['Montserrat'] text-[12px] px-8 py-4 rounded font-bold" href="#masterclass" onclick="toggleMenu()">GARANTIR MINHA VAGA</a>
+</div>
 </div>
 </div>
 </nav>
