@@ -91,6 +91,7 @@
             grid-template-columns: 1fr;
             gap: 24px;
             width: 100%;
+            justify-items: center;
         }
 
         @media (min-width: 640px) {
@@ -98,13 +99,14 @@
         }
 
         @media (min-width: 1024px) {
-            .video-grid { grid-template-columns: repeat(5, 1fr); }
+            .video-grid { grid-template-columns: repeat(4, 1fr); }
         }
 
         .video-card {
             display: flex;
             flex-direction: column;
             width: 100%;
+            max-width: 320px;
         }
 
         .video-title {
@@ -270,17 +272,17 @@
 <a class="mt-4 font-['Montserrat'] text-bege-erva-doce/60 hover:text-bege-erva-doce text-[10px] uppercase tracking-widest font-bold transition-colors text-center" href="https://www.instagram.com/reel/DQ78RRNDz9t/" target="_blank">Assistir no Instagram</a>
 </div>
 <!-- Extra items for 5-column layout -->
-<div class="video-card lg:flex hidden lg:flex-col">
+<div class="video-card">
 <h3 class="video-title">BANHO PARA REJEIÇÃO</h3>
 <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DQrdWIvjOe4/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14"></blockquote>
 <a class="mt-4 font-['Montserrat'] text-bege-erva-doce/60 hover:text-bege-erva-doce text-[10px] uppercase tracking-widest font-bold transition-colors text-center" href="https://www.instagram.com/reel/DQrdWIvjOe4/" target="_blank">Assistir no Instagram</a>
 </div>
-<div class="video-card lg:flex hidden lg:flex-col">
+<div class="video-card">
 <h3 class="video-title">FOLHAS E FLORES</h3>
 <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DQnRj4aD-dr/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14"></blockquote>
 <a class="mt-4 font-['Montserrat'] text-bege-erva-doce/60 hover:text-bege-erva-doce text-[10px] uppercase tracking-widest font-bold transition-colors text-center" href="https://www.instagram.com/reel/DQnRj4aD-dr/" target="_blank">Assistir no Instagram</a>
 </div>
-<div class="video-card lg:flex hidden lg:flex-col">
+<div class="video-card">
 <h3 class="video-title">CURA PELAS ERVAS</h3>
 <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DEsxmNWIPlB/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14"></blockquote>
 <a class="mt-4 font-['Montserrat'] text-bege-erva-doce/60 hover:text-bege-erva-doce text-[10px] uppercase tracking-widest font-bold transition-colors text-center" href="https://www.instagram.com/reel/DEsxmNWIPlB/" target="_blank">Assistir no Instagram</a>
