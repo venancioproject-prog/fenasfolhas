@@ -85,14 +85,15 @@
             padding-right: 1.5rem;
         }
 
-        /* Video Grid - Fixed alignment and responsiveness */
+        /* Video Grid - Requirement 1 & 2 & 4 */
         .video-grid {
             display: grid;
-            grid-template-columns: 1fr;
+            grid-template-columns: 1fr; /* Mobile: one video per row */
             gap: 32px;
             width: 100%;
+            justify-content: center;
             justify-items: center;
-            align-items: start;
+            margin: 0 auto;
         }
 
         @media (min-width: 640px) {
@@ -100,16 +101,19 @@
         }
 
         @media (min-width: 1024px) {
-            .video-grid { grid-template-columns: repeat(4, 1fr); }
+            .video-grid { 
+                grid-template-columns: repeat(4, 1fr); /* Desktop: 4 columns */
+            }
         }
 
         .video-card {
             display: flex;
             flex-direction: column;
             width: 100%;
-            max-width: 100%; /* Fill grid cell width */
+            max-width: 100%;
         }
 
+        /* Requirement 5: Titles in UPPERCASE, Newsreader font, consistent padding */
         .video-title {
             font-family: 'Newsreader', serif;
             color: #EBD19C;
@@ -122,7 +126,7 @@
             margin-bottom: 16px;
             padding-top: 12px;
             border-top: 1px solid rgba(235, 209, 156, 0.2);
-            min-height: 2.5rem;
+            min-height: 3.5rem; /* Increased min-height to ensure alignment even with wrapping titles */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -162,8 +166,8 @@
 <div class="section-container py-4 flex justify-between items-center relative">
 <!-- Logo -->
 <div class="text-xl md:text-2xl font-semibold italic text-bege-erva-doce font-['Newsreader'] z-[210]">
-            Yèyé Osunsade
-        </div>
+                Yèyé Osunsade
+            </div>
 <!-- Desktop Nav -->
 <div class="hidden lg:flex space-x-6 items-center">
 <a class="text-bege-erva-doce/80 hover:text-white transition-colors uppercase tracking-widest text-[11px] font-bold font-['Montserrat']" href="#sobre">Sobre</a>
@@ -179,7 +183,7 @@
 <span class="material-symbols-outlined text-3xl" id="menu-icon">menu</span>
 </button>
 </div>
-<!-- Mobile Menu - Cascading Downwards -->
+<!-- Mobile Menu -->
 <div class="lg:hidden absolute top-full left-0 right-0 bg-verde-ancestral border-b border-white/10 shadow-2xl z-[190]" id="mobile-menu">
 <div class="flex flex-col items-center space-y-6 pt-8 pb-12">
 <a class="text-bege-erva-doce text-lg uppercase tracking-widest font-bold font-['Montserrat']" href="#sobre" onclick="toggleMenu()">Sobre</a>
@@ -199,15 +203,15 @@
 <div class="section-container flex flex-col md:flex-row items-center gap-12 md:gap-16">
 <div class="w-full flex-1 space-y-6 md:space-y-8 text-center md:text-left">
 <h1 class="font-headline-xl text-[2rem] sm:text-[2.5rem] md:text-headline-xl text-bege-erva-doce leading-[1.15] md:leading-[1.1]">
-                Desperte sua Potência Máxima através da Alquimia Botânica
-            </h1>
+                    Desperte sua Potência Máxima através da Alquimia Botânica
+                </h1>
 <p class="font-body-lg text-body-lg text-bege-erva-doce/80 max-w-xl mx-auto md:mx-0">
-                Yèyé Osunsade traduz a sabedoria ancestral das folhas em estratégias práticas para quem busca regeneração mental, foco e o auge da performance humana.
-            </p>
+                    Yèyé Osunsade traduz a sabedoria ancestral das folhas em estratégias práticas para quem busca regeneração mental, foco e o auge da performance humana.
+                </p>
 <div class="pt-4 flex justify-center md:justify-start">
 <a class="inline-flex items-center gap-3 bg-tertiary text-on-tertiary-fixed uppercase font-['Montserrat'] text-xs sm:text-sm md:text-subtitle-md px-6 md:px-8 py-4 rounded shadow-lg hover:bg-tertiary/90 transition-all transform hover:scale-105 font-bold" href="#masterclass">
 <span class="text-red-600 text-[10px] animate-pulse">●</span> GARANTIR MINHA VAGA NA MASTERCLASS
-                </a>
+                    </a>
 </div>
 </div>
 <div class="w-full flex-1 max-w-md mx-auto">
@@ -235,12 +239,14 @@
 </div>
 </div>
 </section>
-<!-- VIDEO GALLERY - Fixed Alignment -->
+<!-- VIDEO GALLERY - Requirement 1, 2, 3, 4, 5 & 8 -->
 <section class="bg-verde-ancestral py-16 md:py-section-gap w-full" id="saberes-da-floresta">
-<div class="section-container">
+<!-- Requirement 1: Central Container max-width 1200px and centered -->
+<div class="max-w-[1200px] mx-auto px-6">
 <div class="text-center mb-12 md:mb-20">
 <h2 class="font-['Fraunces'] font-bold text-2xl sm:text-3xl md:text-5xl text-bege-erva-doce">Vídeos de Yeye Oshun sobre Ervas e Banhos</h2>
 </div>
+<!-- Requirement 2 & 3: Grid alignment 4x2 on desktop -->
 <div class="video-grid">
 <!-- Item 1 -->
 <div class="video-card">
@@ -272,17 +278,19 @@
 <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DQ78RRNDz9t/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14"></blockquote>
 <a class="mt-4 font-['Montserrat'] text-bege-erva-doce/60 hover:text-bege-erva-doce text-[10px] uppercase tracking-widest font-bold transition-colors text-center" href="https://www.instagram.com/reel/DQ78RRNDz9t/" target="_blank">Assistir no Instagram</a>
 </div>
-<!-- Extra items -->
+<!-- Item 6 -->
 <div class="video-card">
 <h3 class="video-title">BANHO PARA REJEIÇÃO</h3>
 <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DQrdWIvjOe4/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14"></blockquote>
 <a class="mt-4 font-['Montserrat'] text-bege-erva-doce/60 hover:text-bege-erva-doce text-[10px] uppercase tracking-widest font-bold transition-colors text-center" href="https://www.instagram.com/reel/DQrdWIvjOe4/" target="_blank">Assistir no Instagram</a>
 </div>
+<!-- Item 7 -->
 <div class="video-card">
 <h3 class="video-title">FOLHAS E FLORES</h3>
 <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DQnRj4aD-dr/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14"></blockquote>
 <a class="mt-4 font-['Montserrat'] text-bege-erva-doce/60 hover:text-bege-erva-doce text-[10px] uppercase tracking-widest font-bold transition-colors text-center" href="https://www.instagram.com/reel/DQnRj4aD-dr/" target="_blank">Assistir no Instagram</a>
 </div>
+<!-- Item 8 -->
 <div class="video-card">
 <h3 class="video-title">CURA PELAS ERVAS</h3>
 <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DEsxmNWIPlB/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14"></blockquote>
@@ -296,8 +304,8 @@
 <div class="section-container text-center space-y-12">
 <h2 class="font-headline-lg text-[1.85rem] sm:text-[2.25rem] md:text-headline-lg text-bege-erva-doce">Fé nas Folhas: Uma Experiência Transmídia Ancestral</h2>
 <p class="font-body-lg text-body-lg text-bege-erva-doce/80 max-w-3xl mx-auto">
-            Mais do que um projeto, "Fé nas Folhas" manifesta-se como um ecossistema vivo de conhecimento que transita entre literatura, educação e arte.
-        </p>
+                Mais do que um projeto, "Fé nas Folhas" manifesta-se como um ecossistema vivo de conhecimento que transita entre literatura, educação e arte.
+            </p>
 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-12">
 <div class="flex flex-col items-center gap-4 group">
 <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full border border-bege-erva-doce/20 flex items-center justify-center text-bege-erva-doce group-hover:bg-bege-erva-doce group-hover:text-verde-ancestral transition-all duration-300">
@@ -408,39 +416,39 @@
 <script async="" src="https://www.instagram.com/embed.js"></script>
 <!-- Mobile Menu Logic -->
 <script>
-    const menuToggle = document.getElementById('menu-toggle');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const menuIcon = document.getElementById('menu-icon');
-    let isMenuOpen = false;
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        let isMenuOpen = false;
 
-    function toggleMenu() {
-        isMenuOpen = !isMenuOpen;
-        if (isMenuOpen) {
-            mobileMenu.classList.add('active');
-            menuIcon.innerText = 'close';
-            // Disable body scroll when menu is open
-            document.body.classList.add('no-scroll');
-        } else {
-            mobileMenu.classList.remove('active');
-            menuIcon.innerText = 'menu';
-            document.body.classList.remove('no-scroll');
+        function toggleMenu() {
+            isMenuOpen = !isMenuOpen;
+            if (isMenuOpen) {
+                mobileMenu.classList.add('active');
+                menuIcon.innerText = 'close';
+                // Disable body scroll when menu is open
+                document.body.classList.add('no-scroll');
+            } else {
+                mobileMenu.classList.remove('active');
+                menuIcon.innerText = 'menu';
+                document.body.classList.remove('no-scroll');
+            }
         }
-    }
 
-    menuToggle.addEventListener('click', toggleMenu);
+        menuToggle.addEventListener('click', toggleMenu);
 
-    // Close menu on link click
-    document.querySelectorAll('#mobile-menu a').forEach(link => {
-        link.addEventListener('click', () => {
-            if (isMenuOpen) toggleMenu();
+        // Close menu on link click
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (isMenuOpen) toggleMenu();
+            });
         });
-    });
 
-    // Close menu when clicking outside
-    window.addEventListener('click', (e) => {
-        if (isMenuOpen && !mobileMenu.contains(e.target) && !menuToggle.contains(e.target)) {
-            toggleMenu();
-        }
-    });
-</script>
+        // Close menu when clicking outside
+        window.addEventListener('click', (e) => {
+            if (isMenuOpen && !mobileMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+                toggleMenu();
+            }
+        });
+    </script>
 </body></html>
