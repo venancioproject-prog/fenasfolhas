@@ -1,456 +1,805 @@
-<!DOCTYPE html><html class="dark" lang="pt-BR" style=""><head>
-<meta charset="utf-8">
-<meta content="width=device-width, initial-scale=1.0" name="viewport">
-<title>Fé nas Folhas - Alquimia Botânica e Performance</title>
+<!DOCTYPE html>
+
+<html class="dark scroll-smooth" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Fé nas Folhas - Sabedoria Ancestral, Ervas &amp; Performance</title>
 <!-- Material Symbols -->
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <!-- Google Fonts -->
-<link href="https://fonts.googleapis.com" rel="preconnect">
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Noto+Serif:ital,wght@0,100..900;1,100..900&amp;family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&amp;family=Montserrat:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Noto+Serif:ital,wght@0,100..900;1,100..900&amp;family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&amp;family=Montserrat:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
 <!-- Tailwind CSS -->
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <!-- Tailwind Configuration -->
 <script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "primary": "#b7cea0",
-                        "secondary": "#ddc490",
-                        "tertiary": "#f9b981",
-                        "verde-ancestral": "#394C29",
-                        "bege-erva-doce": "#EBD19C",
-                        "custom-brown": "#B37C49",
-                        "on-tertiary-fixed": "#2d1600",
-                        "on-background": "#dae7cc",
-                        "background": "#0c1607",
-                        "surface-container": "#182212",
-                        "surface-container-low": "#141e0e",
-                        "secondary-fixed": "#fae0a9",
-                        "primary-container": "#394c29",
-                    },
-                    borderRadius: {
-                        "DEFAULT": "0.125rem",
-                        "lg": "0.25rem",
-                        "xl": "0.5rem",
-                        "full": "0.75rem"
-                    },
-                    spacing: {
-                        "unit": "8px",
-                        "container-max": "1200px",
-                        "gutter": "24px",
-                        "margin-edge": "40px",
-                        "section-gap": "120px",
-                        "element-gap": "16px"
-                    },
-                    fontFamily: {
-                        "headline-lg": ["Newsreader"],
-                        "headline-xl": ["Newsreader"],
-                        "headline-md": ["Newsreader"],
-                        "subtitle-md": ["Manrope"],
-                        "subtitle-lg": ["Manrope"],
-                        "body-lg": ["Noto Serif"],
-                        "body-md": ["Noto Serif"],
-                        "label-md": ["Manrope"]
-                    },
-                    fontSize: {
-                        "headline-lg": ["3rem", {"lineHeight": "1.2", "fontWeight": "700"}],
-                        "headline-xl": ["4.5rem", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
-                        "subtitle-md": ["1rem", {"lineHeight": "1.4", "fontWeight": "600"}],
-                        "subtitle-lg": ["1.25rem", {"lineHeight": "1.5", "letterSpacing": "0.1em", "fontWeight": "700"}],
-                        "headline-md": ["2.25rem", {"lineHeight": "1.3", "fontWeight": "600"}],
-                        "body-lg": ["1.125rem", {"lineHeight": "1.7", "fontWeight": "400"}],
-                        "body-md": ["1rem", {"lineHeight": "1.6", "fontWeight": "400"}],
-                        "label-md": ["0.875rem", {"lineHeight": "1.2", "fontWeight": "500"}]
-                    }
-                }
-            }
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "on-secondary": "#3d2e07",
+          "secondary-fixed-dim": "#ddc490",
+          "on-surface-variant": "#c5c8bc",
+          "on-primary-container": "#a5bc8f",
+          "tertiary-fixed-dim": "#f9b981",
+          "tertiary-fixed": "#ffdcc0",
+          "secondary-container": "#58471e",
+          "surface-dim": "#0c1607",
+          "inverse-surface": "#dae7cc",
+          "secondary-fixed": "#fae0a9",
+          "surface-bright": "#323c29",
+          "on-tertiary-fixed-variant": "#683c0e",
+          "primary-fixed": "#d3eabb",
+          "on-primary-fixed": "#0f2003",
+          "on-error": "#690005",
+          "surface": "#0c1607",
+          "surface-container-lowest": "#071103",
+          "surface-variant": "#2d3825",
+          "outline": "#8e9287",
+          "surface-container": "#182212",
+          "primary-container": "#394c29",
+          "on-tertiary-container": "#e5a871",
+          "on-tertiary": "#4b2700",
+          "on-tertiary-fixed": "#2d1600",
+          "background": "#0c1607",
+          "inverse-on-surface": "#293321",
+          "surface-container-highest": "#2d3825",
+          "outline-variant": "#44483f",
+          "on-secondary-container": "#ceb683",
+          "primary-fixed-dim": "#b7cea0",
+          "error": "#ffb4ab",
+          "on-background": "#dae7cc",
+          "inverse-primary": "#50643f",
+          "surface-container-low": "#141e0e",
+          "tertiary-container": "#673c0e",
+          "error-container": "#93000a",
+          "on-surface": "#dae7cc",
+          "on-primary-fixed-variant": "#394c29",
+          "on-error-container": "#ffdad6",
+          "tertiary": "#f9b981",
+          "secondary": "#ddc490",
+          "on-secondary-fixed-variant": "#56441c",
+          "on-secondary-fixed": "#251a00",
+          "primary": "#b7cea0",
+          "surface-container-high": "#232d1b",
+          "surface-tint": "#b7cea0",
+          "on-primary": "#233515",
+          "verde-ancestral": "#182513",
+          "bege-erva-doce": "#EBD19C",
+          "custom-brown": "#B37C49"
+        },
+        borderRadius: {
+          "DEFAULT": "0.125rem",
+          "lg": "0.25rem",
+          "xl": "0.5rem",
+          "full": "0.75rem"
+        },
+        spacing: {
+          "unit": "8px",
+          "container-max": "1280px",
+          "section-gap": "100px",
+          "margin-edge": "40px",
+          "gutter": "24px",
+          "element-gap": "16px"
+        },
+        fontFamily: {
+          "headline-md": ["Newsreader", "serif"],
+          "headline-xl": ["Newsreader", "serif"],
+          "headline-lg": ["Newsreader", "serif"],
+          "body-lg": ["Noto Serif", "serif"],
+          "body-md": ["Noto Serif", "serif"],
+          "label-md": ["Manrope", "sans-serif"],
+          "subtitle-md": ["Manrope", "sans-serif"],
+          "subtitle-lg": ["Manrope", "sans-serif"]
+        },
+        fontSize: {
+          "headline-md": ["2.25rem", { "lineHeight": "1.3", "fontWeight": "600" }],
+          "headline-xl": ["4rem", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+          "body-lg": ["1.125rem", { "lineHeight": "1.7", "fontWeight": "400" }],
+          "label-md": ["0.875rem", { "lineHeight": "1.2", "fontWeight": "500" }],
+          "subtitle-md": ["1rem", { "lineHeight": "1.4", "fontWeight": "600" }],
+          "headline-lg": ["2.85rem", { "lineHeight": "1.2", "fontWeight": "700" }],
+          "subtitle-lg": ["1.25rem", { "lineHeight": "1.5", "letterSpacing": "0.08em", "fontWeight": "700" }],
+          "body-md": ["1rem", { "lineHeight": "1.6", "fontWeight": "400" }]
         }
-    </script>
+      }
+    }
+  }
+</script>
 <style>
-        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #0c1607; }
-        ::-webkit-scrollbar-thumb { background: #2d3825; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #394c29; }
-        
-        .section-container {
-            width: 100%;
-            max-width: 1200px;
-            margin-left: auto;
-            margin-right: auto;
-            padding-left: 1.5rem;
-            padding-right: 1.5rem;
-        }
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { background: #0c1607; }
+  ::-webkit-scrollbar-thumb { background: #2d3825; border-radius: 4px; }
+  ::-webkit-scrollbar-thumb:hover { background: #394c29; }
+  
+  .section-container {
+      width: 100%;
+      max-width: 1240px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+  }
 
-        /* Video Grid - Requirement 1 & 2 & 4 */
-        .video-grid {
-            display: grid;
-            grid-template-columns: 1fr; /* Mobile: one video per row */
-            gap: 32px;
-            width: 100%;
-            justify-content: center;
-            justify-items: center;
-            margin: 0 auto;
-        }
+  /* Audio player subtle custom styling */
+  audio::-webkit-media-controls-panel {
+      background-color: #fae0a9;
+  }
+  audio::-webkit-media-controls-play-button,
+  audio::-webkit-media-controls-current-time-display,
+  audio::-webkit-media-controls-time-remaining-display {
+      color: #251a00;
+  }
 
-        @media (min-width: 640px) {
-            .video-grid { grid-template-columns: repeat(2, 1fr); }
-        }
-
-        @media (min-width: 1024px) {
-            .video-grid { 
-                grid-template-columns: repeat(4, 1fr); /* Desktop: 4 columns */
-            }
-        }
-
-        .video-card {
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-            max-width: 100%;
-        }
-
-        /* Requirement 5: Titles in UPPERCASE, Newsreader font, consistent padding */
-        .video-title {
-            font-family: 'Newsreader', serif;
-            color: #EBD19C;
-            font-size: 0.875rem;
-            font-weight: 700;
-            line-height: 1.3;
-            text-align: center;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: 16px;
-            padding-top: 12px;
-            border-top: 1px solid rgba(235, 209, 156, 0.2);
-            min-height: 3.5rem; /* Increased min-height to ensure alignment even with wrapping titles */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        blockquote.instagram-media { 
-            min-width: 0 !important; 
-            max-width: 100% !important; 
-            width: 100% !important; 
-            margin: 0 auto !important;
-            padding: 0 !important;
-        }
-
-        /* Mobile Menu Transitions */
-        #mobile-menu {
-            transition: all 0.3s ease-in-out;
-            transform-origin: top;
-            max-height: 0;
-            overflow: hidden;
-            opacity: 0;
-        }
-        
-        #mobile-menu.active {
-            max-height: 100vh;
-            opacity: 1;
-            padding-bottom: 2rem;
-        }
-
-        .no-scroll {
-            overflow: hidden;
-        }
-    </style>
+  /* Mobile Menu Transitions */
+  #mobile-menu {
+      transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      transform-origin: top;
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+  }
+  #mobile-menu.active {
+      max-height: 100vh;
+      opacity: 1;
+  }
+  .no-scroll {
+      overflow: hidden;
+  }
+</style>
 </head>
-<body class="bg-verde-ancestral text-on-background antialiased overflow-x-hidden m-0 p-0">
-<!-- TopNavBar -->
-<nav class="bg-verde-ancestral/95 sticky top-0 backdrop-blur-md border-b border-white/10 z-[200]">
-<div class="section-container py-4 flex justify-between items-center relative">
+<body class="bg-[#0e170a] text-on-background antialiased overflow-x-hidden m-0 p-0 font-['Noto_Serif'] selection:bg-tertiary selection:text-on-tertiary">
+<!-- TOP NAVIGATION (STICKY / DOCKED) -->
+<nav class="bg-[#121c0e]/95 sticky top-0 backdrop-blur-md border-b border-white/10 z-[200]">
+<div class="section-container py-3.5 flex justify-between items-center relative">
 <!-- Logo -->
-<div class="text-xl md:text-2xl font-semibold italic text-bege-erva-doce font-['Newsreader'] z-[210]">
-                Fé nas Folhas
-            </div>
-<!-- Desktop Nav -->
-<div class="hidden lg:flex space-x-6 items-center">
-<a class="text-bege-erva-doce/80 hover:text-white transition-colors uppercase tracking-widest text-[11px] font-bold font-['Montserrat']" href="#sobre">Sobre</a>
-<a class="text-bege-erva-doce/80 hover:text-white transition-colors uppercase tracking-widest text-[11px] font-bold font-['Montserrat']" href="#saberes-da-floresta">Saberes</a>
-<a class="text-bege-erva-doce/80 hover:text-white transition-colors uppercase tracking-widest text-[11px] font-bold font-['Montserrat']" href="#espetaculo">Espetáculo</a>
-<a class="text-bege-erva-doce/80 hover:text-white transition-colors uppercase tracking-widest text-[11px] font-bold font-['Montserrat']" href="#livro">Livro</a>
-<a class="text-bege-erva-doce/80 hover:text-white transition-colors uppercase tracking-widest text-[11px] font-bold font-['Montserrat']" href="#masterclass">Masterclass</a>
-<a class="text-bege-erva-doce/80 hover:text-white transition-colors uppercase tracking-widest text-[11px] font-bold font-['Montserrat']" href="#imprensa">Imprensa</a>
-<a class="bg-tertiary text-on-tertiary-fixed uppercase font-['Montserrat'] text-[10px] px-5 py-2.5 rounded hover:opacity-90 transition-opacity font-bold ml-4" href="#masterclass">GARANTIR VAGA</a>
+<a class="text-xl md:text-2xl font-bold italic text-bege-erva-doce font-['Newsreader'] tracking-wide z-[210] hover:text-white transition-colors" href="#apresentacao">
+      Fé nas Folhas
+    </a>
+<!-- Desktop Nav Links (10 Anchors) -->
+<div class="hidden xl:flex space-x-4 items-center">
+<a class="text-bege-erva-doce/80 hover:text-white transition-colors uppercase tracking-wider text-[11px] font-bold font-['Montserrat']" href="#apresentacao">Apresentação</a>
+<a class="text-bege-erva-doce/80 hover:text-white transition-colors uppercase tracking-wider text-[11px] font-bold font-['Montserrat']" href="#show">Show</a>
+<a class="text-bege-erva-doce/80 hover:text-white transition-colors uppercase tracking-wider text-[11px] font-bold font-['Montserrat']" href="#workshop">Workshop</a>
+<a class="text-bege-erva-doce/80 hover:text-white transition-colors uppercase tracking-wider text-[11px] font-bold font-['Montserrat']" href="#mentoria">Mentoria</a>
+<a class="text-bege-erva-doce/80 hover:text-white transition-colors uppercase tracking-wider text-[11px] font-bold font-['Montserrat']" href="#imersoes">Imersões</a>
+<a class="text-bege-erva-doce/80 hover:text-white transition-colors uppercase tracking-wider text-[11px] font-bold font-['Montserrat']" href="#musicas">Músicas</a>
+<a class="text-bege-erva-doce/80 hover:text-white transition-colors uppercase tracking-wider text-[11px] font-bold font-['Montserrat']" href="#livro">Livro</a>
+<a class="text-bege-erva-doce/80 hover:text-white transition-colors uppercase tracking-wider text-[11px] font-bold font-['Montserrat']" href="#taro">Tarô</a>
+<a class="text-bege-erva-doce/80 hover:text-white transition-colors uppercase tracking-wider text-[11px] font-bold font-['Montserrat']" href="#redes-sociais">Redes</a>
+<a class="text-bege-erva-doce/80 hover:text-white transition-colors uppercase tracking-wider text-[11px] font-bold font-['Montserrat']" href="#contato">Contato</a>
+<a class="bg-tertiary text-on-tertiary-fixed uppercase font-['Montserrat'] text-[11px] px-4 py-2.5 rounded hover:bg-tertiary-fixed transition-all font-extrabold shadow-md ml-2" href="#workshop">QUERO PARTICIPAR</a>
 </div>
 <!-- Mobile Toggle Button -->
-<button aria-label="Toggle Menu" class="lg:hidden text-bege-erva-doce z-[210] p-2 focus:outline-none" id="menu-toggle">
+<button aria-label="Toggle Menu" class="xl:hidden text-bege-erva-doce z-[210] p-2 focus:outline-none" id="menu-toggle">
 <span class="material-symbols-outlined text-3xl" id="menu-icon">menu</span>
 </button>
 </div>
-<!-- Mobile Menu -->
-<div class="lg:hidden absolute top-full left-0 right-0 bg-verde-ancestral border-b border-white/10 shadow-2xl z-[190]" id="mobile-menu">
-<div class="flex flex-col items-center space-y-6 pt-8 pb-12">
-<a class="text-bege-erva-doce text-lg uppercase tracking-widest font-bold font-['Montserrat']" href="#sobre" onclick="toggleMenu()">Sobre</a>
-<a class="text-bege-erva-doce text-lg uppercase tracking-widest font-bold font-['Montserrat']" href="#saberes-da-floresta" onclick="toggleMenu()">Saberes</a>
-<a class="text-bege-erva-doce text-lg uppercase tracking-widest font-bold font-['Montserrat']" href="#espetaculo" onclick="toggleMenu()">Espetáculo</a>
-<a class="text-bege-erva-doce text-lg uppercase tracking-widest font-bold font-['Montserrat']" href="#livro" onclick="toggleMenu()">Livro</a>
-<a class="text-bege-erva-doce text-lg uppercase tracking-widest font-bold font-['Montserrat']" href="#masterclass" onclick="toggleMenu()">Masterclass</a>
-<a class="text-bege-erva-doce text-lg uppercase tracking-widest font-bold font-['Montserrat']" href="#imprensa" onclick="toggleMenu()">Imprensa</a>
-<div class="pt-4">
-<a class="bg-tertiary text-on-tertiary-fixed uppercase font-['Montserrat'] text-[12px] px-8 py-4 rounded font-bold shadow-lg" href="#masterclass" onclick="toggleMenu()">GARANTIR MINHA VAGA</a>
+<!-- Mobile Menu Dropdown -->
+<div class="xl:hidden absolute top-full left-0 right-0 bg-[#121c0e] border-b border-white/10 shadow-2xl z-[190]" id="mobile-menu">
+<div class="flex flex-col items-center space-y-4 py-6 px-4">
+<a class="text-bege-erva-doce text-sm uppercase tracking-widest font-bold font-['Montserrat']" href="#apresentacao" onclick="toggleMenu()">Apresentação</a>
+<a class="text-bege-erva-doce text-sm uppercase tracking-widest font-bold font-['Montserrat']" href="#show" onclick="toggleMenu()">Show</a>
+<a class="text-bege-erva-doce text-sm uppercase tracking-widest font-bold font-['Montserrat']" href="#workshop" onclick="toggleMenu()">Workshop</a>
+<a class="text-bege-erva-doce text-sm uppercase tracking-widest font-bold font-['Montserrat']" href="#mentoria" onclick="toggleMenu()">Mentoria</a>
+<a class="text-bege-erva-doce text-sm uppercase tracking-widest font-bold font-['Montserrat']" href="#imersoes" onclick="toggleMenu()">Imersões</a>
+<a class="text-bege-erva-doce text-sm uppercase tracking-widest font-bold font-['Montserrat']" href="#musicas" onclick="toggleMenu()">Músicas</a>
+<a class="text-bege-erva-doce text-sm uppercase tracking-widest font-bold font-['Montserrat']" href="#livro" onclick="toggleMenu()">Livro</a>
+<a class="text-bege-erva-doce text-sm uppercase tracking-widest font-bold font-['Montserrat']" href="#taro" onclick="toggleMenu()">Tarô</a>
+<a class="text-bege-erva-doce text-sm uppercase tracking-widest font-bold font-['Montserrat']" href="#redes-sociais" onclick="toggleMenu()">Redes Sociais</a>
+<a class="text-bege-erva-doce text-sm uppercase tracking-widest font-bold font-['Montserrat']" href="#contato" onclick="toggleMenu()">Contato</a>
+<div class="pt-2 w-full max-w-xs text-center">
+<a class="block w-full bg-tertiary text-on-tertiary-fixed uppercase font-['Montserrat'] text-xs py-3.5 rounded font-bold shadow-lg" href="#workshop" onclick="toggleMenu()">QUERO PARTICIPAR</a>
 </div>
 </div>
 </div>
 </nav>
-<!-- HERO -->
-<header class="bg-verde-ancestral pt-12 md:pt-24 pb-16 md:pb-section-gap" id="sobre">
-<div class="section-container flex flex-col md:flex-row items-center gap-12 md:gap-16">
-<div class="w-full flex-1 space-y-6 md:space-y-8 text-center md:text-left">
-<h1 class="font-headline-xl text-[2rem] sm:text-[2.5rem] md:text-headline-xl text-bege-erva-doce leading-[1.15] md:leading-[1.1]">O Poder e a Magia da Sabedoria Ancestral</h1>
-<p class="font-body-lg text-body-lg text-bege-erva-doce/80 max-w-xl mx-auto md:mx-0">Fé nas Folhas é um mergulho profundo nas tradições, no poder de cura das plantas e no resgate da nossa história através da arte, literatura e do afeto.</p>
-<div class="pt-4 flex justify-center md:justify-start">
-<a class="inline-flex items-center gap-3 bg-tertiary text-on-tertiary-fixed uppercase font-['Montserrat'] text-xs sm:text-sm md:text-subtitle-md px-6 md:px-8 py-4 rounded shadow-lg hover:bg-tertiary/90 transition-all transform hover:scale-105 font-bold" href="#masterclass">
-<span class="text-red-600 text-[10px] animate-pulse">●</span> GARANTIR MINHA VAGA NA MASTERCLASS
-                    </a>
-</div>
-</div>
-<div class="w-full flex-1 max-w-xl mx-auto"><div class="relative w-full aspect-[16/9] rounded-xl overflow-hidden border border-bege-erva-doce/20 shadow-2xl"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" frameborder="0" height="100%" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/RxOFjf6V1Oc?si=ZhCYtzWlAFlEqAmD" style="width: 100%; height: 100%; border: 0;" title="YouTube video player" width="100%"></iframe></div></div>
-</div>
-</header>
-<!-- TRAJECTORY -->
-<section class="bg-secondary-fixed text-primary-container py-16 md:py-section-gap">
-<div class="section-container grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 items-center">
-<div class="relative w-full rounded-xl overflow-hidden shadow-2xl order-2 lg:order-1 flex items-center justify-center"><img alt="Sueli Kinté e Sueide Kinté - Fé nas Folhas" class="w-full h-auto max-h-[600px] object-contain rounded-xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAneND3UrDVEZU3zVf5tCVN0AH5-XoGPQmq3R2KAq6UXaGqkzsjQG3s9eOhfIRUREi8ZEXk1ekLGFZJ78ciaF6787oRkxokEW50IPg8YMEKAOqL7OgaBKpVbaC2XNEgHejwUpyMXbKHqXl2ACFJu9uUQ0_0P9GECQWHqFSFxKPwgevg5GAnyJlhhTtz6sg1Rh9ukiYOcUXZuBKnwvgcwbz3XSNXQwOElO240EDwtahKlXhfvPYZuvRyronGeHVq8v-tdg"></div>
-<div class="space-y-6 md:space-y-8 order-1 lg:order-2 text-center md:text-left">
-<h2 class="font-headline-lg text-[1.85rem] sm:text-[2.25rem] md:text-headline-lg leading-tight">Tradição Ancestral e Alta Performance</h2>
-<div class="space-y-6 font-body-lg text-body-lg opacity-90"><p class="">Nossa missão é honrar e decodificar os saberes das matas. As folhas e raízes não são apenas tradição, mas tecnologias ancestrais de cuidado e bem-estar. Acreditamos que a verdadeira cura nasce quando nos reconectamos com a natureza e fazemos as pazes com a nossa própria história.</p></div>
-<blockquote class="border-l-4 border-verde-ancestral pl-6 py-2 mx-auto md:mx-0 text-left">
-<p class="font-headline-md text-xl md:text-2xl italic">"A verdadeira performance nasce quando sua química interna está em paz com a sua história."</p>
-</blockquote>
-</div>
-</div>
-</section>
-<!-- VIDEO GALLERY - Requirement 1, 2, 3, 4, 5 & 8 -->
-<section class="bg-verde-ancestral py-16 md:py-section-gap w-full" id="saberes-da-floresta">
-<!-- Requirement 1: Central Container max-width 1200px and centered -->
-<div class="max-w-[1200px] mx-auto px-6">
-<div class="text-center mb-12 md:mb-20">
-<h2 class="font-['Fraunces'] font-bold text-2xl sm:text-3xl md:text-5xl text-bege-erva-doce">Tradição, Cura e Ancestralidade</h2>
-</div>
-<!-- Requirement 2 & 3: Grid alignment 4x2 on desktop -->
-<div class="video-grid">
-<!-- Item 1 -->
-<div class="video-card">
-<h3 class="video-title">BANHO DE FOLHAS FAZ BRILHAR</h3>
-<iframe allowfullscreen="true" allowtransparency="true" class="instagram-media" data-instgrm-payload-id="instagram-media-payload-0" frameborder="0" height="0" id="instagram-embed-0" scrolling="no" src="https://www.instagram.com/reel/C-bTe91p2v9/embed/?cr=1&amp;v=14&amp;wp=330&amp;rd=null&amp;rp=srcdoc#%7B%22ci%22%3A0%2C%22os%22%3A3897.4000000059605%2C%22ls%22%3A8.5%2C%22le%22%3A3677%7D" style="background-color: white; border-radius: 3px; border: 1px solid rgb(219, 219, 219); box-shadow: none; display: block; margin: 0px; min-width: 326px; padding: 0px; position: absolute;"></iframe><blockquote class="instagram-media-registered" data-instgrm-permalink="https://www.instagram.com/reel/C-bTe91p2v9/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" id="instagram-media-payload-0"></blockquote>
-<a class="mt-4 font-['Montserrat'] text-bege-erva-doce/60 hover:text-bege-erva-doce text-[10px] uppercase tracking-widest font-bold transition-colors text-center" href="https://www.instagram.com/reel/C-bTe91p2v9/" target="_blank">Assistir no Instagram</a>
-</div>
-<!-- Item 2 -->
-<div class="video-card">
-<h3 class="video-title">TRATAR RESSENTIMENTO</h3>
-<iframe allowfullscreen="true" allowtransparency="true" class="instagram-media" data-instgrm-payload-id="instagram-media-payload-1" frameborder="0" height="0" id="instagram-embed-1" scrolling="no" src="https://www.instagram.com/reel/DRDRn_bjzSg/embed/?cr=1&amp;v=14&amp;wp=330&amp;rd=null&amp;rp=srcdoc#%7B%22ci%22%3A1%2C%22os%22%3A3899.3000000044703%2C%22ls%22%3A8.5%2C%22le%22%3A3677%7D" style="background-color: white; border-radius: 3px; border: 1px solid rgb(219, 219, 219); box-shadow: none; display: block; margin: 0px; min-width: 326px; padding: 0px; position: absolute;"></iframe><blockquote class="instagram-media-registered" data-instgrm-permalink="https://www.instagram.com/reel/DRDRn_bjzSg/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" id="instagram-media-payload-1"></blockquote>
-<a class="mt-4 font-['Montserrat'] text-bege-erva-doce/60 hover:text-bege-erva-doce text-[10px] uppercase tracking-widest font-bold transition-colors text-center" href="https://www.instagram.com/reel/DRDRn_bjzSg/" target="_blank">Assistir no Instagram</a>
-</div>
-<!-- Item 3 -->
-<div class="video-card">
-<h3 class="video-title">BANHO DE DESCARREGO</h3>
-<iframe allowfullscreen="true" allowtransparency="true" class="instagram-media" data-instgrm-payload-id="instagram-media-payload-2" frameborder="0" height="0" id="instagram-embed-2" scrolling="no" src="https://www.instagram.com/reel/DRLYJbID0vk/embed/?cr=1&amp;v=14&amp;wp=330&amp;rd=null&amp;rp=srcdoc#%7B%22ci%22%3A2%2C%22os%22%3A3901.2000000029802%2C%22ls%22%3A8.5%2C%22le%22%3A3677%7D" style="background-color: white; border-radius: 3px; border: 1px solid rgb(219, 219, 219); box-shadow: none; display: block; margin: 0px; min-width: 326px; padding: 0px; position: absolute;"></iframe><blockquote class="instagram-media-registered" data-instgrm-permalink="https://www.instagram.com/reel/DRLYJbID0vk/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" id="instagram-media-payload-2"></blockquote>
-<a class="mt-4 font-['Montserrat'] text-bege-erva-doce/60 hover:text-bege-erva-doce text-[10px] uppercase tracking-widest font-bold transition-colors text-center" href="https://www.instagram.com/reel/DRLYJbID0vk/" target="_blank">Assistir no Instagram</a>
-</div>
-<!-- Item 4 -->
-<div class="video-card">
-<h3 class="video-title">BANHO PARA PROSPERIDADE</h3>
-<iframe allowfullscreen="true" allowtransparency="true" class="instagram-media" data-instgrm-payload-id="instagram-media-payload-3" frameborder="0" height="0" id="instagram-embed-3" scrolling="no" src="https://www.instagram.com/reel/DQ5TfCdj2jt/embed/?cr=1&amp;v=14&amp;wp=330&amp;rd=null&amp;rp=srcdoc#%7B%22ci%22%3A3%2C%22os%22%3A14537.20000000298%2C%22ls%22%3A8.5%2C%22le%22%3A3677%7D" style="background-color: white; border-radius: 3px; border: 1px solid rgb(219, 219, 219); box-shadow: none; display: block; margin: 0px; min-width: 326px; padding: 0px; position: absolute;"></iframe><blockquote class="instagram-media-registered" data-instgrm-permalink="https://www.instagram.com/reel/DQ5TfCdj2jt/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" id="instagram-media-payload-3"></blockquote>
-<a class="mt-4 font-['Montserrat'] text-bege-erva-doce/60 hover:text-bege-erva-doce text-[10px] uppercase tracking-widest font-bold transition-colors text-center" href="https://www.instagram.com/reel/DQ5TfCdj2jt/" target="_blank">Assistir no Instagram</a>
-</div>
-<!-- Item 5 -->
-<div class="video-card">
-<h3 class="video-title">ATRAÇÃO E AMOR</h3>
-<iframe allowfullscreen="true" allowtransparency="true" class="instagram-media" data-instgrm-payload-id="instagram-media-payload-4" frameborder="0" height="0" id="instagram-embed-4" scrolling="no" src="https://www.instagram.com/reel/DQ78RRNDz9t/embed/?cr=1&amp;v=14&amp;wp=330&amp;rd=null&amp;rp=srcdoc#%7B%22ci%22%3A4%2C%22os%22%3A14541.30000000447%2C%22ls%22%3A8.5%2C%22le%22%3A3677%7D" style="background-color: white; border-radius: 3px; border: 1px solid rgb(219, 219, 219); box-shadow: none; display: block; margin: 0px; min-width: 326px; padding: 0px; position: absolute;"></iframe><blockquote class="instagram-media-registered" data-instgrm-permalink="https://www.instagram.com/reel/DQ78RRNDz9t/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" id="instagram-media-payload-4"></blockquote>
-<a class="mt-4 font-['Montserrat'] text-bege-erva-doce/60 hover:text-bege-erva-doce text-[10px] uppercase tracking-widest font-bold transition-colors text-center" href="https://www.instagram.com/reel/DQ78RRNDz9t/" target="_blank">Assistir no Instagram</a>
-</div>
-<!-- Item 6 -->
-<div class="video-card">
-<h3 class="video-title">BANHO PARA REJEIÇÃO</h3>
-<iframe allowfullscreen="true" allowtransparency="true" class="instagram-media" data-instgrm-payload-id="instagram-media-payload-5" frameborder="0" height="0" id="instagram-embed-5" scrolling="no" src="https://www.instagram.com/reel/DQrdWIvjOe4/embed/?cr=1&amp;v=14&amp;wp=330&amp;rd=null&amp;rp=srcdoc#%7B%22ci%22%3A5%2C%22os%22%3A14546.20000000298%2C%22ls%22%3A8.5%2C%22le%22%3A3677%7D" style="background-color: white; border-radius: 3px; border: 1px solid rgb(219, 219, 219); box-shadow: none; display: block; margin: 0px; min-width: 326px; padding: 0px; position: absolute;"></iframe><blockquote class="instagram-media-registered" data-instgrm-permalink="https://www.instagram.com/reel/DQrdWIvjOe4/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" id="instagram-media-payload-5"></blockquote>
-<a class="mt-4 font-['Montserrat'] text-bege-erva-doce/60 hover:text-bege-erva-doce text-[10px] uppercase tracking-widest font-bold transition-colors text-center" href="https://www.instagram.com/reel/DQrdWIvjOe4/" target="_blank">Assistir no Instagram</a>
-</div>
-<!-- Item 7 -->
-<div class="video-card">
-<h3 class="video-title">FOLHAS E FLORES</h3>
-<iframe allowfullscreen="true" allowtransparency="true" class="instagram-media" data-instgrm-payload-id="instagram-media-payload-6" frameborder="0" height="0" id="instagram-embed-6" scrolling="no" src="https://www.instagram.com/reel/DQnRj4aD-dr/embed/?cr=1&amp;v=14&amp;wp=330&amp;rd=null&amp;rp=srcdoc#%7B%22ci%22%3A6%2C%22os%22%3A25237.60000000149%2C%22ls%22%3A8.5%2C%22le%22%3A3677%7D" style="background-color: white; border-radius: 3px; border: 1px solid rgb(219, 219, 219); box-shadow: none; display: block; margin: 0px; min-width: 326px; padding: 0px; position: absolute;"></iframe><blockquote class="instagram-media-registered" data-instgrm-permalink="https://www.instagram.com/reel/DQnRj4aD-dr/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" id="instagram-media-payload-6"></blockquote>
-<a class="mt-4 font-['Montserrat'] text-bege-erva-doce/60 hover:text-bege-erva-doce text-[10px] uppercase tracking-widest font-bold transition-colors text-center" href="https://www.instagram.com/reel/DQnRj4aD-dr/" target="_blank">Assistir no Instagram</a>
-</div>
-<!-- Item 8 -->
-<div class="video-card">
-<h3 class="video-title">CURA PELAS ERVAS</h3>
-<iframe allowfullscreen="true" allowtransparency="true" class="instagram-media" data-instgrm-payload-id="instagram-media-payload-7" frameborder="0" height="0" id="instagram-embed-7" scrolling="no" src="https://www.instagram.com/reel/DEsxmNWIPlB/embed/?cr=1&amp;v=14&amp;wp=330&amp;rd=null&amp;rp=srcdoc#%7B%22ci%22%3A7%2C%22os%22%3A25241.70000000298%2C%22ls%22%3A8.5%2C%22le%22%3A3677%7D" style="background-color: white; border-radius: 3px; border: 1px solid rgb(219, 219, 219); box-shadow: none; display: block; margin: 0px; min-width: 326px; padding: 0px; position: absolute;"></iframe><blockquote class="instagram-media-registered" data-instgrm-permalink="https://www.instagram.com/reel/DEsxmNWIPlB/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" id="instagram-media-payload-7"></blockquote>
-<a class="mt-4 font-['Montserrat'] text-bege-erva-doce/60 hover:text-bege-erva-doce text-[10px] uppercase tracking-widest font-bold transition-colors text-center" href="https://www.instagram.com/reel/DEsxmNWIPlB/" target="_blank">Assistir no Instagram</a>
-</div>
-</div>
-</div>
-</section>
-<!-- TRANSMEDIA EXPERIENCE -->
-<section class="bg-verde-ancestral py-16 md:py-section-gap">
-<div class="section-container text-center space-y-12">
-<h2 class="font-headline-lg text-[1.85rem] sm:text-[2.25rem] md:text-headline-lg text-bege-erva-doce">Ecossistema Fé nas Folhas: Um Legado Transmídia</h2>
-<p class="font-body-lg text-body-lg text-bege-erva-doce/80 max-w-3xl mx-auto">
-                Mais do que um projeto, o ecossistema Fé nas Folhas manifesta-se como um polo vivo de conhecimento integrado que transita entre literatura, educação corporativa e arte transformadora.
-            </p>
-<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-12">
-<div class="flex flex-col items-center gap-4 group">
-<div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full border border-bege-erva-doce/20 flex items-center justify-center text-bege-erva-doce group-hover:bg-bege-erva-doce group-hover:text-verde-ancestral transition-all duration-300">
-<span class="material-symbols-outlined text-3xl sm:text-4xl">menu_book</span>
-</div>
-<span class="font-label-md text-bege-erva-doce uppercase tracking-widest font-bold">Literatura</span>
-</div>
-<div class="flex flex-col items-center gap-4 group">
-<div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full border border-bege-erva-doce/20 flex items-center justify-center text-bege-erva-doce group-hover:bg-bege-erva-doce group-hover:text-verde-ancestral transition-all duration-300">
-<span class="material-symbols-outlined text-3xl sm:text-4xl">groups</span>
-</div>
-<span class="font-label-md text-bege-erva-doce uppercase tracking-widest font-bold">Oficinas e Vivências</span>
-</div>
-<div class="flex flex-col items-center gap-4 group sm:col-span-2 md:col-span-1">
-<div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full border border-bege-erva-doce/20 flex items-center justify-center text-bege-erva-doce group-hover:bg-bege-erva-doce group-hover:text-verde-ancestral transition-all duration-300">
-<span class="material-symbols-outlined text-3xl sm:text-4xl">music_note</span>
-</div>
-<span class="font-label-md text-bege-erva-doce uppercase tracking-widest font-bold">Expressão Artística</span>
-</div>
-</div>
-</div>
-</section>
-<!-- MUSICAL PERFORMANCE -->
-<section class="bg-surface-container-low py-16 md:py-section-gap" id="espetaculo">
-<div class="section-container grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 items-center">
-<div class="space-y-6 md:space-y-8 text-center md:text-left">
-<div class="flex justify-center md:justify-start">
-<span class="bg-tertiary text-on-tertiary-fixed px-4 py-1 rounded-full font-label-md text-[11px] font-bold uppercase tracking-widest">Arte &amp; Ritual</span>
-</div>
-<h2 class="font-headline-lg text-[1.85rem] sm:text-[2.25rem] md:text-headline-lg text-bege-erva-doce">Espetáculo Musical</h2>
-<p class="font-body-lg text-body-lg text-bege-erva-doce/80">A teoria se torna experiência sensorial de alto impacto. O espetáculo musical transcende a fala, utilizando frequências sonoras e movimento para traduzir a força ancestral da floresta.</p>
-</div>
-<div class="w-full grid grid-cols-1 sm:grid-cols-2 gap-4">
-  <div class="group overflow-hidden rounded-xl border border-bege-erva-doce/10 shadow-lg aspect-[4/3] relative">
-    <img alt="Espetáculo Musical - Momento 1" class="w-full h-full object-cover transition-all duration-300 group-hover:scale-105" src="VIVÊNCIA_YEYE_2911 - OLHODEANUBIS (97 de 176).png">
-  </div>
-  <div class="group overflow-hidden rounded-xl border border-bege-erva-doce/10 shadow-lg aspect-[4/3] relative">
-    <img alt="Espetáculo Musical - Momento 2" class="w-full h-full object-cover transition-all duration-300 group-hover:scale-105" src="VIVÊNCIA_YEYE_2911 - OLHODEANUBIS (123 de 176) (1).png">
-  </div>
-  <div class="group overflow-hidden rounded-xl border border-bege-erva-doce/10 shadow-lg aspect-[4/3] relative">
-    <img alt="Espetáculo Musical - Momento 3" class="w-full h-full object-cover transition-all duration-300 group-hover:scale-105" src="VIVÊNCIA_YEYE_2911 - OLHODEANUBIS (123 de 176).png">
-  </div>
-  <div class="group overflow-hidden rounded-xl border border-bege-erva-doce/10 shadow-lg aspect-[4/3] relative">
-    <img alt="Espetáculo Musical - Momento 4" class="w-full h-full object-cover transition-all duration-300 group-hover:scale-105" src="VIVÊNCIA_YEYE_2911 - OLHODEANUBIS (166 de 176).png">
-  </div>
-</div>
-</div>
-</section>
-<!-- THE BOOK -->
-<section class="bg-secondary-fixed text-primary-container py-16 md:py-section-gap" id="livro">
-<div class="section-container grid grid-cols-1 lg:grid-cols-12 gap-12 md:gap-16 items-center">
-<div class="relative w-full rounded-xl overflow-hidden shadow-2xl order-2 lg:order-1 flex items-center justify-center"><img alt="Sueli Kinté e Sueide Kinté - Fé nas Folhas" class="w-full h-auto max-h-[600px] object-contain rounded-xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAneND3UrDVEZU3zVf5tCVN0AH5-XoGPQmq3R2KAq6UXaGqkzsjQG3s9eOhfIRUREi8ZEXk1ekLGFZJ78ciaF6787oRkxokEW50IPg8YMEKAOqL7OgaBKpVbaC2XNEgHejwUpyMXbKHqXl2ACFJu9uUQ0_0P9GECQWHqFSFxKPwgevg5GAnyJlhhTtz6sg1Rh9ukiYOcUXZuBKnwvgcwbz3XSNXQwOElO240EDwtahKlXhfvPYZuvRyronGeHVq8v-tdg"></div>
-<div class="lg:col-span-7 space-y-8 text-center md:text-left">
-<h2 class="font-headline-lg text-[1.85rem] sm:text-[2.25rem] md:text-headline-lg">Livro: Fé nas Folhas</h2>
-<p class="font-body-lg text-body-lg opacity-90">Um guia definitivo que resgata a sabedoria de benzedeiras com foco na cultura afro-brasileira e indígena. Publicado pela Fontanar, é o manual essencial para a sua jornada de regeneração.</p>
-<div class="bg-verde-ancestral/5 border border-verde-ancestral/10 p-6 sm:p-8 rounded-lg text-left">
-<p class="font-headline-md italic text-xl md:text-2xl">"Que as folhas tragam a cura e o design traga a conexão."</p>
-<p class="mt-4 font-['Montserrat'] text-[10px] sm:font-label-md opacity-60 uppercase tracking-widest font-bold">— Fé nas Folhas</p>
-</div>
-<div class="flex justify-center md:justify-start">
-<a class="inline-block bg-custom-brown text-white uppercase font-['Montserrat'] px-8 py-4 rounded shadow-lg hover:opacity-95 font-bold transition-all" href="#">COMPRAR NA AMAZON</a>
-</div>
-</div>
-</div>
-</section>
-<!-- MASTERCLASS -->
-<section class="bg-verde-ancestral py-20 md:py-section-gap border-y border-white/5" id="masterclass">
-<div class="section-container text-center space-y-10 flex flex-col items-center">
-<h2 class="font-headline-xl text-[1.75rem] sm:text-[2.5rem] md:text-headline-xl text-bege-erva-doce">Oficinas e Rodas de Saberes</h2>
-<p class="font-body-lg text-body-lg text-bege-erva-doce/80 max-w-3xl mx-auto">Encontros imersivos projetados para quem busca autoconhecimento e conexão. Nossas vivências ensinam na prática o preparo de banhos e o uso das ervas para limpar, proteger e harmonizar os caminhos.</p>
-<div class="pt-4 w-full sm:w-auto">
-<a class="inline-block w-full sm:w-auto bg-tertiary text-on-tertiary-fixed uppercase font-['Montserrat'] px-10 py-5 rounded shadow-lg hover:scale-105 transition-all font-bold tracking-wider" href="#">PARTICIPAR DAS VIVÊNCIAS</a>
-</div>
-</div>
-</section>
-<!-- PRESS -->
-<section class="bg-secondary-fixed text-primary-container py-16 md:py-section-gap" id="imprensa">
+<!-- 2. SEÇÃO APRESENTAÇÃO (HERO / #apresentacao) -->
+<section class="bg-gradient-to-b from-[#142010] via-[#0e170a] to-[#0c1607] pt-12 md:pt-20 pb-16 md:pb-24 border-b border-white/5" id="apresentacao">
 <div class="section-container">
-<h2 class="font-headline-lg text-[1.85rem] sm:text-[2.25rem] md:text-headline-lg text-center mb-12 md:mb-16">Fé nas Folhas na Mídia</h2>
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
-<div class="p-6 border border-verde-ancestral/10 bg-white/5 rounded-lg flex flex-col justify-between h-full">
-<span class="font-['Montserrat'] font-bold text-[11px] uppercase tracking-tighter block mb-4">Folha de S.Paulo</span>
-<p class="italic text-sm">"Reconecta o mundo corporativo com a sabedoria das matas."</p>
+<!-- Top Hero Area: Headline + VSL intact -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+<div class="lg:col-span-6 space-y-6 text-center lg:text-left">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container border border-bege-erva-doce/20 text-bege-erva-doce font-['Montserrat'] text-xs uppercase tracking-widest">
+<span class="w-2 h-2 rounded-full bg-tertiary animate-ping"></span>
+          Saberes Vivos das Folhas &amp; das Águas
+        </div>
+<h1 class="font-headline-xl text-3xl sm:text-4xl md:text-[3.75rem] text-bege-erva-doce leading-[1.12]">
+          O Poder e a Magia da Sabedoria Ancestral
+        </h1>
+<p class="font-body-lg text-bege-erva-doce/90 leading-relaxed text-base sm:text-lg">
+          Fé nas Folhas é um chamado para voltar ao começo: onde a cura era simples, a água era oração, e as folhas eram mestras. Desenvolvido por Sueli Kinté e Sueide Kinté, mãe e filha, resgatando a sabedoria ancestral das plantas, dos banhos e das bênçãos para os tempos de hoje.
+        </p>
+<div class="pt-3 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+<a class="inline-flex items-center justify-center gap-3 bg-tertiary text-on-tertiary-fixed uppercase font-['Montserrat'] text-xs sm:text-sm px-7 py-4 rounded shadow-xl hover:bg-tertiary-fixed transition-all transform hover:-translate-y-0.5 font-bold" href="#show">
+            CONHEÇA NOSSAS EXPERIÊNCIAS
+            <span class="material-symbols-outlined text-base">arrow_downward</span>
+</a>
+<a class="inline-flex items-center justify-center gap-2 border border-bege-erva-doce/40 text-bege-erva-doce hover:border-bege-erva-doce hover:bg-white/5 uppercase font-['Montserrat'] text-xs px-6 py-4 rounded transition-all font-bold" href="#workshop">
+            Ver Workshop
+          </a>
 </div>
-<div class="p-6 border border-verde-ancestral/10 bg-white/5 rounded-lg flex flex-col justify-between h-full">
-<span class="font-['Montserrat'] font-bold text-[11px] uppercase tracking-tighter block mb-4">Vogue Brasil</span>
-<p class="italic text-sm">"O novo luxo essencial para o equilíbrio mental."</p>
 </div>
-<div class="p-6 border border-verde-ancestral/10 bg-white/5 rounded-lg flex flex-col justify-between h-full">
-<span class="font-['Montserrat'] font-bold text-[11px] uppercase tracking-tighter block mb-4">Estadão</span>
-<p class="italic text-sm">"Tecnologia ancestral como caminho para a longevidade."</p>
+<!-- Preserved VSL Layout -->
+<div class="lg:col-span-6 w-full">
+<div class="relative w-full aspect-[16/9] rounded-2xl overflow-hidden border border-bege-erva-doce/30 shadow-[0_20px_50px_rgba(0,0,0,0.6)] bg-black/40">
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" class="w-full h-full border-0" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/RxOFjf6V1Oc?si=ZhCYtzWlAFlEqAmD" title="YouTube video player"></iframe>
 </div>
-<div class="p-6 border border-verde-ancestral/10 bg-white/5 rounded-lg flex flex-col justify-between h-full">
-<span class="font-['Montserrat'] font-bold text-[11px] uppercase tracking-tighter block mb-4">Marie Claire</span>
-<p class="italic text-sm">"Uma jornada de cura que une performance e espiritualidade."</p>
+<p class="text-center font-['Montserrat'] text-[11px] uppercase tracking-widest text-bege-erva-doce/60 mt-3">
+          Assista ao manifesto audiovisual Fé nas Folhas
+        </p>
 </div>
-<div class="p-6 border border-verde-ancestral/10 bg-white/5 rounded-lg flex flex-col justify-between h-full sm:col-span-2 lg:col-span-1">
-<span class="font-['Montserrat'] font-bold text-[11px] uppercase tracking-tighter block mb-4">Valor Econômico</span>
-<p class="italic text-sm">"A metodologia atrai CEOs em busca de foco."</p>
+</div>
+<!-- Founders Sub-block with https://lh3.googleusercontent.com/aida-public/AB6AXuBXVJItjTGdQcqQw2Xo3kzozqJdlXW7mqwxE1LR6PFJwEiYR7q4E3WkGIcO2D2LWh8jJ_wXhC287E5OLfsiNcfJW3acTlhBrrYcN4jhh9_TINT6nST-HsdRACY-5jDxwYEpmkjamAsE2BBQif0-iajSF06noFkFGVyBGpcobzzanG4RRXhFJM7Qak3l4SlR9aauEQJyJcBGfYf_zHmAopy5jKaAUENXElwewmamC4NrRO6IFrIko79k5XVUD9afbLYI8w and https://lh3.googleusercontent.com/aida/AEtjO1XUw7a_HI4n1SdtBgdN-ZapYAPFQa-WtuLuU84LSXr9Fpiv1w0CNuBQ4C0rQ4qKIbs66lKYFq0rQmEgIlO2_SxXU5CTMLNZWe2Tal5bFOwCtFiFS0a8vpMUSYPIZNGTYwv49szJU9qGb40hEAFJZ0h9Nl4lbkd-ORt48C7BGKuDAMUY6CLWE4QkjFLBFPbS-9kGwDAZjDcVYGu1s8VlJ3m19e8urtrUWG2eLpowYet6TOSD5ReAjKFI5CY8KmHNQr4QyLLRwHV4xQ -->
+<div class="mt-16 md:mt-24 p-6 sm:p-10 rounded-2xl bg-surface-container/60 border border-bege-erva-doce/20 grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+<div class="md:col-span-5 flex justify-center">
+<div class="relative max-w-sm rounded-xl overflow-hidden shadow-2xl border border-bege-erva-doce/30 group">
+<img alt="Sueli Kinté e Sueide Kinté - Fé nas Folhas" class="w-full h-auto object-cover transform group-hover:scale-102 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkkZKxT3nmhH7M45gJIMXXQMSWnnoK_NDP21mQBqBZY2s4KI-VUySC4UL_UvWne0YzKM1XCZJanWzKC-xOdf0wTlnJKrixCHNWX7wbFDouMUSK8M5jChAxUSbub5sJ2PA5GxHCRa9Vtz1qFp6hcPd6fgsNdDR1sRS9H2D-bmWOUSK5zluHtWV2K8iHquoa0H_UD5lc2C_oFa6CcJCiJvuCflnpplAd9JvB1jeewNn5PRXrPrhs_a2IxVvohUicnNp_-Q"/>
+</div>
+</div>
+<div class="md:col-span-7 space-y-5 text-left">
+<div class="inline-block text-tertiary font-['Montserrat'] text-xs uppercase tracking-widest font-bold">Linhagem &amp; Matriarcado</div>
+<h2 class="font-headline-lg text-2xl sm:text-3xl md:text-4xl text-bege-erva-doce leading-snug">
+          Mãe e Filha: Sabedoria das Mãos que Curam
+        </h2>
+<p class="font-body-lg text-bege-erva-doce/80 text-sm sm:text-base leading-relaxed">
+          Nossa missão é honrar e decodificar os saberes das matas e das águas. As folhas, ervas e raízes não são apenas tradição folclórica: são verdadeiras biotecnologias ancestrais de cuidado, regeneração emocional e equilíbrio biológico.
+        </p>
+<blockquote class="border-l-4 border-tertiary pl-4 py-1 italic font-headline-md text-lg text-secondary">
+          "A verdadeira performance nasce quando sua química interna está em paz com a sua história."
+        </blockquote>
+<div class="pt-2 flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden border border-bege-erva-doce/40 shrink-0">
+<img alt="Yèyé Osunsade" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1XUw7a_HI4n1SdtBgdN-ZapYAPFQa-WtuLuU84LSXr9Fpiv1w0CNuBQ4C0rQ4qKIbs66lKYFq0rQmEgIlO2_SxXU5CTMLNZWe2Tal5bFOwCtFiFS0a8vpMUSYPIZNGTYwv49szJU9qGb40hEAFJZ0h9Nl4lbkd-ORt48C7BGKuDAMUY6CLWE4QkjFLBFPbS-9kGwDAZjDcVYGu1s8VlJ3m19e8urtrUWG2eLpowYet6TOSD5ReAjKFI5CY8KmHNQr4QyLLRwHV4xQ"/>
+</div>
+<div>
+<p class="font-['Newsreader'] text-bege-erva-doce font-bold text-base leading-none">Yèyé Osunsade &amp; Sueli Kinté</p>
+<p class="font-['Montserrat'] text-xs uppercase tracking-wider text-bege-erva-doce/60 mt-1">Guardiãs do Saber Botânico</p>
+</div>
+</div>
 </div>
 </div>
 </div>
 </section>
-<!-- FOOTER -->
-<footer class="bg-black text-bege-erva-doce py-12 border-t border-white/5">
-<div class="section-container flex flex-col md:flex-row justify-between items-center gap-8">
-<div class="text-xl font-bold font-['Newsreader'] italic">Fé nas Folhas</div>
-<div class="text-[11px] opacity-60 text-center order-3 md:order-2">© 2024 Fé nas Folhas. Alquimia Botânica e Performance.</div>
-<div class="flex space-x-6 text-[10px] uppercase tracking-widest font-bold font-['Montserrat'] order-2 md:order-3">
-<a class="hover:text-white transition-colors" href="#">Instagram</a>
-<a class="hover:text-white transition-colors" href="#">LinkedIn</a>
-<a class="hover:text-white transition-colors" href="#">Contato</a>
+<!-- 3. SEÇÃO SHOW - FÉ NAS FOLHAS (#show) -->
+<section class="bg-[#141e0e] py-16 md:py-section-gap border-b border-white/5" id="show">
+<div class="section-container space-y-12">
+<div class="max-w-3xl mx-auto text-center space-y-4">
+<span class="bg-tertiary text-on-tertiary-fixed px-4 py-1 rounded-full font-label-md text-[11px] font-bold uppercase tracking-widest">Arte &amp; Ritual Sagrado</span>
+<h2 class="font-headline-lg text-3xl sm:text-4xl md:text-5xl text-bege-erva-doce">
+        Show: Fé nas Folhas
+      </h2>
+<p class="font-body-lg text-bege-erva-doce/80 text-base sm:text-lg leading-relaxed">
+        O Show Fé nas Folhas é um espetáculo ancestral: música, canto, benção e beleza que transformam a fala em experiência sensorial de alto impacto. Uma vivência rítmica e sagrada que conecta o público com a força viva da floresta.
+      </p>
+</div>
+<!-- Preserved 4-grid Photo Gallery with https://lh3.googleusercontent.com/aida/AEtjO1X_jFHPk5_E2_7Qw7AeNhQJBFU8QYN3vK14vG_Z5yQpnjQWFIAq9tlKCebfOlAVDIR58AnoBX7f8UjN3x8Kw_8JqXXU-zJhNYAb8Oq4G77olP1zyjH7ialH9-LZFvkyRQvKU-76pMCzPf8HBBpdKQ79RCqcno5AQkwqD2LTYlJvCCOfIzu5-TGkmmYFsbIgZ_NexPiyTa0TZM7MT8lbg9lcgR2Dn8rNLGWNiR-mr_KhrwQupEeRxYNHD2ZzL5uEgIyx_Lery1-N3A -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+<div class="group overflow-hidden rounded-xl border border-bege-erva-doce/20 shadow-xl aspect-[4/3] relative bg-black/30">
+<img alt="Show Fé nas Folhas - Espetáculo Ancestral" class="w-full h-full object-cover transition-all duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/AEtjO1X_jFHPk5_E2_7Qw7AeNhQJBFU8QYN3vK14vG_Z5yQpnjQWFIAq9tlKCebfOlAVDIR58AnoBX7f8UjN3x8Kw_8JqXXU-zJhNYAb8Oq4G77olP1zyjH7ialH9-LZFvkyRQvKU-76pMCzPf8HBBpdKQ79RCqcno5AQkwqD2LTYlJvCCOfIzu5-TGkmmYFsbIgZ_NexPiyTa0TZM7MT8lbg9lcgR2Dn8rNLGWNiR-mr_KhrwQupEeRxYNHD2ZzL5uEgIyx_Lery1-N3A"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+<p class="text-xs uppercase tracking-wider text-bege-erva-doce font-['Montserrat'] font-semibold">O Canto das Folhas</p>
+</div>
+</div>
+<div class="group overflow-hidden rounded-xl border border-bege-erva-doce/20 shadow-xl aspect-[4/3] relative bg-black/30">
+<img alt="Show Fé nas Folhas - Ritmo e Ancestralidade" class="w-full h-full object-cover transition-all duration-500 group-hover:scale-105" onerror="this.onerror=null;this.src='https://lh3.googleusercontent.com/aida/AEtjO1X_jFHPk5_E2_7Qw7AeNhQJBFU8QYN3vK14vG_Z5yQpnjQWFIAq9tlKCebfOlAVDIR58AnoBX7f8UjN3x8Kw_8JqXXU-zJhNYAb8Oq4G77olP1zyjH7ialH9-LZFvkyRQvKU-76pMCzPf8HBBpdKQ79RCqcno5AQkwqD2LTYlJvCCOfIzu5-TGkmmYFsbIgZ_NexPiyTa0TZM7MT8lbg9lcgR2Dn8rNLGWNiR-mr_KhrwQupEeRxYNHD2ZzL5uEgIyx_Lery1-N3A';" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5GzFqbIqwSSANRQ2ZqZAJs1oHApbw8MqMRNmllx60lMC6C7Tg79F4puUq2sUbCCR7I6BTH-mOmjPU_pg9PzVuSTzLm_yoQPHXDxlOSQQGNtnxEXqCyM_7JHdVTS1JwZXqNLMmT2X3vpo4h1TiOxHS0LLQWAaO3m_53MsS4DS9eSdeuiOObdTERKtFmh0gNLITXVaY-8r_PwfANY8GaHIhZYSGlw-QlN3zHVamEcP35SQ2L_0xePwg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+<p class="text-xs uppercase tracking-wider text-bege-erva-doce font-['Montserrat'] font-semibold">Altar das Águas</p>
+</div>
+</div>
+<div class="group overflow-hidden rounded-xl border border-bege-erva-doce/20 shadow-xl aspect-[4/3] relative bg-black/30">
+<img alt="Show Fé nas Folhas - Vivência Teatral" class="w-full h-full object-cover transition-all duration-500 group-hover:scale-105" onerror="this.onerror=null;this.src='https://lh3.googleusercontent.com/aida/AEtjO1X_jFHPk5_E2_7Qw7AeNhQJBFU8QYN3vK14vG_Z5yQpnjQWFIAq9tlKCebfOlAVDIR58AnoBX7f8UjN3x8Kw_8JqXXU-zJhNYAb8Oq4G77olP1zyjH7ialH9-LZFvkyRQvKU-76pMCzPf8HBBpdKQ79RCqcno5AQkwqD2LTYlJvCCOfIzu5-TGkmmYFsbIgZ_NexPiyTa0TZM7MT8lbg9lcgR2Dn8rNLGWNiR-mr_KhrwQupEeRxYNHD2ZzL5uEgIyx_Lery1-N3A';" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzIFENgsgi5yWCyur8fKVUP1qSSss1Pe86MR7Qz0_7_6O6pRNa-A-CM2bIHbaRn569dnipUI-1Puwg-ValKzNBMEI7WrodOAfKKOAvU2PHMQ6pRGGioZ1Zq1RQ4Nc96n-wj3V09SjUcetewa3mtIcHgDuXCslmZJKinFSSKCCkxHpFTzQ60Y8a8d2nvIZvT-gLQ5RavM08OX_l9TBgGud3l-m7tFdyLGkOWG9K-iVBhzCI6WnHC5vu"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+<p class="text-xs uppercase tracking-wider text-bege-erva-doce font-['Montserrat'] font-semibold">Benzimento e Dança</p>
+</div>
+</div>
+<div class="group overflow-hidden rounded-xl border border-bege-erva-doce/20 shadow-xl aspect-[4/3] relative bg-black/30">
+<img alt="Show Fé nas Folhas - Celebração Coletiva" class="w-full h-full object-cover transition-all duration-500 group-hover:scale-105" onerror="this.onerror=null;this.src='https://lh3.googleusercontent.com/aida/AEtjO1X_jFHPk5_E2_7Qw7AeNhQJBFU8QYN3vK14vG_Z5yQpnjQWFIAq9tlKCebfOlAVDIR58AnoBX7f8UjN3x8Kw_8JqXXU-zJhNYAb8Oq4G77olP1zyjH7ialH9-LZFvkyRQvKU-76pMCzPf8HBBpdKQ79RCqcno5AQkwqD2LTYlJvCCOfIzu5-TGkmmYFsbIgZ_NexPiyTa0TZM7MT8lbg9lcgR2Dn8rNLGWNiR-mr_KhrwQupEeRxYNHD2ZzL5uEgIyx_Lery1-N3A';" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCunKJ7KPKKwv8y1_3R4VbzfuvNlWTxQ6tWjVYHcnJ-Xl-G1ypQJdbcjHOE-1s9nmsLCdzaddsRsJXt_wZtlA-kwEuLAk28I1nTR5zVd0u43vzWXOLSfOcBmWq8ZHhF8yf3VQUxbBbpmC7gmUIkdzfy2oF0KDNJwTqx8gF-I4qYK28xx3UFCBscR1vKYY0urEhZl8ATYwWVaQPU6IMuGewAHJ4kqU5FfLx7-W2W4E3tA-Ngf9jGsVH_"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+<p class="text-xs uppercase tracking-wider text-bege-erva-doce font-['Montserrat'] font-semibold">Frequências de Cura</p>
+</div>
+</div>
+</div>
+<!-- CTA Button for Show -->
+<div class="flex justify-center pt-4">
+<a class="inline-flex items-center gap-3 bg-secondary-fixed text-on-secondary-fixed hover:bg-secondary font-['Montserrat'] font-bold text-xs sm:text-sm uppercase tracking-wider px-8 py-4 rounded shadow-xl transition-all hover:scale-105" href="#contato">
+<span class="material-symbols-outlined text-lg">theater_comedy</span>
+        CONTRATAR O SHOW
+      </a>
+</div>
+</div>
+</section>
+<!-- 4. SEÇÃO WORKSHOP - CURANDEIRAS & FOLHAS (#workshop) -->
+<section class="bg-secondary-fixed text-primary-container py-16 md:py-section-gap" id="workshop">
+<div class="section-container space-y-12">
+<div class="max-w-3xl mx-auto text-center space-y-4">
+<span class="bg-[#394c29] text-bege-erva-doce px-4 py-1 rounded-full font-label-md text-[11px] font-bold uppercase tracking-widest">Prática Botânica &amp; Rituais</span>
+<h2 class="font-headline-lg text-3xl sm:text-4xl md:text-5xl leading-tight">
+        Workshop: Curandeiras &amp; Folhas
+      </h2>
+<p class="font-body-lg text-lg text-primary-container/90 max-w-2xl mx-auto leading-relaxed">
+        O workshop Curandeiras &amp; Folhas é um mergulho prático no mundo das ervas. Um encontro imersivo para aprender a sentir, colher, preparar e benzer com as plantas sagradas.
+      </p>
+</div>
+<!-- Cards de Aprendizado -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="bg-white/60 backdrop-blur-sm border border-verde-ancestral/15 rounded-xl p-6 flex flex-col justify-between hover:shadow-xl transition-all transform hover:-translate-y-1">
+<div class="space-y-3">
+<div class="w-12 h-12 rounded-lg bg-verde-ancestral/10 flex items-center justify-center text-verde-ancestral">
+<span class="material-symbols-outlined text-2xl">eco</span>
+</div>
+<h3 class="font-headline-md text-xl text-verde-ancestral font-bold">Folhas Quentes, Mornas e Frias</h3>
+<p class="font-body-md text-sm text-verde-ancestral/80">
+            Propriedades energéticas, fisiológicas e classificação botânica para o equilíbrio biológico e restauração da vitalidade.
+          </p>
+</div>
+<div class="pt-4 border-t border-verde-ancestral/10 text-xs font-['Montserrat'] font-bold text-verde-ancestral/70 uppercase">
+          Módulo 01 • Classificação
+        </div>
+</div>
+<div class="bg-white/60 backdrop-blur-sm border border-verde-ancestral/15 rounded-xl p-6 flex flex-col justify-between hover:shadow-xl transition-all transform hover:-translate-y-1">
+<div class="space-y-3">
+<div class="w-12 h-12 rounded-lg bg-verde-ancestral/10 flex items-center justify-center text-verde-ancestral">
+<span class="material-symbols-outlined text-2xl">vital_signs</span>
+</div>
+<h3 class="font-headline-md text-xl text-verde-ancestral font-bold">A Arte do Benzimento</h3>
+<p class="font-body-md text-sm text-verde-ancestral/80">
+            Orações tradicionais, gestos consagrados, rezas de cura e proteção energética ancestral transmitidos de geração em geração.
+          </p>
+</div>
+<div class="pt-4 border-t border-verde-ancestral/10 text-xs font-['Montserrat'] font-bold text-verde-ancestral/70 uppercase">
+          Módulo 02 • Benzimentos
+        </div>
+</div>
+<div class="bg-white/60 backdrop-blur-sm border border-verde-ancestral/15 rounded-xl p-6 flex flex-col justify-between hover:shadow-xl transition-all transform hover:-translate-y-1">
+<div class="space-y-3">
+<div class="w-12 h-12 rounded-lg bg-verde-ancestral/10 flex items-center justify-center text-verde-ancestral">
+<span class="material-symbols-outlined text-2xl">water_drop</span>
+</div>
+<h3 class="font-headline-md text-xl text-verde-ancestral font-bold">Banhos de Ervas</h3>
+<p class="font-body-md text-sm text-verde-ancestral/80">
+            Receitas tradicionais para brilho, descarrego, abertura de caminhos, prosperidade e cura emocional profunda.
+          </p>
+</div>
+<div class="pt-4 border-t border-verde-ancestral/10 text-xs font-['Montserrat'] font-bold text-verde-ancestral/70 uppercase">
+          Módulo 03 • Alquimia Líquida
+        </div>
+</div>
+<div class="bg-white/60 backdrop-blur-sm border border-verde-ancestral/15 rounded-xl p-6 flex flex-col justify-between hover:shadow-xl transition-all transform hover:-translate-y-1">
+<div class="space-y-3">
+<div class="w-12 h-12 rounded-lg bg-verde-ancestral/10 flex items-center justify-center text-verde-ancestral">
+<span class="material-symbols-outlined text-2xl">mode_heat</span>
+</div>
+<h3 class="font-headline-md text-xl text-verde-ancestral font-bold">Alquimia dos Defumadores</h3>
+<p class="font-body-md text-sm text-verde-ancestral/80">
+            Produção de incensos naturais, queima de resinas e técnicas ancestrais de limpeza e harmonização de ambientes e lares.
+          </p>
+</div>
+<div class="pt-4 border-t border-verde-ancestral/10 text-xs font-['Montserrat'] font-bold text-verde-ancestral/70 uppercase">
+          Módulo 04 • Purificação
+        </div>
+</div>
+</div>
+<div class="flex justify-center pt-2">
+<a class="inline-flex items-center gap-3 bg-verde-ancestral text-bege-erva-doce hover:bg-[#27351c] font-['Montserrat'] font-bold text-xs sm:text-sm uppercase tracking-wider px-9 py-4 rounded shadow-xl transition-all hover:scale-105" href="#contato">
+<span class="material-symbols-outlined text-lg">edit_calendar</span>
+        INSCREVER-SE NO WORKSHOP
+      </a>
+</div>
+</div>
+</section>
+<!-- 5. SEÇÃO MENTORIA (#mentoria) -->
+<section class="bg-[#10190c] py-16 md:py-section-gap border-b border-white/5" id="mentoria">
+<div class="section-container">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<div class="lg:col-span-6 space-y-6 text-center lg:text-left">
+<span class="bg-tertiary/20 text-tertiary border border-tertiary/30 px-3.5 py-1 rounded-full font-label-md text-[11px] font-bold uppercase tracking-widest">
+          Aprofundamento &amp; Consciência
+        </span>
+<h2 class="font-headline-lg text-3xl sm:text-4xl md:text-5xl text-bege-erva-doce">
+          Mentoria: Fé nas Folhas
+        </h2>
+<p class="font-body-lg text-bege-erva-doce/85 text-base sm:text-lg leading-relaxed">
+          A Mentoria Fé nas Folhas é para quem deseja caminhar mais profundamente na sabedoria botânica ancestral, aliando desenvolvimento pessoal, regeneração mental e liderança consciente aos saberes da terra.
+        </p>
+<div class="pt-2">
+<a class="inline-flex items-center gap-3 bg-tertiary text-on-tertiary-fixed hover:bg-tertiary-fixed font-['Montserrat'] font-bold text-xs sm:text-sm uppercase tracking-wider px-8 py-4 rounded shadow-xl transition-all hover:scale-105" href="#contato">
+<span class="material-symbols-outlined text-lg">assignment_ind</span>
+            ENTRAR NA LISTA DE ESPERA
+          </a>
+</div>
+</div>
+<!-- Pilares da Mentoria em cards escuros sofisticados -->
+<div class="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="p-6 rounded-xl bg-surface-container border border-bege-erva-doce/15 hover:border-tertiary/40 transition-colors">
+<span class="material-symbols-outlined text-tertiary text-2xl mb-2">timelapse</span>
+<h4 class="font-headline-md text-lg text-bege-erva-doce font-bold mb-2">Diagnóstico Energético</h4>
+<p class="text-xs sm:text-sm text-bege-erva-doce/70 leading-relaxed">
+            Alinhamento pessoal com as luas, as estações e os ciclos biológicos para tomada de decisão lúcida.
+          </p>
+</div>
+<div class="p-6 rounded-xl bg-surface-container border border-bege-erva-doce/15 hover:border-tertiary/40 transition-colors">
+<span class="material-symbols-outlined text-tertiary text-2xl mb-2">local_pharmacy</span>
+<h4 class="font-headline-md text-lg text-bege-erva-doce font-bold mb-2">Farmacopeia Popular</h4>
+<p class="text-xs sm:text-sm text-bege-erva-doce/70 leading-relaxed">
+            Saberes afro-indígenas e fitoterapia prática para construir a sua farmácia viva de saúde integral.
+          </p>
+</div>
+<div class="p-6 rounded-xl bg-surface-container border border-bege-erva-doce/15 hover:border-tertiary/40 transition-colors">
+<span class="material-symbols-outlined text-tertiary text-2xl mb-2">psychology</span>
+<h4 class="font-headline-md text-lg text-bege-erva-doce font-bold mb-2">Longevidade Cognitiva</h4>
+<p class="text-xs sm:text-sm text-bege-erva-doce/70 leading-relaxed">
+            Práticas diárias de foco sereno, respiração e plantas adaptógenas para a clareza mental continuada.
+          </p>
+</div>
+<div class="p-6 rounded-xl bg-surface-container border border-bege-erva-doce/15 hover:border-tertiary/40 transition-colors">
+<span class="material-symbols-outlined text-tertiary text-2xl mb-2">shield_person</span>
+<h4 class="font-headline-md text-lg text-bege-erva-doce font-bold mb-2">Acompanhamento Individual</h4>
+<p class="text-xs sm:text-sm text-bege-erva-doce/70 leading-relaxed">
+            Encontros de orientação com Yèyé Osunsade e rituais personalizados de regeneração contínua.
+          </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 6. SEÇÃO IMERSÕES (#imersoes) -->
+<section class="bg-[#142211] py-16 md:py-section-gap border-b border-white/5" id="imersoes">
+<div class="section-container space-y-12">
+<div class="max-w-3xl mx-auto text-center space-y-4">
+<span class="bg-tertiary text-on-tertiary-fixed px-4 py-1 rounded-full font-label-md text-[11px] font-bold uppercase tracking-widest">Retiros &amp; Conexão</span>
+<h2 class="font-headline-lg text-3xl sm:text-4xl md:text-5xl text-bege-erva-doce">
+        Imersões: Vivências na Terra
+      </h2>
+<p class="font-body-lg text-bege-erva-doce/80 text-base sm:text-lg leading-relaxed">
+        As Imersões Fé nas Folhas acontecem em lugares onde a natureza fala alto. Dias de silêncio, recolhimento, rodas de fogueira, banhos de rio e banhos de folha sob a condução cuidadosa de Yèyé Osunsade.
+      </p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="rounded-xl bg-surface-container/80 border border-bege-erva-doce/20 p-6 flex flex-col justify-between">
+<div class="space-y-3">
+<span class="material-symbols-outlined text-3xl text-bege-erva-doce">waves</span>
+<h3 class="font-headline-md text-xl text-bege-erva-doce font-bold">Retiro das Águas</h3>
+<p class="text-sm text-bege-erva-doce/75 leading-relaxed">
+            Cantos para Oxum, purificação nas cachoeiras, banhos de rio e renovação profunda do campo vibracional.
+          </p>
+</div>
+<div class="mt-6 pt-3 border-t border-white/10 text-xs font-['Montserrat'] text-tertiary font-bold uppercase">
+          Elemento Água
+        </div>
+</div>
+<div class="rounded-xl bg-surface-container/80 border border-bege-erva-doce/20 p-6 flex flex-col justify-between">
+<div class="space-y-3">
+<span class="material-symbols-outlined text-3xl text-bege-erva-doce">nature</span>
+<h3 class="font-headline-md text-xl text-bege-erva-doce font-bold">Caminhada do Reconhecimento</h3>
+<p class="text-sm text-bege-erva-doce/75 leading-relaxed">
+            Trilhas guiadas na mata nativa para identificação, colheita reverente e diálogo com as ervas medicinais.
+          </p>
+</div>
+<div class="mt-6 pt-3 border-t border-white/10 text-xs font-['Montserrat'] text-tertiary font-bold uppercase">
+          Elemento Terra
+        </div>
+</div>
+<div class="rounded-xl bg-surface-container/80 border border-bege-erva-doce/20 p-6 flex flex-col justify-between">
+<div class="space-y-3">
+<span class="material-symbols-outlined text-3xl text-bege-erva-doce">local_fire_department</span>
+<h3 class="font-headline-md text-xl text-bege-erva-doce font-bold">Noites de Fogueira</h3>
+<p class="text-sm text-bege-erva-doce/75 leading-relaxed">
+            Contação de itans, histórias e memórias ancestrais aquecidas pelo fogo sagrado sob o céu estrelado.
+          </p>
+</div>
+<div class="mt-6 pt-3 border-t border-white/10 text-xs font-['Montserrat'] text-tertiary font-bold uppercase">
+          Elemento Fogo
+        </div>
+</div>
+<div class="rounded-xl bg-surface-container/80 border border-bege-erva-doce/20 p-6 flex flex-col justify-between">
+<div class="space-y-3">
+<span class="material-symbols-outlined text-3xl text-bege-erva-doce">restaurant</span>
+<h3 class="font-headline-md text-xl text-bege-erva-doce font-bold">Alimentação Sagrada</h3>
+<p class="text-sm text-bege-erva-doce/75 leading-relaxed">
+            Cozinha de afeto com PANCs, raízes e ervas aromáticas que desintoxicam o organismo e alimentam a alma.
+          </p>
+</div>
+<div class="mt-6 pt-3 border-t border-white/10 text-xs font-['Montserrat'] text-tertiary font-bold uppercase">
+          Nutrição da Alma
+        </div>
+</div>
+</div>
+<div class="flex justify-center pt-2">
+<a class="inline-flex items-center gap-3 bg-tertiary text-on-tertiary-fixed hover:bg-tertiary-fixed font-['Montserrat'] font-bold text-xs sm:text-sm uppercase tracking-wider px-9 py-4 rounded shadow-xl transition-all hover:scale-105" href="#contato">
+<span class="material-symbols-outlined text-lg">forest</span>
+        QUERO PARTICIPAR DA IMERSÃO
+      </a>
+</div>
+</div>
+</section>
+<!-- 7. SEÇÃO MÚSICAS - CANÇÕES DA FLORESTA (#musicas) -->
+<section class="bg-[#0e170a] py-16 md:py-section-gap border-b border-white/5" id="musicas">
+<div class="section-container space-y-12">
+<div class="max-w-3xl mx-auto text-center space-y-4">
+<span class="bg-tertiary text-on-tertiary-fixed px-4 py-1 rounded-full font-label-md text-[11px] font-bold uppercase tracking-widest">Frequências de Cura</span>
+<h2 class="font-headline-lg text-3xl sm:text-4xl md:text-5xl text-bege-erva-doce">
+        Músicas: Canções da Floresta
+      </h2>
+<p class="font-body-lg text-bege-erva-doce/80 text-base sm:text-lg leading-relaxed">
+        A trilha sonora do Fé nas Folhas nasce das águas, das folhas e das rezas antigas. Melodias que acalmam o espírito, despertam a intuição e embalam os rituais de cura.
+      </p>
+</div>
+<!-- Audio Cards Elegantes e Funcionais -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Faixa 1 -->
+<div class="rounded-xl bg-surface-container border border-bege-erva-doce/20 p-6 flex flex-col justify-between space-y-4 hover:border-tertiary/40 transition-all shadow-lg">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-tertiary/20 text-tertiary flex items-center justify-center font-bold text-sm">
+            01
+          </div>
+<div>
+<h3 class="font-headline-md text-lg text-bege-erva-doce font-bold leading-tight">Oração às Folhas</h3>
+<p class="font-['Montserrat'] text-xs text-bege-erva-doce/60 uppercase">Yèyé Osunsade</p>
+</div>
+</div>
+<p class="text-xs text-bege-erva-doce/70 italic">
+          Canto meditativo evocando as folhas sagradas de cura e purificação dos caminhos.
+        </p>
+<div class="pt-2">
+<audio class="w-full h-10 rounded-lg" controls="">
+<source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg"/>
+            Seu navegador não suporta o reprodutor de áudio.
+          </audio>
+</div>
+</div>
+<!-- Faixa 2 -->
+<div class="rounded-xl bg-surface-container border border-bege-erva-doce/20 p-6 flex flex-col justify-between space-y-4 hover:border-tertiary/40 transition-all shadow-lg">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-tertiary/20 text-tertiary flex items-center justify-center font-bold text-sm">
+            02
+          </div>
+<div>
+<h3 class="font-headline-md text-lg text-bege-erva-doce font-bold leading-tight">Canto das Águas Doces</h3>
+<p class="font-['Montserrat'] text-xs text-bege-erva-doce/60 uppercase">Fé nas Folhas Ensemble</p>
+</div>
+</div>
+<p class="text-xs text-bege-erva-doce/70 italic">
+          Harmonias fluídas inspiradas no murmúrio das nascentes e na serenidade dos rios.
+        </p>
+<div class="pt-2">
+<audio class="w-full h-10 rounded-lg" controls="">
+<source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" type="audio/mpeg"/>
+            Seu navegador não suporta o reprodutor de áudio.
+          </audio>
+</div>
+</div>
+<!-- Faixa 3 -->
+<div class="rounded-xl bg-surface-container border border-bege-erva-doce/20 p-6 flex flex-col justify-between space-y-4 hover:border-tertiary/40 transition-all shadow-lg">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-tertiary/20 text-tertiary flex items-center justify-center font-bold text-sm">
+            03
+          </div>
+<div>
+<h3 class="font-headline-md text-lg text-bege-erva-doce font-bold leading-tight">Louvação a Ossain &amp; Benzedeiras</h3>
+<p class="font-['Montserrat'] text-xs text-bege-erva-doce/60 uppercase">Vozes Ancestrais</p>
+</div>
+</div>
+<p class="text-xs text-bege-erva-doce/70 italic">
+          Ritmo de agogô e cabaça celebrando os mestres curandeiros e o sopro das folhas.
+        </p>
+<div class="pt-2">
+<audio class="w-full h-10 rounded-lg" controls="">
+<source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3" type="audio/mpeg"/>
+            Seu navegador não suporta o reprodutor de áudio.
+          </audio>
+</div>
+</div>
+</div>
+<div class="flex justify-center pt-2">
+<a class="inline-flex items-center gap-3 bg-secondary-fixed text-on-secondary-fixed hover:bg-secondary font-['Montserrat'] font-bold text-xs sm:text-sm uppercase tracking-wider px-8 py-4 rounded shadow-xl transition-all hover:scale-105" href="https://open.spotify.com" target="_blank">
+<span class="material-symbols-outlined text-lg">headphones</span>
+        OUÇA AS CANÇÕES
+      </a>
+</div>
+</div>
+</section>
+<!-- 8. SEÇÃO LIVRO (#livro) -->
+<section class="bg-secondary-fixed text-primary-container py-16 md:py-section-gap" id="livro">
+<div class="section-container grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<!-- Preserved Capa do Livro https://lh3.googleusercontent.com/aida/AEtjO1U3QR5MhoC-4ymXrLKJGnPW7Qap0OxGFVaqVzpM2YRTMXSCjePb_UGSpRXUNEwLh1_QQnNAG2l1sf3eFN8JpReURyzk9Sh2M--qA9AhOKjkoIjVKIO-KJQ3jQ-5xrsmDt7hkPCrlgyVczzcwV_DozGW_btXfQxvwwQQ_fPzubHSMIKoyANMPtOy9LN7XuQJuCXQba6J1KHoshz2Z4Km8Mu98pvlYorVbcD9v9Z61KDghsvauQMDUKa2JexjC2AX6PSF_f33xXI5Xw -->
+<div class="lg:col-span-5 flex justify-center order-2 lg:order-1">
+<div class="relative max-w-xs sm:max-w-sm rounded-xl overflow-hidden shadow-[0_25px_50px_rgba(0,0,0,0.35)] border border-verde-ancestral/20 transform hover:-rotate-1 transition-transform duration-300">
+<img alt="Livro Fé nas Folhas - Sueli Kinté e Sueide Kinté" class="w-full h-auto object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1U3QR5MhoC-4ymXrLKJGnPW7Qap0OxGFVaqVzpM2YRTMXSCjePb_UGSpRXUNEwLh1_QQnNAG2l1sf3eFN8JpReURyzk9Sh2M--qA9AhOKjkoIjVKIO-KJQ3jQ-5xrsmDt7hkPCrlgyVczzcwV_DozGW_btXfQxvwwQQ_fPzubHSMIKoyANMPtOy9LN7XuQJuCXQba6J1KHoshz2Z4Km8Mu98pvlYorVbcD9v9Z61KDghsvauQMDUKa2JexjC2AX6PSF_f33xXI5Xw"/>
+</div>
+</div>
+<div class="lg:col-span-7 space-y-6 text-center lg:text-left order-1 lg:order-2">
+<span class="bg-[#394c29] text-bege-erva-doce px-4 py-1 rounded-full font-label-md text-[11px] font-bold uppercase tracking-widest">
+        Obra Literária • Editora Fontanar
+      </span>
+<h2 class="font-headline-lg text-3xl sm:text-4xl md:text-5xl leading-tight">
+        Livro: Fé nas Folhas
+      </h2>
+<p class="font-body-lg text-base sm:text-lg opacity-90 leading-relaxed">
+        O livro Fé nas Folhas é um guia vivo sobre a alma das ervas. Um resgate profundo da sabedoria de benzedeiras com foco na cultura afro-brasileira e indígena, repleto de práticas ancestrais, receitas de banhos e rezas para a cura da alma e o bem-estar cotidiano.
+      </p>
+<div class="bg-verde-ancestral/10 border border-verde-ancestral/15 p-6 rounded-lg text-left">
+<p class="font-headline-md italic text-xl md:text-2xl text-verde-ancestral">
+          "Que as folhas tragam a cura e o design traga a conexão."
+        </p>
+<p class="mt-2 font-['Montserrat'] text-xs opacity-75 uppercase tracking-widest font-bold">
+          — Sueli Kinté e Sueide Kinté
+        </p>
+</div>
+<div class="pt-2 flex justify-center lg:justify-start">
+<a class="inline-flex items-center gap-3 bg-custom-brown text-white uppercase font-['Montserrat'] px-8 py-4 rounded shadow-xl hover:opacity-95 font-bold transition-all hover:scale-105" href="https://www.amazon.com.br" target="_blank">
+<span class="material-symbols-outlined text-lg">shopping_cart</span>
+          COMPRAR O LIVRO
+        </a>
+</div>
+</div>
+</div>
+</section>
+<!-- 9. SEÇÃO TARÔ - CURANDEIRA DAS ÁGUAS (#taro) -->
+<section class="bg-[#101b0d] py-16 md:py-section-gap border-b border-white/5" id="taro">
+<div class="section-container">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+<span class="bg-tertiary/20 text-tertiary border border-tertiary/30 px-3.5 py-1 rounded-full font-label-md text-[11px] font-bold uppercase tracking-widest">
+          Oráculo Sagrado &amp; Intuição
+        </span>
+<h2 class="font-headline-lg text-3xl sm:text-4xl md:text-5xl text-bege-erva-doce">
+          Tarô: Curandeira das Águas
+        </h2>
+<p class="font-body-lg text-bege-erva-doce/85 text-base sm:text-lg leading-relaxed">
+          O Tarô Curandeira das Águas é um oráculo inspirado em rios, folhas, jasmim e no oráculo milenar das conchas. Um portal de autoconhecimento e orientação sutil para trazer respostas, clareza e bênçãos aos seus caminhos.
+        </p>
+<!-- Destaques oraculares -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
+<div class="p-4 rounded-xl bg-surface-container border border-bege-erva-doce/15 text-left">
+<span class="material-symbols-outlined text-tertiary text-2xl mb-1">psychiatry</span>
+<h4 class="font-headline-md text-base text-bege-erva-doce font-bold">Arcanos das Ervas</h4>
+<p class="text-xs text-bege-erva-doce/70 mt-1">A frequência botânica de cada lâmina para proteção e cura.</p>
+</div>
+<div class="p-4 rounded-xl bg-surface-container border border-bege-erva-doce/15 text-left">
+<span class="material-symbols-outlined text-tertiary text-2xl mb-1">spa</span>
+<h4 class="font-headline-md text-base text-bege-erva-doce font-bold">Mães d'Água</h4>
+<p class="text-xs text-bege-erva-doce/70 mt-1">Conselhos afetuosos para acolher emoções e fertilizar ideias.</p>
+</div>
+<div class="p-4 rounded-xl bg-surface-container border border-bege-erva-doce/15 text-left">
+<span class="material-symbols-outlined text-tertiary text-2xl mb-1">wb_twilight</span>
+<h4 class="font-headline-md text-base text-bege-erva-doce font-bold">Tiragens de Proteção</h4>
+<p class="text-xs text-bege-erva-doce/70 mt-1">Leituras específicas para descarrego e equilíbrio do destino.</p>
+</div>
+</div>
+<div class="pt-2 flex justify-center lg:justify-start">
+<a class="inline-flex items-center gap-3 bg-tertiary text-on-tertiary-fixed hover:bg-tertiary-fixed font-['Montserrat'] font-bold text-xs sm:text-sm uppercase tracking-wider px-8 py-4 rounded shadow-xl transition-all hover:scale-105" href="#contato">
+<span class="material-symbols-outlined text-lg">auto_awesome</span>
+            CONHEÇA O TARÔ
+          </a>
+</div>
+</div>
+<!-- Card Visual do Tarô com https://lh3.googleusercontent.com/aida/AEtjO1XUw7a_HI4n1SdtBgdN-ZapYAPFQa-WtuLuU84LSXr9Fpiv1w0CNuBQ4C0rQ4qKIbs66lKYFq0rQmEgIlO2_SxXU5CTMLNZWe2Tal5bFOwCtFiFS0a8vpMUSYPIZNGTYwv49szJU9qGb40hEAFJZ0h9Nl4lbkd-ORt48C7BGKuDAMUY6CLWE4QkjFLBFPbS-9kGwDAZjDcVYGu1s8VlJ3m19e8urtrUWG2eLpowYet6TOSD5ReAjKFI5CY8KmHNQr4QyLLRwHV4xQ -->
+<div class="lg:col-span-5 flex justify-center">
+<div class="relative p-6 sm:p-8 rounded-2xl bg-surface-container border border-bege-erva-doce/30 shadow-2xl text-center space-y-4 max-w-sm">
+<div class="w-32 h-32 mx-auto rounded-full overflow-hidden border-2 border-tertiary shadow-lg">
+<img alt="Yèyé Osunsade - Curandeira das Águas" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1XUw7a_HI4n1SdtBgdN-ZapYAPFQa-WtuLuU84LSXr9Fpiv1w0CNuBQ4C0rQ4qKIbs66lKYFq0rQmEgIlO2_SxXU5CTMLNZWe2Tal5bFOwCtFiFS0a8vpMUSYPIZNGTYwv49szJU9qGb40hEAFJZ0h9Nl4lbkd-ORt48C7BGKuDAMUY6CLWE4QkjFLBFPbS-9kGwDAZjDcVYGu1s8VlJ3m19e8urtrUWG2eLpowYet6TOSD5ReAjKFI5CY8KmHNQr4QyLLRwHV4xQ"/>
+</div>
+<h3 class="font-headline-md text-2xl text-bege-erva-doce">Oráculo das Águas</h3>
+<p class="text-xs text-bege-erva-doce/75 italic">
+            "A resposta que você busca já repousa no espelho límpido das águas calmas."
+          </p>
+<div class="flex justify-center gap-2 pt-2 text-tertiary">
+<span class="material-symbols-outlined">filter_drama</span>
+<span class="material-symbols-outlined">water_drop</span>
+<span class="material-symbols-outlined">flare</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 10. SEÇÃO REDES SOCIAIS (#redes-sociais) -->
+<section class="bg-[#121c0e] py-16 md:py-20 border-b border-white/5" id="redes-sociais">
+<div class="section-container">
+<div class="max-w-3xl mx-auto text-center space-y-6">
+<span class="bg-tertiary text-on-tertiary-fixed px-4 py-1 rounded-full font-label-md text-[11px] font-bold uppercase tracking-widest">
+        Comunidade &amp; Sabedoria Diária
+      </span>
+<h2 class="font-headline-lg text-3xl sm:text-4xl md:text-5xl text-bege-erva-doce">
+        Acompanhe nas Redes Sociais
+      </h2>
+<p class="font-body-lg text-bege-erva-doce/80 text-base sm:text-lg leading-relaxed">
+        Acompanhe Yeye nas redes e receba rezas, receitas de banhos, saberes da mata e reflexões diárias para o seu bem-estar.
+      </p>
+<div class="flex flex-wrap justify-center gap-4 pt-4">
+<a class="inline-flex items-center gap-3 bg-tertiary text-on-tertiary-fixed hover:bg-tertiary-fixed font-['Montserrat'] font-bold text-xs sm:text-sm uppercase tracking-wider px-8 py-4 rounded shadow-xl transition-all hover:scale-105" href="https://www.instagram.com/yeye___oshun" target="_blank">
+<span class="material-symbols-outlined text-lg">photo_camera</span>
+          SEGUIR YEYE (@yeye___oshun)
+        </a>
+<a class="inline-flex items-center gap-2 border border-bege-erva-doce/40 text-bege-erva-doce hover:bg-white/5 font-['Montserrat'] font-bold text-xs uppercase tracking-wider px-6 py-4 rounded transition-all" href="https://www.youtube.com" target="_blank">
+<span class="material-symbols-outlined text-lg">smart_display</span>
+          Canal no YouTube
+        </a>
+</div>
+</div>
+</div>
+</section>
+<!-- 11. CONTATO & CONTRATAÇÕES (#contato) -->
+<section class="bg-gradient-to-b from-[#121c0e] to-[#0a1106] py-16 md:py-section-gap" id="contato">
+<div class="section-container">
+<div class="max-w-3xl mx-auto text-center space-y-6">
+<span class="bg-secondary text-on-secondary px-4 py-1 rounded-full font-label-md text-[11px] font-bold uppercase tracking-widest">
+        Convites &amp; Parcerias
+      </span>
+<h2 class="font-headline-lg text-3xl sm:text-4xl md:text-5xl text-bege-erva-doce">
+        Contato &amp; Contratações
+      </h2>
+<p class="font-body-lg text-bege-erva-doce/80 text-base sm:text-lg leading-relaxed">
+        Para convites, imprensa, contratações de espetáculo, palestras corporativas e workshops sob medida para sua organização ou evento.
+      </p>
+<!-- Card de Contato Direto -->
+<div class="mt-8 p-8 rounded-2xl bg-surface-container/90 border border-bege-erva-doce/20 shadow-2xl text-center space-y-6 max-w-xl mx-auto">
+<div class="flex flex-col sm:flex-row justify-center items-center gap-6 text-sm text-bege-erva-doce/90">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary">mail</span>
+<span>contato@fenasfolhas.com.br</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary">location_on</span>
+<span>São Paulo / Salvador • Brasil</span>
+</div>
+</div>
+<div class="pt-2">
+<a class="inline-flex items-center justify-center gap-3 w-full sm:w-auto bg-tertiary text-on-tertiary-fixed hover:bg-tertiary-fixed font-['Montserrat'] font-extrabold text-sm uppercase tracking-wider px-10 py-4 rounded shadow-xl transition-all hover:scale-105" href="https://wa.me/" target="_blank">
+<span class="material-symbols-outlined text-lg">chat</span>
+            FALE COM YEYE
+          </a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- FOOTER COMPLETO -->
+<footer class="bg-black text-bege-erva-doce py-12 border-t border-white/10">
+<div class="section-container flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="text-xl font-bold font-['Newsreader'] italic tracking-wide">
+      Fé nas Folhas
+    </div>
+<div class="text-[12px] opacity-70 text-center font-['Montserrat']">
+      © 2025 Fé nas Folhas. Todos os direitos reservados. Alquimia Botânica, Arte e Saberes Vivos.
+    </div>
+<div class="flex space-x-6 text-[11px] uppercase tracking-widest font-bold font-['Montserrat']">
+<a class="hover:text-white transition-colors" href="https://www.instagram.com/yeye___oshun" target="_blank">Instagram</a>
+<a class="hover:text-white transition-colors" href="#show">Espetáculo</a>
+<a class="hover:text-white transition-colors" href="#contato">Contato</a>
 </div>
 </div>
 </footer>
-<!-- Instagram Script -->
-<script async="" src="https://www.instagram.com/embed.js"></script>
-<!-- Mobile Menu Logic -->
+<!-- Mobile Menu Toggle Script -->
 <script>
-        const menuToggle = document.getElementById('menu-toggle');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const menuIcon = document.getElementById('menu-icon');
-        let isMenuOpen = false;
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuIcon = document.getElementById('menu-icon');
+  let isMenuOpen = false;
 
-        function toggleMenu() {
-            isMenuOpen = !isMenuOpen;
-            if (isMenuOpen) {
-                mobileMenu.classList.add('active');
-                menuIcon.innerText = 'close';
-                // Disable body scroll when menu is open
-                document.body.classList.add('no-scroll');
-            } else {
-                mobileMenu.classList.remove('active');
-                menuIcon.innerText = 'menu';
-                document.body.classList.remove('no-scroll');
-            }
-        }
+  function toggleMenu() {
+    isMenuOpen = !isMenuOpen;
+    if (isMenuOpen) {
+      mobileMenu.classList.add('active');
+      menuIcon.innerText = 'close';
+      document.body.classList.add('no-scroll');
+    } else {
+      mobileMenu.classList.remove('active');
+      menuIcon.innerText = 'menu';
+      document.body.classList.remove('no-scroll');
+    }
+  }
 
-        menuToggle.addEventListener('click', toggleMenu);
+  menuToggle.addEventListener('click', toggleMenu);
 
-        // Close menu on link click
-        document.querySelectorAll('#mobile-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                if (isMenuOpen) toggleMenu();
-            });
-        });
-
-        // Close menu when clicking outside
-        window.addEventListener('click', (e) => {
-            if (isMenuOpen && !mobileMenu.contains(e.target) && !menuToggle.contains(e.target)) {
-                toggleMenu();
-            }
-        });
-    </script>
-
-
-
-
-
-
+  window.addEventListener('click', (e) => {
+    if (isMenuOpen && !mobileMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+      toggleMenu();
+    }
+  });
+</script>
 </body></html>
