@@ -1,11 +1,4 @@
 <!DOCTYPE html><html class="dark scroll-smooth" lang="pt-BR" style=""><head>
-<script>
-  // Redirect old subfolder URLs to clean root URL
-  if (window.location.pathname.includes('stitch_alquimia_bot_nica_landing_page')) {
-    const hash = window.location.hash || '';
-    window.location.replace('/' + hash);
-  }
-</script>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 <title>Fé nas Folhas - Sabedoria Ancestral, Ervas &amp; Performance</title>
@@ -245,7 +238,7 @@
 <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex justify-between items-center relative">
 <!-- Logo (notranslate to lock dimensions and alt attribute) -->
 <div class="flex-shrink-0 mr-8 lg:mr-12 z-[210]">
-  <a class="inline-flex items-center hover:opacity-90 transition-opacity notranslate" translate="no" href="/#apresentacao" style="text-decoration:none;">
+  <a class="inline-flex items-center hover:opacity-90 transition-opacity notranslate" translate="no" href="#apresentacao" style="text-decoration:none;">
     <img alt="Fé nas Folhas" class="nav-logo-img notranslate" translate="no" src="logo-fe-nas-folhas.png" style="height: 42px; width: auto; max-height: 42px; display: block;">
   </a>
 </div>
@@ -275,7 +268,7 @@
     <button onclick="changeLanguage('fr')" id="btn-lang-fr" class="lang-btn" title="Français">FR</button>
   </div>
 
-  <a class="bg-tertiary text-on-tertiary-fixed uppercase font-['Montserrat'] text-[11px] px-3.5 py-2 rounded hover:bg-tertiary-fixed transition-all font-extrabold shadow-md flex-shrink-0" href="/#workshop">QUERO PARTICIPAR</a>
+  <a class="bg-tertiary text-on-tertiary-fixed uppercase font-['Montserrat'] text-[11px] px-3.5 py-2 rounded hover:bg-tertiary-fixed transition-all font-extrabold shadow-md flex-shrink-0" href="#workshop">QUERO PARTICIPAR</a>
 </div>
 <!-- Mobile Toggle Button -->
 <button aria-label="Toggle Menu" class="xl:hidden text-bege-erva-doce z-[210] p-2 focus:outline-none" id="menu-toggle">
@@ -1172,22 +1165,5 @@
 </script>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-
-<script>
-  // Handle in-page smooth scrolling for root anchor links (/#hash)
-  document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('a[href^="/#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        const targetId = this.getAttribute('href').replace('/#', '');
-        const targetElement = document.getElementById(targetId);
-        if (targetElement) {
-          e.preventDefault();
-          targetElement.scrollIntoView({ behavior: 'smooth' });
-          history.pushState(null, null, '/#' + targetId);
-        }
-      });
-    });
-  });
-</script>
 
 </body></html>
