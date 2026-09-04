@@ -159,6 +159,36 @@
   .no-scroll {
       overflow: hidden;
   }
+
+  /* Google Translate & Language Selector Styling */
+  .goog-te-banner-frame.skiptranslate, .goog-te-banner-frame, .goog-te-banner { display: none !important; }
+  body { top: 0px !important; }
+  #goog-gt-tt, .goog-te-balloon-frame { display: none !important; }
+  .goog-text-highlight { background: none !important; box-shadow: none !important; }
+  .skiptranslate iframe { display: none !important; }
+  #google_translate_element { display: none !important; }
+
+  .lang-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3px 7px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    color: rgba(235, 209, 156, 0.85);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(235, 209, 156, 0.2);
+    transition: all 0.2s ease;
+    cursor: pointer;
+  }
+  .lang-btn:hover, .lang-btn.active-lang {
+    color: #0c1607 !important;
+    background: #ddc490 !important;
+    border-color: #ddc490 !important;
+  }
+
 </style>
 </head>
 <body class="bg-[#0e170a] text-on-background antialiased overflow-x-hidden m-0 p-0 font-['Noto_Serif'] selection:bg-tertiary selection:text-on-tertiary">
@@ -181,7 +211,17 @@
 <a class="text-bege-erva-doce/80 hover:text-white transition-colors uppercase tracking-wider text-[11px] font-bold font-['Montserrat']" href="#taro">Tarô</a>
 <a class="text-bege-erva-doce/80 hover:text-white transition-colors uppercase tracking-wider text-[11px] font-bold font-['Montserrat']" href="#redes-sociais">Redes</a>
 <a class="text-bege-erva-doce/80 hover:text-white transition-colors uppercase tracking-wider text-[11px] font-bold font-['Montserrat']" href="#contato">Contato</a>
-<a class="bg-tertiary text-on-tertiary-fixed uppercase font-['Montserrat'] text-[11px] px-4 py-2.5 rounded hover:bg-tertiary-fixed transition-all font-extrabold shadow-md ml-2" href="#workshop">QUERO PARTICIPAR</a>
+
+<!-- Language Selector (Desktop) -->
+<div class="inline-flex items-center space-x-1 border border-[#ebd19c]/20 bg-black/40 backdrop-blur-sm rounded px-1.5 py-1 mr-1 notranslate" translate="no">
+  <span class="material-symbols-outlined text-sm text-bege-erva-doce/70 mr-0.5" style="font-size: 14px;">translate</span>
+  <button onclick="changeLanguage('pt')" id="btn-lang-pt" class="lang-btn active-lang" title="Português">PT</button>
+  <button onclick="changeLanguage('en')" id="btn-lang-en" class="lang-btn" title="English">EN</button>
+  <button onclick="changeLanguage('es')" id="btn-lang-es" class="lang-btn" title="Español">ES</button>
+  <button onclick="changeLanguage('fr')" id="btn-lang-fr" class="lang-btn" title="Français">FR</button>
+</div>
+
+<a class="bg-tertiary text-on-tertiary-fixed uppercase font-['Montserrat'] text-[11px] px-4 py-2.5 rounded hover:bg-tertiary-fixed transition-all font-extrabold shadow-md ml-1" href="#workshop">QUERO PARTICIPAR</a>
 </div>
 <!-- Mobile Toggle Button -->
 <button aria-label="Toggle Menu" class="xl:hidden text-bege-erva-doce z-[210] p-2 focus:outline-none" id="menu-toggle">
@@ -191,6 +231,16 @@
 <!-- Mobile Menu Dropdown -->
 <div class="xl:hidden absolute top-full left-0 right-0 bg-[#121c0e] border-b border-white/10 shadow-2xl z-[190]" id="mobile-menu">
 <div class="flex flex-col items-center space-y-4 py-6 px-4">
+
+<!-- Language Selector (Mobile) -->
+<div class="flex items-center justify-center space-x-2 pb-2 notranslate" translate="no">
+  <span class="material-symbols-outlined text-sm text-bege-erva-doce/70 mr-1" style="font-size: 16px;">translate</span>
+  <button onclick="changeLanguage('pt'); if(typeof toggleMenu==='function') toggleMenu();" id="m-btn-lang-pt" class="lang-btn px-3 py-1.5 active-lang">PT</button>
+  <button onclick="changeLanguage('en'); if(typeof toggleMenu==='function') toggleMenu();" id="m-btn-lang-en" class="lang-btn px-3 py-1.5">EN</button>
+  <button onclick="changeLanguage('es'); if(typeof toggleMenu==='function') toggleMenu();" id="m-btn-lang-es" class="lang-btn px-3 py-1.5">ES</button>
+  <button onclick="changeLanguage('fr'); if(typeof toggleMenu==='function') toggleMenu();" id="m-btn-lang-fr" class="lang-btn px-3 py-1.5">FR</button>
+</div>
+
 <a class="text-bege-erva-doce text-sm uppercase tracking-widest font-bold font-['Montserrat']" href="#apresentacao" onclick="toggleMenu()">Apresentação</a><a class="text-bege-erva-doce text-sm uppercase tracking-widest font-bold font-['Montserrat']" href="#saberes-da-floresta" onclick="toggleMenu()">Vídeos</a>
 <a class="text-bege-erva-doce text-sm uppercase tracking-widest font-bold font-['Montserrat']" href="#show" onclick="toggleMenu()">Show</a>
 <a class="text-bege-erva-doce text-sm uppercase tracking-widest font-bold font-['Montserrat']" href="#workshop" onclick="toggleMenu()">Workshop</a>
@@ -839,5 +889,114 @@
   });
 </script>
 
+
+
+<div id="google_translate_element" style="display:none;"></div>
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'pt',
+      includedLanguages: 'pt,en,es,fr',
+      autoDisplay: false
+    }, 'google_translate_element');
+    
+    // Auto-detect foreign visitors
+    initLanguageDetection();
+  }
+
+  function setLanguageCookie(lang) {
+    var domain = window.location.hostname;
+    if (domain) {
+      document.cookie = 'googtrans=/pt/' + lang + '; path=/; domain=' + domain;
+    }
+    document.cookie = 'googtrans=/pt/' + lang + '; path=/;';
+    localStorage.setItem('user_lang_pref', lang);
+  }
+
+  function updateActiveLangButtons(lang) {
+    const langs = ['pt', 'en', 'es', 'fr'];
+    langs.forEach(l => {
+      const dBtn = document.getElementById('btn-lang-' + l);
+      const mBtn = document.getElementById('m-btn-lang-' + l);
+      if (dBtn) {
+        if (l === lang) dBtn.classList.add('active-lang');
+        else dBtn.classList.remove('active-lang');
+      }
+      if (mBtn) {
+        if (l === lang) mBtn.classList.add('active-lang');
+        else mBtn.classList.remove('active-lang');
+      }
+    });
+  }
+
+  function changeLanguage(lang) {
+    updateActiveLangButtons(lang);
+    if (lang === 'pt') {
+      var domain = window.location.hostname;
+      if (domain) {
+        document.cookie = 'googtrans=; path=/; domain=' + domain + '; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+      }
+      document.cookie = 'googtrans=; path=/; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+      localStorage.setItem('user_lang_pref', 'pt');
+      var select = document.querySelector('.goog-te-combo');
+      if (select) {
+        select.value = 'pt';
+        select.dispatchEvent(new Event('change'));
+      } else {
+        window.location.reload();
+      }
+    } else {
+      setLanguageCookie(lang);
+      var select = document.querySelector('.goog-te-combo');
+      if (select) {
+        select.value = lang;
+        select.dispatchEvent(new Event('change'));
+      } else {
+        window.location.reload();
+      }
+    }
+  }
+
+  function initLanguageDetection() {
+    const savedPref = localStorage.getItem('user_lang_pref');
+    if (savedPref) {
+      updateActiveLangButtons(savedPref);
+      if (savedPref !== 'pt') {
+        setTimeout(() => {
+          var select = document.querySelector('.goog-te-combo');
+          if (select) {
+            select.value = savedPref;
+            select.dispatchEvent(new Event('change'));
+          }
+        }, 300);
+      }
+      return;
+    }
+
+    // Detect browser language
+    const browserLang = (navigator.language || navigator.userLanguage || 'pt').toLowerCase();
+    const isPt = browserLang.startsWith('pt');
+
+    if (!isPt) {
+      let targetLang = 'en';
+      if (browserLang.startsWith('es')) targetLang = 'es';
+      else if (browserLang.startsWith('fr')) targetLang = 'fr';
+      
+      setLanguageCookie(targetLang);
+      updateActiveLangButtons(targetLang);
+
+      setTimeout(() => {
+        var select = document.querySelector('.goog-te-combo');
+        if (select) {
+          select.value = targetLang;
+          select.dispatchEvent(new Event('change'));
+        }
+      }, 500);
+    } else {
+      updateActiveLangButtons('pt');
+    }
+  }
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </body></html>
