@@ -189,39 +189,81 @@
     border-color: #ddc490 !important;
   }
 
+
+  /* Header & Logo Stability */
+  .nav-logo-link {
+    flex-shrink: 0 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    margin-right: 2.5rem !important;
+  }
+  .nav-logo-img {
+    height: 38px !important;
+    max-height: 38px !important;
+    min-height: 38px !important;
+    width: auto !important;
+    display: block !important;
+    object-fit: contain !important;
+  }
+  @media (min-width: 768px) {
+    .nav-logo-img {
+      height: 44px !important;
+      max-height: 44px !important;
+      min-height: 44px !important;
+    }
+  }
+  .nav-link-item {
+    color: rgba(235, 209, 156, 0.85);
+    transition: color 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 11px;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    white-space: nowrap;
+    padding: 4px 6px;
+  }
+  .nav-link-item:hover {
+    color: #ffffff;
+  }
+
 </style>
 </head>
 <body class="bg-[#0e170a] text-on-background antialiased overflow-x-hidden m-0 p-0 font-['Noto_Serif'] selection:bg-tertiary selection:text-on-tertiary">
 <!-- TOP NAVIGATION (STICKY / DOCKED) -->
 <nav class="bg-[#121c0e]/95 sticky top-0 backdrop-blur-md border-b border-white/10 z-[200]">
-<div class="section-container py-3.5 flex justify-between items-center relative">
-<!-- Logo -->
-<a class="flex items-center z-[210] hover:opacity-90 transition-opacity" href="#apresentacao">
-  <img alt="Fé nas Folhas" class="h-8 md:h-10 w-auto object-contain" src="logo-fe-nas-folhas.png">
+<div class="section-container py-3 flex justify-between items-center relative">
+<!-- Logo (notranslate to lock dimensions and alt attribute) -->
+<a class="nav-logo-link z-[210] hover:opacity-90 transition-opacity notranslate" translate="no" href="#apresentacao">
+  <img alt="Fé nas Folhas" class="nav-logo-img notranslate" translate="no" src="logo-fe-nas-folhas.png">
 </a>
+
 <!-- Desktop Nav Links (10 Anchors) -->
-<div class="hidden xl:flex space-x-4 items-center">
-<a class="text-bege-erva-doce/80 hover:text-white transition-colors uppercase tracking-wider text-[11px] font-bold font-['Montserrat']" href="#apresentacao">Apresentação</a><a class="text-bege-erva-doce/80 hover:text-white transition-colors uppercase tracking-wider text-[11px] font-bold font-['Montserrat']" href="#saberes-da-floresta">Vídeos</a>
-<a class="text-bege-erva-doce/80 hover:text-white transition-colors uppercase tracking-wider text-[11px] font-bold font-['Montserrat']" href="#show">Show</a>
-<a class="text-bege-erva-doce/80 hover:text-white transition-colors uppercase tracking-wider text-[11px] font-bold font-['Montserrat']" href="#workshop">Workshop</a>
-<a class="text-bege-erva-doce/80 hover:text-white transition-colors uppercase tracking-wider text-[11px] font-bold font-['Montserrat']" href="#mentoria">Mentoria</a>
-<a class="text-bege-erva-doce/80 hover:text-white transition-colors uppercase tracking-wider text-[11px] font-bold font-['Montserrat']" href="#imersoes">Imersões</a>
-<a class="text-bege-erva-doce/80 hover:text-white transition-colors uppercase tracking-wider text-[11px] font-bold font-['Montserrat']" href="#musicas">Músicas</a>
-<a class="text-bege-erva-doce/80 hover:text-white transition-colors uppercase tracking-wider text-[11px] font-bold font-['Montserrat']" href="#livro">Livro</a>
-<a class="text-bege-erva-doce/80 hover:text-white transition-colors uppercase tracking-wider text-[11px] font-bold font-['Montserrat']" href="#taro">Tarô</a>
-<a class="text-bege-erva-doce/80 hover:text-white transition-colors uppercase tracking-wider text-[11px] font-bold font-['Montserrat']" href="#redes-sociais">Redes</a>
-<a class="text-bege-erva-doce/80 hover:text-white transition-colors uppercase tracking-wider text-[11px] font-bold font-['Montserrat']" href="#contato">Contato</a>
+<div class="hidden xl:flex items-center justify-end space-x-1 2xl:space-x-2 flex-1">
+  <div class="flex items-center space-x-1 lg:space-x-2 mr-3">
+    <a class="nav-link-item" href="#apresentacao">Apresentação</a>
+    <a class="nav-link-item" href="#saberes-da-floresta">Vídeos</a>
+    <a class="nav-link-item" href="#show">Show</a>
+    <a class="nav-link-item" href="#workshop">Workshop</a>
+    <a class="nav-link-item" href="#mentoria">Mentoria</a>
+    <a class="nav-link-item" href="#imersoes">Imersões</a>
+    <a class="nav-link-item" href="#musicas">Músicas</a>
+    <a class="nav-link-item" href="#livro">Livro</a>
+    <a class="nav-link-item" href="#taro">Tarô</a>
+    <a class="nav-link-item" href="#redes-sociais">Redes</a>
+    <a class="nav-link-item" href="#contato">Contato</a>
+  </div>
 
-<!-- Language Selector (Desktop) -->
-<div class="inline-flex items-center space-x-1 border border-[#ebd19c]/20 bg-black/40 backdrop-blur-sm rounded px-1.5 py-1 mr-1 notranslate" translate="no">
-  <span class="material-symbols-outlined text-sm text-bege-erva-doce/70 mr-0.5 notranslate" translate="no" style="font-size: 14px;">translate</span>
-  <button onclick="changeLanguage('pt')" id="btn-lang-pt" class="lang-btn active-lang" title="Português">PT</button>
-  <button onclick="changeLanguage('en')" id="btn-lang-en" class="lang-btn" title="English">EN</button>
-  <button onclick="changeLanguage('es')" id="btn-lang-es" class="lang-btn" title="Español">ES</button>
-  <button onclick="changeLanguage('fr')" id="btn-lang-fr" class="lang-btn" title="Français">FR</button>
-</div>
+  <!-- Language Selector (Desktop) -->
+  <div class="inline-flex items-center space-x-1 border border-[#ebd19c]/25 bg-black/40 backdrop-blur-sm rounded px-1.5 py-1 mr-2 notranslate flex-shrink-0" translate="no">
+    <span class="material-symbols-outlined text-sm text-bege-erva-doce/70 mr-0.5 notranslate" translate="no" style="font-size: 14px;">translate</span>
+    <button onclick="changeLanguage('pt')" id="btn-lang-pt" class="lang-btn active-lang" title="Português">PT</button>
+    <button onclick="changeLanguage('en')" id="btn-lang-en" class="lang-btn" title="English">EN</button>
+    <button onclick="changeLanguage('es')" id="btn-lang-es" class="lang-btn" title="Español">ES</button>
+    <button onclick="changeLanguage('fr')" id="btn-lang-fr" class="lang-btn" title="Français">FR</button>
+  </div>
 
-<a class="bg-tertiary text-on-tertiary-fixed uppercase font-['Montserrat'] text-[11px] px-4 py-2.5 rounded hover:bg-tertiary-fixed transition-all font-extrabold shadow-md ml-1" href="#workshop">QUERO PARTICIPAR</a>
+  <a class="bg-tertiary text-on-tertiary-fixed uppercase font-['Montserrat'] text-[11px] px-3.5 py-2 rounded hover:bg-tertiary-fixed transition-all font-extrabold shadow-md flex-shrink-0" href="#workshop">QUERO PARTICIPAR</a>
 </div>
 <!-- Mobile Toggle Button -->
 <button aria-label="Toggle Menu" class="xl:hidden text-bege-erva-doce z-[210] p-2 focus:outline-none" id="menu-toggle">
