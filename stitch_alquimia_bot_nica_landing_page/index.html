@@ -198,19 +198,22 @@
     margin-right: 2.5rem !important;
   }
   .nav-logo-img {
-    height: 38px !important;
-    max-height: 38px !important;
-    min-height: 38px !important;
+    height: 40px !important;
+    max-height: 40px !important;
+    min-height: 40px !important;
     width: auto !important;
     display: block !important;
     object-fit: contain !important;
   }
   @media (min-width: 768px) {
     .nav-logo-img {
-      height: 44px !important;
-      max-height: 44px !important;
-      min-height: 44px !important;
-    }
+    height: 40px !important;
+    max-height: 40px !important;
+    min-height: 40px !important;
+    width: auto !important;
+    display: block !important;
+    object-fit: contain !important;
+  }
   }
   .nav-link-item {
     color: rgba(235, 209, 156, 0.85);
@@ -232,15 +235,17 @@
 <body class="bg-[#0e170a] text-on-background antialiased overflow-x-hidden m-0 p-0 font-['Noto_Serif'] selection:bg-tertiary selection:text-on-tertiary">
 <!-- TOP NAVIGATION (STICKY / DOCKED) -->
 <nav class="bg-[#121c0e]/95 sticky top-0 backdrop-blur-md border-b border-white/10 z-[200]">
-<div class="section-container py-3 flex justify-between items-center relative">
+<div class="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex justify-between items-center relative">
 <!-- Logo (notranslate to lock dimensions and alt attribute) -->
-<a class="nav-logo-link z-[210] hover:opacity-90 transition-opacity notranslate" translate="no" href="#apresentacao">
-  <img alt="Fé nas Folhas" class="nav-logo-img notranslate" translate="no" src="logo-fe-nas-folhas.png">
-</a>
+<div class="flex-shrink-0 mr-8 lg:mr-12 z-[210]">
+  <a class="inline-flex items-center hover:opacity-90 transition-opacity notranslate" translate="no" href="#apresentacao" style="text-decoration:none;">
+    <img alt="Fé nas Folhas" class="nav-logo-img notranslate" translate="no" src="logo-fe-nas-folhas.png" style="height: 42px; width: auto; max-height: 42px; display: block;">
+  </a>
+</div>
 
 <!-- Desktop Nav Links (10 Anchors) -->
-<div class="hidden xl:flex items-center justify-end space-x-1 2xl:space-x-2 flex-1">
-  <div class="flex items-center space-x-1 lg:space-x-2 mr-3">
+<div class="hidden xl:flex items-center justify-end space-x-1 2xl:space-x-2 flex-grow">
+  <div class="flex items-center space-x-1 lg:space-x-1.5 mr-3">
     <a class="nav-link-item" href="#apresentacao">Apresentação</a>
     <a class="nav-link-item" href="#saberes-da-floresta">Vídeos</a>
     <a class="nav-link-item" href="#show">Show</a>
